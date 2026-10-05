@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-build-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Generators and test harnesses for the Anupam Sarkar portfolio, case studies and CMS. Not shipped to the site.",
+  "scripts": {
+    "test": "node cmstest.js && node admintest.js && node credtest.js && node e2e_bake.js && node backendtest.js && node coverage.js",
+    "generate": "python3 extract_svgs.py && node extract_content.js && python3 gen_content.py && python3 make_content_js.py"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.0"
+  }
+}

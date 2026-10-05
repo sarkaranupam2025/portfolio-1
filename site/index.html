@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-cms-attr="lang:meta.lang">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-cms="meta.title">Anupam Sarkar — Design Leader, Enterprise UX & AI</title>
+<meta name="description" data-cms-attr="content:meta.description" content="Anupam Sarkar — design leader working on enterprise platforms and AI-augmented design. Case studies: Smart Mining, Falcon View, Incident Management for Microsoft Teams, BT Business Billing.">
+<script>
+  /* set the theme before first paint so there is no flash */
+  (function () {
+    try {
+      var t = localStorage.getItem('as-theme');
+      if (t !== 'dark' && t !== 'light') {
+        var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        t = (mq && mq.matches) ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+  })();
+</script>
+<style>
+/* ══════════════════════════════════════════════════════════════
+   TOKENS
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#FAFAFA; --text:#0A0A0A; --text-muted:#666666; --text-faint:#8C8C8C;
+  --border:#E5E5E5; --border-strong:#0A0A0A; --hover-bg:#F2F2F2; --card:#FFFFFF;
+  --header-bg:rgba(250,250,250,.82); --shadow:0 18px 44px rgba(10,10,10,.09);
+  --preview-bg:#0B1218; --preview-ink:#E9EFF1; --preview-line:rgba(233,239,241,.16);
+  --font-main:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,0,0,1); --t:.34s var(--ease);
+  color-scheme:light;
+}
+[data-theme="dark"]{
+  --bg:#0A0A0A; --text:#FAFAFA; --text-muted:#9A9A9A; --text-faint:#6E6E6E;
+  --border:#222222; --border-strong:#FAFAFA; --hover-bg:#131313; --card:#101010;
+  --header-bg:rgba(10,10,10,.82); --shadow:0 18px 44px rgba(0,0,0,.55);
+  --preview-bg:#F5F0E3; --preview-ink:#1A1410; --preview-line:rgba(26,20,16,.16);
+  color-scheme:dark;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BASE
+   ══════════════════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{
+  background:var(--bg); color:var(--text); font-family:var(--font-main);
+  font-weight:400; line-height:1.6; overflow-x:hidden;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  transition:background-color var(--t),color var(--t);
+}
+::selection{background:var(--text);color:var(--bg)}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--text);outline-offset:3px;border-radius:4px}
+h1{font-weight:500;line-height:1.02;letter-spacing:-.035em}
+h2,h3{font-weight:400;line-height:1.12;letter-spacing:-.022em}
+.it{font-style:italic}
+.hl{color:var(--text)}
+.mut{color:var(--text-muted)}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.container{max-width:1440px;margin:0 auto;padding:0 5vw}
+section{padding:clamp(72px,13vh,150px) 0;border-bottom:1px solid var(--border)}
+.eyebrow{
+  font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.2em;
+  color:var(--text-muted);display:flex;align-items:center;gap:14px;
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--border-strong);opacity:.45}
+
+/* reveal-on-scroll ------------------------------------------------ */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HEADER
+   ══════════════════════════════════════════════════════════════ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;justify-content:space-between;align-items:center;gap:24px;
+  padding:1.15rem 5vw;
+  background:var(--header-bg);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);
+  backdrop-filter:blur(18px) saturate(1.4);
+  border-bottom:1px solid var(--border);
+  transition:padding var(--t),background var(--t);
+}
+header.tight{padding-top:.7rem;padding-bottom:.7rem}
+.logo{font-size:1.1rem;font-weight:500;letter-spacing:-.02em;white-space:nowrap}
+.logo span{color:var(--text-muted);font-weight:400}
+nav{display:flex;align-items:center;gap:2.2rem}
+.nav-link{
+  font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--text-muted);position:relative;padding:2px 0;transition:color var(--t);
+}
+.nav-link::after{
+  content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;
+  background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .3s var(--ease);
+}
+.nav-link:hover,.nav-link.active{color:var(--text)}
+.nav-link:hover::after,.nav-link.active::after{transform:scaleX(1);transform-origin:left}
+.nav-right{display:flex;align-items:center;gap:.7rem}
+.pill{
+  border:1px solid var(--border);border-radius:50px;padding:.42rem .95rem;
+  font-size:.68rem;font-weight:500;text-transform:uppercase;letter-spacing:.11em;
+  color:var(--text-muted);transition:all var(--t);white-space:nowrap;
+}
+.pill:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
+#burger{display:none;width:38px;height:38px;border:1px solid var(--border);border-radius:50px;
+  align-items:center;justify-content:center;flex-direction:column;gap:4px;transition:border-color var(--t)}
+#burger i{display:block;width:14px;height:1px;background:var(--text);transition:transform .3s var(--ease),opacity .2s}
+#burger[aria-expanded="true"] i:first-child{transform:translateY(2.5px) rotate(45deg)}
+#burger[aria-expanded="true"] i:last-child{transform:translateY(-2.5px) rotate(-45deg)}
+#mobileNav{
+  position:fixed;top:0;right:0;bottom:0;width:min(78vw,320px);z-index:190;
+  background:var(--bg);border-left:1px solid var(--border);
+  padding:6.5rem 2rem 2rem;display:flex;flex-direction:column;gap:.4rem;
+  transform:translateX(102%);transition:transform .42s var(--ease);
+}
+#mobileNav.open{transform:none}
+#mobileNav a{font-size:1.5rem;letter-spacing:-.02em;padding:.7rem 0;border-bottom:1px solid var(--border)}
+#mobileNav a small{display:block;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-faint);margin-top:4px}
+.scrim{position:fixed;inset:0;z-index:180;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .4s}
+.scrim.on{opacity:1;pointer-events:auto}
+
+/* ══════════════════════════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════════════════════════ */
+.hero{
+  min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding-top:22vh;padding-bottom:7vh;border-bottom:1px solid var(--border);
+}
+.hero-top{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:clamp(28px,6vh,64px);flex-wrap:wrap}
+.hero h1{font-size:clamp(3.4rem,11.5vw,10.5rem);margin-bottom:clamp(24px,4vh,44px)}
+.hero h1 .dot{color:var(--text-muted)}
+.hero-bottom{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:end}
+.hero-statement{font-size:clamp(1.05rem,1.45vw,1.4rem);line-height:1.52;color:var(--text-muted);max-width:60ch}
+.hero-statement .hl{color:var(--text)}
+.hero-stats{display:flex;gap:clamp(20px,3vw,44px);flex-wrap:wrap}
+.stat b{display:block;font-size:clamp(1.6rem,2.6vw,2.3rem);font-weight:500;letter-spacing:-.03em;line-height:1}
+.stat span{display:block;margin-top:8px;font-size:.66rem;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--text-faint);max-width:16ch}
+.scroll-cue{margin-top:clamp(28px,5vh,56px);display:flex;align-items:center;gap:12px;
+  font-size:.66rem;font-weight:500;text-transform:uppercase;letter-spacing:.18em;color:var(--text-faint)}
+.scroll-cue i{display:block;width:1px;height:34px;background:linear-gradient(var(--text-faint),transparent);animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{0%,100%{opacity:.25;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION SCAFFOLD
+   ══════════════════════════════════════════════════════════════ */
+.section-grid{display:grid;grid-template-columns:1fr 2.6fr;gap:clamp(28px,5vw,80px);align-items:start}
+.section-label{
+  font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.2em;
+  color:var(--text-muted);position:sticky;top:15vh;
+}
+.section-label b{display:block;color:var(--text);font-weight:500;margin-bottom:6px}
+.section-head{margin-bottom:clamp(28px,4vw,52px)}
+.section-head h2{font-size:clamp(2rem,4vw,3.4rem);max-width:22ch}
+.lede{margin-top:1.2rem;font-size:clamp(1rem,1.2vw,1.15rem);color:var(--text-muted);max-width:62ch}
+
+/* tenets ---------------------------------------------------------- */
+.tenets{display:grid;gap:0;margin-top:8px;border-top:1px solid var(--border)}
+.tenet{display:grid;grid-template-columns:64px minmax(0,1fr);gap:clamp(16px,3vw,40px);
+  padding:clamp(24px,3vw,36px) 0;border-bottom:1px solid var(--border);transition:padding-left var(--t)}
+.tenet:hover{padding-left:14px}
+.tenet .n{font-family:var(--font-mono);font-size:.72rem;color:var(--text-faint);padding-top:6px;letter-spacing:.06em}
+.tenet h3{font-size:clamp(1.15rem,1.7vw,1.5rem);margin-bottom:.55rem}
+.tenet p{color:var(--text-muted);font-size:.98rem;line-height:1.68;max-width:66ch}
+.tenet p .hl{color:var(--text)}
+.kicker-line{margin-top:clamp(28px,4vw,44px);font-size:clamp(1.1rem,1.8vw,1.6rem);letter-spacing:-.02em}
+
+/* ══════════════════════════════════════════════════════════════
+   EXPERIENCE
+   ══════════════════════════════════════════════════════════════ */
+.exp-list{margin-top:8px}
+.exp-item{
+  display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:clamp(16px,3vw,44px);
+  padding:clamp(22px,2.6vw,34px) 0;border-top:1px solid var(--border);align-items:baseline;
+  transition:padding-left var(--t),background var(--t);
+}
+.exp-item:last-child{border-bottom:1px solid var(--border)}
+.exp-item:hover{padding-left:16px;background:var(--hover-bg)}
+.exp-year{font-family:var(--font-mono);font-size:.82rem;color:var(--text-muted);letter-spacing:-.01em}
+.exp-details h3{font-size:clamp(1.2rem,1.9vw,1.6rem);margin-bottom:.15rem}
+.exp-org{font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--text-faint);margin-bottom:.75rem}
+.exp-details p{font-size:.96rem;color:var(--text-muted);line-height:1.62;max-width:70ch}
+.exp-details p .hl{color:var(--text)}
+.exp-side{text-align:right;white-space:nowrap}
+.exp-loc{font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.11em;color:var(--text-muted)}
+.exp-scope{display:block;margin-top:8px;font-family:var(--font-mono);font-size:.72rem;color:var(--text-faint)}
+
+/* ══════════════════════════════════════════════════════════════
+   WORKS  (clickable case studies)
+   ══════════════════════════════════════════════════════════════ */
+.work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,28px);margin-top:8px}
+.work-card{
+  position:relative;display:flex;flex-direction:column;
+  border:1px solid var(--border);background:var(--card);overflow:hidden;
+  transition:border-color var(--t),transform .42s var(--ease),box-shadow .42s var(--ease);
+}
+.work-card:hover,.work-card:focus-visible{border-color:var(--border-strong);transform:translateY(-5px);box-shadow:var(--shadow)}
+.work-preview{position:relative;aspect-ratio:16/9;overflow:hidden;border-bottom:1px solid var(--border)}
+.work-preview svg{width:100%;height:100%;transition:transform .7s var(--ease)}
+.work-card:hover .work-preview svg{transform:scale(1.035)}
+.work-preview .badge{
+  position:absolute;top:14px;left:14px;z-index:2;
+  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 9px;border-radius:50px;background:var(--preview-bg);color:var(--preview-ink);
+  border:1px solid var(--preview-line);
+}
+.work-body{padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;flex:1;gap:14px}
+.work-meta{display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+  font-size:.66rem;font-weight:500;text-transform:uppercase;letter-spacing:.13em;color:var(--text-faint)}
+.work-meta .yr{font-family:var(--font-mono);letter-spacing:.04em}
+.work-card h3{font-size:clamp(1.3rem,2vw,1.75rem);line-height:1.15}
+.work-card h3 .it{color:var(--text-muted)}
+.work-prob{font-size:.95rem;color:var(--text-muted);line-height:1.6}
+.work-out{font-size:.95rem;line-height:1.55;padding-top:14px;border-top:1px solid var(--border)}
+.work-out b{font-weight:500}
+.work-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.work-tag{font-size:.62rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--text-muted);border:1px solid var(--border);padding:.3rem .7rem;border-radius:50px}
+.work-cta{display:flex;align-items:center;gap:9px;font-size:.7rem;font-weight:500;
+  text-transform:uppercase;letter-spacing:.13em;padding-top:4px}
+.work-cta i{display:block;width:20px;height:1px;background:currentColor;position:relative;transition:width .35s var(--ease)}
+.work-cta i::after{content:"";position:absolute;right:0;top:-2.5px;width:6px;height:6px;
+  border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.work-card:hover .work-cta i{width:38px}
+
+/* reusable models strip ------------------------------------------------ */
+.frame-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:clamp(24px,3vw,40px);
+  background:var(--border);border:1px solid var(--border)}
+.frame{background:var(--bg);padding:clamp(20px,2.2vw,30px);transition:background var(--t)}
+.frame:hover{background:var(--hover-bg)}
+.frame .n{font-family:var(--font-mono);font-size:.68rem;color:var(--text-faint);letter-spacing:.08em}
+.frame h3{font-size:1.1rem;margin:12px 0 8px}
+.frame p{font-size:.9rem;color:var(--text-muted);line-height:1.6}
+.frame-note{margin-top:18px;font-size:.85rem;color:var(--text-faint)}
+
+/* ══════════════════════════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════════════════════════ */
+footer{padding:clamp(80px,15vh,170px) 0 5vh;text-align:center;border-bottom:0}
+.contact-title{font-size:clamp(2.6rem,7vw,5.6rem);margin-bottom:clamp(24px,4vh,44px)}
+.contact-link{font-style:italic;font-size:clamp(1.2rem,2.4vw,2.1rem);
+  border-bottom:2px solid var(--text);padding-bottom:5px;transition:opacity var(--t)}
+.contact-link:hover{opacity:.45}
+.contact-sub{margin-top:26px;font-size:.9rem;color:var(--text-muted)}
+.footer-bottom{margin-top:clamp(60px,12vh,130px);display:flex;justify-content:space-between;gap:20px;
+  font-size:.68rem;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:.11em;flex-wrap:wrap}
+.footer-bottom div{display:flex;gap:1.5rem}
+.footer-bottom a{transition:color var(--t)}
+.footer-bottom a:hover{color:var(--text)}
+
+/* ══════════════════════════════════════════════════════════════
+   AI PRACTICES
+   ══════════════════════════════════════════════════════════════ */
+.block-label{margin:clamp(40px,5vw,64px) 0 20px}
+.todo{background:rgba(180,120,0,.13);border-bottom:1px dashed rgba(180,120,0,.6);
+  padding:0 3px;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+[data-theme="dark"] .todo{background:rgba(255,190,80,.15);border-bottom-color:rgba(255,190,80,.5)}
+.fill-in{margin-top:26px;padding:16px 18px;border:1px dashed var(--border);
+  font-family:var(--font-mono);font-size:.74rem;line-height:1.7;color:var(--text-faint)}
+.fill-in b{color:var(--text-muted);font-weight:500}
+
+/* pipeline: research -> shipped, showing where AI sits and what stays human */
+.pipeline{display:flex;gap:0;margin-top:8px;border:1px solid var(--border);
+  background:var(--card);overflow-x:auto;scrollbar-width:thin}
+.stage{flex:1 0 172px;padding:22px 18px 20px;border-right:1px solid var(--border);
+  display:flex;flex-direction:column;gap:9px;transition:background var(--t)}
+.stage:last-child{border-right:0}
+.stage:hover{background:var(--hover-bg)}
+.stage .idx{font-family:var(--font-mono);font-size:.66rem;color:var(--text-faint);letter-spacing:.08em}
+.stage h3{font-size:1.02rem;letter-spacing:-.01em}
+.stage .split{display:flex;flex-direction:column;gap:8px;margin-top:auto;padding-top:14px}
+.stage .split span{font-size:.78rem;line-height:1.5;color:var(--text-muted);
+  display:flex;gap:8px;align-items:flex-start}
+.stage .split b{flex:none;width:14px;font-family:var(--font-mono);font-size:.64rem;
+  font-weight:500;letter-spacing:.04em;padding-top:2px}
+.stage .split .ai b{color:var(--text)}
+.stage .split .hu b{color:var(--text-faint)}
+.pipeline-key{display:flex;gap:22px;margin-top:14px;font-size:.7rem;color:var(--text-faint);
+  text-transform:uppercase;letter-spacing:.1em;flex-wrap:wrap}
+
+/* practice cards */
+.practice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;
+  background:var(--border);border:1px solid var(--border);margin-top:8px}
+.practice{background:var(--bg);padding:clamp(20px,2.2vw,30px);display:flex;
+  flex-direction:column;gap:11px;transition:background var(--t)}
+.practice:hover{background:var(--hover-bg)}
+.practice .n{font-family:var(--font-mono);font-size:.68rem;color:var(--text-faint);letter-spacing:.08em}
+.practice h3{font-size:1.12rem;letter-spacing:-.015em}
+.practice .row{display:flex;gap:10px;font-size:.88rem;line-height:1.58;color:var(--text-muted)}
+.practice .row b{flex:none;width:52px;font-size:.64rem;font-weight:500;text-transform:uppercase;
+  letter-spacing:.11em;color:var(--text-faint);padding-top:3px}
+.practice .proof{margin-top:auto;padding-top:14px;border-top:1px solid var(--border);
+  font-size:.92rem;line-height:1.5}
+
+/* guardrails */
+.guard{margin-top:clamp(40px,5vw,64px);border:1px solid var(--border);border-left:3px solid var(--text);
+  padding:clamp(24px,3vw,38px);background:var(--card)}
+.guard h3{font-size:clamp(1.3rem,2vw,1.7rem);margin-bottom:18px}
+.guard ol{list-style:none;counter-reset:g;display:grid;gap:16px}
+.guard li{counter-increment:g;display:grid;grid-template-columns:34px minmax(0,1fr);gap:14px;
+  font-size:.95rem;line-height:1.6;color:var(--text-muted)}
+.guard li::before{content:"0" counter(g);font-family:var(--font-mono);font-size:.7rem;
+  color:var(--text-faint);padding-top:4px;letter-spacing:.06em}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width:1000px){
+  .section-grid{grid-template-columns:1fr;gap:26px}
+  .section-label{position:static}
+  .hero-bottom{grid-template-columns:1fr;gap:32px}
+  .work-grid{grid-template-columns:1fr}
+  .frame-strip{grid-template-columns:1fr}
+  .practice-grid{grid-template-columns:1fr}
+  .stage{border-right:0;border-bottom:1px solid var(--border)}
+  .stage:last-child{border-bottom:0}
+}
+@media (max-width:900px){
+  nav .nav-link{display:none}
+  #burger{display:flex}
+  .exp-item{grid-template-columns:1fr;gap:8px}
+  .exp-side{text-align:left}
+  .exp-loc::before{content:"· ";}
+}
+@media (max-width:620px){
+  .hero-top{flex-direction:column;gap:12px;align-items:flex-start}
+  .hero-stats{gap:22px}
+  .stat b{font-size:1.5rem}
+  .footer-bottom{flex-direction:column;gap:16px;text-align:center}
+  .footer-bottom div{justify-content:center}
+  .tenet{grid-template-columns:1fr;gap:8px}
+  .tenet .n{padding-top:0}
+  .guard li{grid-template-columns:1fr;gap:4px}
+  .practice .row{flex-direction:column;gap:4px}
+  .practice .row b{padding-top:0}
+}
+@media print{header,#mobileNav,.scrim,.scroll-cue{display:none}}
+</style>
+<script src="cms/content.js"></script>
+<script src="cms/cms-runtime.js"></script>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header id="hdr">
+  <a href="#top" class="logo"><span data-cms="header.logoName">Anupam Sarkar</span> <span data-cms="header.logoRole">— Design Leader</span></a>
+  <nav aria-label="Primary">
+    <a class="nav-link" href="#philosophy" data-cms="header.nav.0.label">Philosophy</a>
+    <a class="nav-link" href="#experience" data-cms="header.nav.1.label">Experience</a>
+    <a class="nav-link" href="#works" data-cms="header.nav.2.label">Works</a>
+    <a class="nav-link" href="#ai-practices" data-cms="header.nav.3.label">AI Practices</a>
+    <a class="nav-link" href="#contact" data-cms="header.nav.4.label">Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button class="pill" id="themeToggle" aria-pressed="false" data-cms="header.themeLabelDark">Dark</button>
+    <button id="burger" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<nav id="mobileNav" aria-label="Mobile">
+  <a href="#philosophy" data-cms="header.navMobile.0.label">Philosophy<small data-cms="header.navMobile.0.sub">How I think</small></a>
+  <a href="#experience" data-cms="header.navMobile.1.label">Experience<small data-cms="header.navMobile.1.sub">Where I've led</small></a>
+  <a href="#works" data-cms="header.navMobile.2.label">Works<small data-cms="header.navMobile.2.sub">Four case studies</small></a>
+  <a href="#ai-practices" data-cms="header.navMobile.3.label">AI Practices<small data-cms="header.navMobile.3.sub">Pipeline &amp; guardrails</small></a>
+  <a href="#contact" data-cms="header.navMobile.4.label">Contact<small data-cms="header.navMobile.4.sub">Say hello</small></a>
+</nav>
+
+<main id="top" aria-label="Portfolio">
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero container">
+  <div class="hero-top">
+    <span class="eyebrow" data-cms="hero.eyebrowLeft">Design Leader &amp; Product Design Manager</span>
+    <span class="eyebrow" data-cms="hero.eyebrowRight">13+ years · Enterprise UX &amp; AI</span>
+  </div>
+
+  <h1><span data-cms="hero.h1First">Anupam</span><br><span data-cms="hero.h1Last">Sarkar</span><span class="dot it">.</span></h1>
+
+  <div class="hero-bottom">
+    <p class="hero-statement rv" data-cms="hero.statement">
+      I take enterprise systems that nobody can read — billing portals, mine control rooms,
+      hospital operations, incident response — and turn them into
+      <span class="hl">a decision someone can make before the shift ends</span>.
+      Currently leading UX strategy for <span class="hl">IBM Power Systems</span>, and building
+      AI-augmented design practice along the way.
+    </p>
+    <div class="hero-stats rv" data-cms-list="hero.stats">
+    <template data-cms-template><div class="stat"><b>{{value}}</b><span>{{label}}</span></div></template>
+      <div class="stat"><b>13+</b><span>Years in enterprise product design</span></div>
+      <div class="stat"><b>340k</b><span>Businesses on systems I've redesigned</span></div>
+      <div class="stat"><b>4</b><span>Case studies below, start to shipped</span></div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" data-cms="hero.scrollCue"><i></i> Scroll — or jump straight to <a href="#works" style="border-bottom:1px solid currentColor">the work</a></div>
+</section>
+
+<!-- ═══════════ PHILOSOPHY ═══════════ -->
+<section id="philosophy" class="container">
+  <div class="section-grid">
+    <div class="section-label"><b data-cms="philosophy.labelNum">01</b> <span data-cms="philosophy.labelText">Philosophy</span></div>
+    <div>
+      <div class="section-head rv">
+        <h2 data-cms="philosophy.heading">Design for the <span class="it">decision</span>, not the screen.</h2>
+        <p class="lede" data-cms="philosophy.lede">Thirteen years across IBM, BT Group, Siemens and John Deere taught me one
+          thing repeatedly: enterprise software rarely fails on aesthetics. It fails because the
+          person who has to act can't find the thing they need to act on.</p>
+      </div>
+
+      <div class="tenets" data-cms-list="philosophy.tenets">
+        <template data-cms-template>
+<div class="tenet rv">
+          <span class="n">{{n}}</span>
+          <div>
+            <h3>{{title}}</h3>
+            <p>{{body}}</p>
+          </div>
+        </div>
+</template>
+
+<div class="tenet rv">
+          <span class="n">01</span>
+          <div>
+            <h3>Start from intent, work backwards to interface</h3>
+            <p>Before any wireframe I map what the user is actually trying to settle — the alert they
+              must triage, the dispute they must close, the shift they must hand over. Layout follows
+              from that. It's why <span class="hl">supervisors scan Where → Who before Severity</span>,
+              and why the designs I ship put location first.</p>
+          </div>
+        </div>
+        <div class="tenet rv">
+          <span class="n">02</span>
+          <div>
+            <h3>Compress the cycle, never the evidence</h3>
+            <p>I use AI to do the slow parts faster — coding interview transcripts, drafting
+              documentation, generating prototype variants — so the team spends its hours on judgement
+              instead of transcription. <span class="hl">147 field observations, coded and
+              affinity-grouped in a fraction of the usual time</span>, with the audit trail left
+              visible for whoever challenges the number.</p>
+          </div>
+        </div>
+        <div class="tenet rv">
+          <span class="n">03</span>
+          <div>
+            <h3>Governance is a set of agreements, not a gate</h3>
+            <p>A design system only holds if the people shipping against it agreed to it. I run
+              <span class="hl">3-in-a-box</span> — PM, engineering and design deciding together — and
+              write the rules down at token level so drift is a diff, not an argument.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="kicker-line rv" data-cms="philosophy.kicker"><span class="hl">Less rework. Higher velocity.</span> <span class="mut">Impact you can put a number on.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EXPERIENCE ═══════════ -->
+<section id="experience" class="container">
+  <div class="section-grid">
+    <div class="section-label"><b data-cms="experience.labelNum">02</b> <span data-cms="experience.labelText">Experience</span></div>
+    <div>
+      <div class="section-head rv">
+        <h2 data-cms="experience.heading">Where I've <span class="it">led</span>.</h2>
+        <p class="lede" data-cms="experience.lede">Five organisations, one recurring job: arrive where the complexity lives,
+          set the design direction, and leave a team that can hold it without me.</p>
+      </div>
+
+      <div class="exp-list" data-cms-list="experience.items">
+        <template data-cms-template>
+<article class="exp-item rv">
+          <span class="exp-year">{{year}}</span>
+          <div class="exp-details">
+            <h3>{{role}}</h3>
+            <div class="exp-org">{{org}}</div>
+            <p>{{body}}</p>
+          </div>
+          <div class="exp-side"><span class="exp-loc">{{location}}</span><span class="exp-scope">{{scope}}</span></div>
+        </article>
+</template>
+
+<article class="exp-item rv">
+          <span class="exp-year">2024 — Present</span>
+          <div class="exp-details">
+            <h3>Product Design Manager</h3>
+            <div class="exp-org">IBM · Power Systems Business Unit</div>
+            <p>UX strategy for hardware and platform tooling used by <span class="hl">10,000+ enterprise
+              users</span>. Scaled the Carbon Design System across squads, introduced 3-in-a-box
+              governance, and cut UI drift by <span class="hl">20%</span> — first-pass design approvals
+              up <span class="hl">35%</span>.</p>
+          </div>
+          <div class="exp-side"><span class="exp-loc">Bangalore</span><span class="exp-scope">10k+ users</span></div>
+        </article>
+
+        <article class="exp-item rv">
+          <span class="exp-year">2024 — 2025</span>
+          <div class="exp-details">
+            <h3>Product Design Manager</h3>
+            <div class="exp-org">BT Group · Business Billing &amp; Provisioning</div>
+            <p>Directed UX strategy for global billing and provisioning platforms serving
+              <span class="hl">340,000+ businesses</span> and 500,000 users. Reframed a portal redesign
+              as a system fix, and halved feature-discovery cycles from
+              <span class="hl">4 weeks to 2</span>.</p>
+          </div>
+          <div class="exp-side"><span class="exp-loc">Blr / London</span><span class="exp-scope">340k businesses</span></div>
+        </article>
+
+        <article class="exp-item rv">
+          <span class="exp-year">2022 — 2024</span>
+          <div class="exp-details">
+            <h3>Lead UX Strategist</h3>
+            <div class="exp-org">Siemens AG · Sustainability Intelligence</div>
+            <p>Set the design vision for sustainability and workforce dashboards used across
+              <span class="hl">190+ countries</span>. Made evidence-based design the default: prototype
+              validation success rose from <span class="hl">60% to 85%</span>.</p>
+          </div>
+          <div class="exp-side"><span class="exp-loc">Blr / Munich</span><span class="exp-scope">60 → 85% validation</span></div>
+        </article>
+
+        <article class="exp-item rv">
+          <span class="exp-year">2022</span>
+          <div class="exp-details">
+            <h3>Lead Creative Director</h3>
+            <div class="exp-org">John Deere · Asia Digital Experience</div>
+            <p>Digital strategy across immersive XR and virtual showrooms for the Asia market —
+              reducing dependency on physical demos by <span class="hl">40%</span> while keeping the
+              dealer conversation intact.</p>
+          </div>
+          <div class="exp-side"><span class="exp-loc">Pune</span><span class="exp-scope">−40% physical demos</span></div>
+        </article>
+
+        <article class="exp-item rv">
+          <span class="exp-year">2019 — 2022</span>
+          <div class="exp-details">
+            <h3>UX Designer &amp; Researcher</h3>
+            <div class="exp-org">Tata Consultancy Services</div>
+            <p>Led <span class="hl">30+ MVP engagements</span> for enterprise collaboration platforms,
+              and built the team's first AI-in-the-loop research and prototyping workflows.</p>
+          </div>
+          <div class="exp-side"><span class="exp-loc">Bangalore</span><span class="exp-scope">30+ MVPs</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WORKS ═══════════ -->
+<section id="works" class="container">
+  <div class="section-grid">
+    <div class="section-label"><b data-cms="works.labelNum">03</b> <span data-cms="works.labelText">Works</span></div>
+    <div>
+      <div class="section-head rv">
+        <h2 data-cms="works.heading">Four systems, <span class="it">start to shipped</span>.</h2>
+        <p class="lede" data-cms="works.lede">Each case study opens in full — problem, research, the calls I made, and what
+          changed afterwards. All four carry a dark/light switch in the top-right corner, and it
+          remembers your choice across the site.</p>
+      </div>
+
+      <div class="work-grid" data-cms-list="projects.items">
+
+        <!-- ── 1. Smart Mining ─────────────────────────────── -->
+        <template data-cms-template>
+<a class="work-card rv" href="{{href}}" data-open="{{openIn}}" aria-label="Open the {{title}} case study">
+          <div class="work-preview" style="--preview-bg:#070d12;--preview-ink:#e9eff1" data-image="{{preview.image}}">
+            <span class="badge">{{badge}}</span>
+            {{preview.svg}}
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span>{{meta}}</span><span class="yr">{{year}}</span></div>
+            <h3>{{title}} <span class="it">{{titleItalic}}</span></h3>
+            <p class="work-prob">{{problem}}</p>
+            <p class="work-out">{{outcome}}</p>
+            <div class="work-tags">{{#tags}}<span class="work-tag">{{.}}</span>{{/tags}}</div>
+            <span class="work-cta">{{cta}} <i></i></span>
+          </div>
+        </a>
+</template>
+
+<a class="work-card rv" href="smart-mining-case-study.html" aria-label="Open the Smart Mining Management System case study">
+          <div class="work-preview" style="--preview-bg:#070d12;--preview-ink:#e9eff1">
+            <span class="badge">STAR · 12 sections</span>
+            <svg viewBox="0 0 480 270" role="img" aria-hidden="true">
+              <rect width="480" height="270" fill="#070d12"/>
+              <g stroke="#1d3240" stroke-width="1">
+                <path d="M0 60h480M0 120h480M0 180h480M0 240h480"/>
+              </g>
+              <g fill="none" stroke-width="1.5" opacity=".85">
+                <circle cx="150" cy="135" r="96" stroke="#1d3240"/>
+                <circle cx="150" cy="135" r="70" stroke="#2ee6a6" stroke-opacity=".55"/>
+                <circle cx="150" cy="135" r="44" stroke="#36d3e2" stroke-opacity=".7"/>
+              </g>
+              <circle cx="150" cy="135" r="21" fill="#2ee6a6"/>
+              <circle cx="150" cy="135" r="21" fill="none" stroke="#0b8a58" stroke-width="6" stroke-dasharray="86 200" transform="rotate(-90 150 135)"/>
+              <g font-family="Helvetica Neue,Arial" font-size="10" fill="#93a7b1" letter-spacing="1.4">
+                <text x="278" y="86">WHERE</text><text x="278" y="140">WHO</text><text x="278" y="194">SEVERITY</text>
+              </g>
+              <g>
+                <rect x="278" y="94" width="150" height="7" rx="3.5" fill="#122029"/>
+                <rect x="278" y="94" width="132" height="7" rx="3.5" fill="#4d8dff"/>
+                <rect x="278" y="148" width="150" height="7" rx="3.5" fill="#122029"/>
+                <rect x="278" y="148" width="96" height="7" rx="3.5" fill="#36d3e2"/>
+                <rect x="278" y="202" width="150" height="7" rx="3.5" fill="#122029"/>
+                <rect x="278" y="202" width="52" height="7" rx="3.5" fill="#ff4f62"/>
+              </g>
+              <g fill="#2ee6a6" opacity=".9">
+                <circle cx="300" cy="40" r="2.5"/><circle cx="330" cy="40" r="2.5"/><circle cx="360" cy="40" r="2.5"/><circle cx="390" cy="40" r="2.5"/>
+              </g>
+            </svg>
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span>Mining operations platform</span><span class="yr">UX Lead · Zero-to-one</span></div>
+            <h3>Smart Mining <span class="it">Management System</span></h3>
+            <p class="work-prob">Seven spreadsheets, a phone tree and radio stood between a sensor
+              reading and a decision. I led the UX from nothing — no design system, no patterns, no
+              prior research.</p>
+            <p class="work-out"><b>147 field observations</b> became an alert flow ordered the way
+              supervisors actually think: <b>Where → Who</b>, then severity. Cognitive load per shift
+              down <b>58%</b>.</p>
+            <div class="work-tags"><span class="work-tag">Research</span><span class="work-tag">Zero-to-one</span><span class="work-tag">Intent-First UX</span></div>
+            <span class="work-cta">Read the case study <i></i></span>
+          </div>
+        </a>
+
+        <!-- ── 2. Falcon View ──────────────────────────────── -->
+        <a class="work-card rv" href="falcon-view-case-study.html" aria-label="Open the Falcon View hospital management case study">
+          <div class="work-preview" style="--preview-bg:#070d12;--preview-ink:#e9eff1">
+            <span class="badge">Role-aware · 8 modules</span>
+            <svg viewBox="0 0 480 270" role="img" aria-hidden="true">
+              <rect width="480" height="270" fill="#070d12"/>
+              <g stroke="#1d3240"><path d="M160 0v270M320 0v270M0 90h480M0 180h480"/></g>
+              <g font-family="Helvetica Neue,Arial" font-size="9" fill="#5f7682" letter-spacing="1.2">
+                <text x="16" y="26">ENERGY</text><text x="176" y="26">WATER</text><text x="336" y="26">COMPLIANCE</text>
+              </g>
+              <g fill="#36d3e2">
+                <rect x="16" y="40" width="12" height="34" rx="2"/><rect x="34" y="52" width="12" height="22" rx="2"/>
+                <rect x="52" y="34" width="12" height="40" rx="2"/><rect x="70" y="58" width="12" height="16" rx="2"/>
+              </g>
+              <path d="M176 66l26-18 26 10 26-24 26 16" fill="none" stroke="#2ee6a6" stroke-width="2"/>
+              <circle cx="280" cy="50" r="4" fill="#2ee6a6"/>
+              <g>
+                <rect x="336" y="40" width="128" height="10" rx="5" fill="#122029"/>
+                <rect x="336" y="40" width="92" height="10" rx="5" fill="#4d8dff"/>
+                <rect x="336" y="58" width="128" height="10" rx="5" fill="#122029"/>
+                <rect x="336" y="58" width="46" height="10" rx="5" fill="#ffb84d"/>
+              </g>
+              <rect x="16" y="106" width="448" height="58" rx="10" fill="#0c161d" stroke="#28455a"/>
+              <text x="34" y="132" font-family="Helvetica Neue,Arial" font-size="11" fill="#e9eff1" letter-spacing=".4">ONE LIVE OPERATING PICTURE</text>
+              <text x="34" y="150" font-family="Helvetica Neue,Arial" font-size="10" fill="#93a7b1">7 systems → 1 surface · 4 teams · role-aware front doors</text>
+              <g>
+                <rect x="16" y="196" width="104" height="46" rx="8" fill="#122029" stroke="#1d3240"/>
+                <rect x="132" y="196" width="104" height="46" rx="8" fill="#122029" stroke="#1d3240"/>
+                <rect x="248" y="196" width="104" height="46" rx="8" fill="#122029" stroke="#2ee6a6" stroke-opacity=".5"/>
+                <rect x="364" y="196" width="100" height="46" rx="8" fill="#122029" stroke="#1d3240"/>
+                <g fill="#5f7682" font-family="Helvetica Neue,Arial" font-size="9">
+                  <text x="30" y="223">FACILITIES</text><text x="146" y="223">CLINICAL</text>
+                  <text x="262" y="223" fill="#2ee6a6">ENERGY</text><text x="378" y="223">COMPLIANCE</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span>Smart hospital management</span><span class="yr">Design Lead</span></div>
+            <h3>Falcon <span class="it">View</span></h3>
+            <p class="work-prob">Four hospitals ran energy, water, compliance and maintenance on
+              spreadsheets, vendor portals and radio. Nothing arrived in time to act on.</p>
+            <p class="work-out">One <b>role-aware platform</b> replaced seven systems — eight modules on a
+              shared data model, four different front doors, and a morning decision instead of an
+              afternoon audit.</p>
+            <div class="work-tags"><span class="work-tag">Design leadership</span><span class="work-tag">Data viz</span><span class="work-tag">Sustainability</span></div>
+            <span class="work-cta">Read the case study <i></i></span>
+          </div>
+        </a>
+
+        <!-- ── 3. Incident Management ──────────────────────── -->
+        <a class="work-card rv" href="incident-management-case-study.html" aria-label="Open the Incident Management System case study">
+          <div class="work-preview" style="--preview-bg:#08080a;--preview-ink:#f5f5f4">
+            <span class="badge">Teams-native · End to end</span>
+            <svg viewBox="0 0 480 270" role="img" aria-hidden="true">
+              <rect width="480" height="270" fill="#08080a"/>
+              <g stroke="#26262d"><path d="M0 68h480M0 202h480"/></g>
+              <text x="20" y="40" font-family="Helvetica Neue,Arial" font-size="10" fill="#6f6f78" letter-spacing="1.6">THE FIRST FIVE MINUTES</text>
+              <g font-family="Helvetica Neue,Arial" font-size="9" fill="#a8a8b0" letter-spacing=".6">
+                <text x="20" y="96">REPORT</text><text x="140" y="96">ALERT</text><text x="260" y="96">TRIAGE</text><text x="380" y="96">WAR ROOM</text>
+              </g>
+              <g stroke="#37373f" stroke-width="1.5" fill="none"><path d="M64 92h60M184 92h60M304 92h60"/></g>
+              <g fill="#7d80f0"><circle cx="34" cy="92" r="5"/><circle cx="154" cy="92" r="5"/><circle cx="274" cy="92" r="5"/><circle cx="394" cy="92" r="5"/></g>
+              <rect x="20" y="118" width="440" height="62" rx="12" fill="#0e0e11" stroke="#37373f"/>
+              <rect x="34" y="132" width="34" height="34" rx="9" fill="#1b1b21" stroke="#5b5fc7"/>
+              <text x="80" y="146" font-family="Helvetica Neue,Arial" font-size="11" fill="#f5f5f4">On-Call assistant · SEV-2 opened</text>
+              <text x="80" y="164" font-family="Helvetica Neue,Arial" font-size="10" fill="#a8a8b0">ticket + team + call, inside one conversation</text>
+              <g fill="#3ed492"><circle cx="430" cy="149" r="4"/></g>
+              <g font-family="Helvetica Neue,Arial" font-size="9" fill="#6f6f78" letter-spacing="1">
+                <text x="20" y="228">5 TOOLS</text><text x="120" y="228" fill="#7d80f0">→</text><text x="150" y="228">1 SURFACE</text>
+              </g>
+              <g fill="#f0584f" opacity=".85"><rect x="330" y="218" width="130" height="14" rx="7" fill="#141418"/>
+                <rect x="330" y="218" width="34" height="14" rx="7" fill="#f0584f"/>
+                <text x="374" y="229" font-size="9" fill="#cfcffa">−68% time to respond</text></g>
+            </svg>
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span>Microsoft Teams · On-call tooling</span><span class="yr">Lead Product Designer</span></div>
+            <h3>Incident Management <span class="it">System</span></h3>
+            <p class="work-prob">On-call teams were losing their most expensive minutes — the first
+              five — hopping between five disconnected tools just to start responding.</p>
+            <p class="work-out">An <b>On-Call assistant</b> that collapses report, alert and war room into
+              a single Teams conversation: three ways in, one incident object, one place to see
+              everything.</p>
+            <div class="work-tags"><span class="work-tag">Service design</span><span class="work-tag">Discovery sprint</span><span class="work-tag">Teams</span></div>
+            <span class="work-cta">Read the case study <i></i></span>
+          </div>
+        </a>
+
+        <!-- ── 4. BT Business Billing ──────────────────────── -->
+        <a class="work-card rv" href="bt-billing-case-study.html" aria-label="Open the BT Business Billing sketchbook case study">
+          <div class="work-preview" style="--preview-bg:#16140f;--preview-ink:#ece3cf">
+            <span class="badge">The notebook · Unpolished</span>
+            <svg viewBox="0 0 480 270" role="img" aria-hidden="true">
+              <rect width="480" height="270" fill="#16140f"/>
+              <g stroke="rgba(236,227,207,.07)"><path d="M0 32h480M0 64h480M0 96h480M0 128h480M0 160h480M0 192h480M0 224h480M0 256h480"/></g>
+              <g transform="rotate(-2.4 130 96)">
+                <rect x="34" y="40" width="196" height="132" rx="3" fill="#f4eede"/>
+                <rect x="86" y="28" width="76" height="22" rx="2" fill="rgba(220,215,180,.75)" transform="rotate(-3 124 39)"/>
+                <g stroke="#c4b89e" stroke-width="1.4"><path d="M52 76h160M52 96h160M52 116h120"/></g>
+                <path d="M52 146c26-16 52 8 78-6s48 6 62-4" fill="none" stroke="#c8341d" stroke-width="2"/>
+              </g>
+              <g transform="rotate(3 350 110)">
+                <rect x="272" y="52" width="150" height="112" rx="2" fill="#fde88a"/>
+                <g stroke="rgba(26,20,16,.5)" stroke-width="1.6"><path d="M288 84h118M288 104h118M288 124h82"/></g>
+                <text x="288" y="152" font-family="Helvetica Neue,Arial" font-size="10" fill="#b23a23" letter-spacing=".4">30+ concepts</text>
+              </g>
+              <g transform="rotate(-1.2 190 216)">
+                <rect x="60" y="188" width="260" height="58" rx="2" fill="#f3ecda"/>
+                <text x="76" y="212" font-family="Helvetica Neue,Arial" font-size="11" fill="#1a1410">25 killed · 5 survived</text>
+                <path d="M76 228h228" stroke="#c4b89e" stroke-width="1.2"/>
+              </g>
+              <g transform="rotate(4 400 216)">
+                <rect x="344" y="186" width="112" height="60" rx="2" fill="#a8d4f0"/>
+                <g stroke="rgba(26,20,16,.45)" stroke-width="1.5"><path d="M358 208h84M358 224h60"/></g>
+              </g>
+              <path d="M236 100c18-22 46-6 62-26" fill="none" stroke="#ff6f52" stroke-width="1.6" stroke-dasharray="4 4"/>
+            </svg>
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span>BT Group · Business billing</span><span class="yr">UX Strategy</span></div>
+            <h3>From the <span class="it">Notebook</span></h3>
+            <p class="work-prob">How do you redesign a billing portal that 340,000 businesses can't
+              escape — when the portal isn't the thing that's broken?</p>
+            <p class="work-out">The scribbles, sticky walls and 2am margin notes: <b>120,000 reviews
+              coded</b>, 23 diagrams, 30+ concepts, 25 killed — and the evidence trail left in full
+              view for the sceptical reader.</p>
+            <div class="work-tags"><span class="work-tag">Process</span><span class="work-tag">Evidence trail</span><span class="work-tag">Sketchbook</span></div>
+            <span class="work-cta">Read the case study <i></i></span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- reusable models / operating systems -->
+      <div class="rv" style="margin-top:clamp(48px,6vw,80px)">
+        <span class="eyebrow block-label" data-cms="works.shelfLabel">Also on the shelf — models I reuse</span>
+        <div class="frame-strip" data-cms-list="works.frames">
+          <template data-cms-template>
+<div class="frame">
+            <span class="n">{{n}}</span>
+            <h3>{{title}}</h3>
+            <p>{{body}}</p>
+          </div>
+</template>
+
+<div class="frame">
+            <span class="n">F.01</span>
+            <h3>Intent-First UX <span class="it">(IFU)</span></h3>
+            <p>An original design language: the interface pre-resolves to the most probable outcome
+              before the user consciously acts. It grew into <b>GRAVITY</b>, a spatial-physics
+              paradigm for enterprise UI.</p>
+          </div>
+          <div class="frame">
+            <span class="n">F.02</span>
+            <h3>AI-Augmented Ops</h3>
+            <p>A library of reusable AI skills covering UX strategy, design-system guidance and
+              content strategy — built to compress research and documentation cycles for the teams
+              I lead.</p>
+          </div>
+          <div class="frame">
+            <span class="n">F.03</span>
+            <h3>3-in-a-Box Governance</h3>
+            <p>PM, engineering and design deciding together against one written set of agreements.
+              Established at IBM; first-pass design approvals up <b>35%</b>.</p>
+          </div>
+        </div>
+        <p class="frame-note" data-cms="works.footnote">Founder &amp; Design Lead, <b>DigitalFirstDevotional</b> — a consumer
+          mobile product on Next.js &amp; Supabase, with AI-assisted personalisation end to end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ AI PRACTICES ═══════════ -->
+<section id="ai-practices" class="container">
+  <div class="section-grid">
+    <div class="section-label"><b data-cms="ai.labelNum">04</b> <span data-cms="ai.labelText">AI Practices</span></div>
+    <div>
+      <div class="section-head rv">
+        <h2 data-cms="ai.heading">How I put AI to <span class="it">work</span>.</h2>
+        <p class="lede" data-cms="ai.lede"><span class="todo">One or two sentences on what AI-augmented practice means
+          on your teams — the outcome you're buying, not the tools you use.</span></p>
+      </div>
+
+      <!-- ── 1. the pipeline ─────────────────────────────────────────────── -->
+      <div class="rv">
+        <span class="eyebrow block-label" data-cms="ai.pipelineLabel">The augmented pipeline</span>
+        <div class="pipeline" data-cms-list="ai.pipeline">
+          <template data-cms-template>
+<div class="stage">
+            <span class="idx">{{n}}</span>
+            <h3 class="todo">{{title}}</h3>
+            <div class="split">
+              <span class="ai"><b>AI</b><span>{{ai}}</span></span>
+              <span class="hu"><b>YOU</b><span>{{human}}</span></span>
+            </div>
+          </div>
+</template>
+
+<div class="stage">
+            <span class="idx">S.01</span>
+            <h3 class="todo">Stage name</h3>
+            <div class="split">
+              <span class="ai"><b>AI</b><span class="todo">what the model does here</span></span>
+              <span class="hu"><b>YOU</b><span class="todo">what stays human</span></span>
+            </div>
+          </div>
+          <div class="stage">
+            <span class="idx">S.02</span>
+            <h3 class="todo">Stage name</h3>
+            <div class="split">
+              <span class="ai"><b>AI</b><span class="todo">what the model does here</span></span>
+              <span class="hu"><b>YOU</b><span class="todo">what stays human</span></span>
+            </div>
+          </div>
+          <div class="stage">
+            <span class="idx">S.03</span>
+            <h3 class="todo">Stage name</h3>
+            <div class="split">
+              <span class="ai"><b>AI</b><span class="todo">what the model does here</span></span>
+              <span class="hu"><b>YOU</b><span class="todo">what stays human</span></span>
+            </div>
+          </div>
+          <div class="stage">
+            <span class="idx">S.04</span>
+            <h3 class="todo">Stage name</h3>
+            <div class="split">
+              <span class="ai"><b>AI</b><span class="todo">what the model does here</span></span>
+              <span class="hu"><b>YOU</b><span class="todo">what stays human</span></span>
+            </div>
+          </div>
+          <div class="stage">
+            <span class="idx">S.05</span>
+            <h3 class="todo">Stage name</h3>
+            <div class="split">
+              <span class="ai"><b>AI</b><span class="todo">what the model does here</span></span>
+              <span class="hu"><b>YOU</b><span class="todo">what stays human</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="pipeline-key" data-cms-list="ai.pipelineKey">
+          <template data-cms-template>
+<span>{{$self}}</span>
+</template>
+
+<span><b>AI</b> — delegated</span>
+          <span><b>YOU</b> — judgement, always</span>
+          <span class="todo">optional third key</span>
+        </div>
+      </div>
+
+      <!-- ── 2. practices with proof points ──────────────────────────────── -->
+      <div class="rv">
+        <span class="eyebrow block-label" data-cms="ai.practicesLabel">Practices &amp; proof points</span>
+        <div class="practice-grid" data-cms-list="ai.practices">
+          <template data-cms-template>
+<article class="practice">
+            <span class="n">{{n}}</span>
+            <h3 class="todo">{{title}}</h3>
+            <p class="row"><b>Do</b><span>{{what}}</span></p>
+            <p class="row"><b>With</b><span>{{withWhat}}</span></p>
+            <p class="proof">{{proof}}</p>
+          </article>
+</template>
+
+<article class="practice">
+            <span class="n">P.01</span>
+            <h3 class="todo">Practice name</h3>
+            <p class="row"><b>Do</b><span class="todo">what you actually do, in one line</span></p>
+            <p class="row"><b>With</b><span class="todo">tooling, models, or the skill you wrote</span></p>
+            <p class="proof"><span class="todo">The number it moved — before → after</span></p>
+          </article>
+          <article class="practice">
+            <span class="n">P.02</span>
+            <h3 class="todo">Practice name</h3>
+            <p class="row"><b>Do</b><span class="todo">what you actually do, in one line</span></p>
+            <p class="row"><b>With</b><span class="todo">tooling, models, or the skill you wrote</span></p>
+            <p class="proof"><span class="todo">The number it moved — before → after</span></p>
+          </article>
+          <article class="practice">
+            <span class="n">P.03</span>
+            <h3 class="todo">Practice name</h3>
+            <p class="row"><b>Do</b><span class="todo">what you actually do, in one line</span></p>
+            <p class="row"><b>With</b><span class="todo">tooling, models, or the skill you wrote</span></p>
+            <p class="proof"><span class="todo">The number it moved — before → after</span></p>
+          </article>
+          <article class="practice">
+            <span class="n">P.04</span>
+            <h3 class="todo">Practice name</h3>
+            <p class="row"><b>Do</b><span class="todo">what you actually do, in one line</span></p>
+            <p class="row"><b>With</b><span class="todo">tooling, models, or the skill you wrote</span></p>
+            <p class="proof"><span class="todo">The number it moved — before → after</span></p>
+          </article>
+          <article class="practice">
+            <span class="n">P.05</span>
+            <h3 class="todo">Practice name</h3>
+            <p class="row"><b>Do</b><span class="todo">what you actually do, in one line</span></p>
+            <p class="row"><b>With</b><span class="todo">tooling, models, or the skill you wrote</span></p>
+            <p class="proof"><span class="todo">The number it moved — before → after</span></p>
+          </article>
+          <article class="practice">
+            <span class="n">P.06</span>
+            <h3 class="todo">Practice name</h3>
+            <p class="row"><b>Do</b><span class="todo">what you actually do, in one line</span></p>
+            <p class="row"><b>With</b><span class="todo">tooling, models, or the skill you wrote</span></p>
+            <p class="proof"><span class="todo">The number it moved — before → after</span></p>
+          </article>
+        </div>
+      </div>
+
+      <!-- ── 3. guardrails ───────────────────────────────────────────────── -->
+      <div class="guard rv" data-cms-list="ai.guardrails">
+        <h3 data-cms="ai.guardHeading">Where I <span class="it">don't</span> use AI.</h3>
+        <ol>
+          <template data-cms-template>
+<li>{{$self}}</li>
+</template>
+
+<li><span class="todo">The first guardrail — the call you never delegate, and why it matters
+            to a hiring manager reading this.</span></li>
+          <li><span class="todo">The second guardrail — e.g. evidence, consent, or attribution.</span></li>
+          <li><span class="todo">The third guardrail — e.g. what a model may never ship unreviewed.</span></li>
+        </ol>
+      </div>
+
+      <p class="fill-in rv" data-cms="ai.fillIn"><b>Fill me in.</b> Everything highlighted in amber is a placeholder —
+        search this file for <b>class="todo"</b> to find all of them, then delete this paragraph.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<footer id="contact" class="container">
+  <h2 class="contact-title rv" data-cms="contact.heading">Let's build the <span class="it">future</span>.</h2>
+  <a class="contact-link rv" href="mailto:ar.anupamsarkar@gmail.com" data-cms="contact.email" data-cms-attr="href:contact.emailHref">ar.anupamsarkar@gmail.com</a>
+  <p class="contact-sub rv" data-cms="contact.sub">Open to design leadership, UX strategy and AI-augmented practice work —
+    Bangalore, or remote across UK / EU time zones.</p>
+
+  <div class="footer-bottom">
+    <span data-cms="contact.copyright">© <span id="yr">2026</span> Anupam Sarkar</span>
+    <span data-cms="contact.credential">IIT Hyderabad Gold Medalist · M.Des</span>
+    <div data-cms-list="contact.links">
+      <template data-cms-template><a href="{{href}}" data-newtab="{{newTab}}">{{label}}</a></template>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:ar.anupamsarkar@gmail.com">Email</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+
+  /* ── theme toggle (shared key with the case studies) ─────────── */
+  var toggle = document.getElementById('themeToggle');
+  function paint() {
+    var dark = root.getAttribute('data-theme') === 'dark';
+    toggle.textContent = dark ? 'Light' : 'Dark';
+    toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+  }
+  paint();
+  toggle.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('as-theme', next); } catch (e) {}
+    paint();
+  });
+  try {
+    window.addEventListener('storage', function (e) {
+      if (e.key === 'as-theme' && (e.newValue === 'dark' || e.newValue === 'light')) {
+        root.setAttribute('data-theme', e.newValue); paint();
+      }
+    });
+  } catch (e) {}
+
+  /* ── mobile nav ─────────────────────────────────────────────── */
+  var burger = document.getElementById('burger'),
+      panel  = document.getElementById('mobileNav'),
+      scrim  = document.getElementById('scrim');
+  function setNav(open) {
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    panel.classList.toggle('open', open);
+    scrim.classList.toggle('on', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function () {
+    setNav(burger.getAttribute('aria-expanded') !== 'true');
+  });
+  scrim.addEventListener('click', function () { setNav(false); });
+  panel.addEventListener('click', function (e) { if (e.target.closest('a')) setNav(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+
+  /* ── reveal on scroll ───────────────────────────────────────── */
+  var items = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    items.forEach(function (el, i) { el.style.transitionDelay = (Math.min(i % 4, 3) * 70) + 'ms'; io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ── header condense + active section ───────────────────────── */
+  var hdr = document.getElementById('hdr'), links = [], sections = [];
+  function rescan() {
+    links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+    sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  }
+  function onScroll() {
+    hdr.classList.toggle('tight', window.scrollY > 40);
+    var y = window.scrollY + window.innerHeight * 0.32, current = -1;
+    sections.forEach(function (s, i) { if (s && s.offsetTop <= y) current = i; });
+    links.forEach(function (a, i) { a.classList.toggle('active', i === current); });
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(function () { onScroll(); ticking = false; }); }
+  }, { passive: true });
+  rescan(); onScroll();
+  /* the CMS may rewrite the DOM before we wire up — wait for it, then re-wire */
+  if (window.__cmsReady) {
+    window.__cmsReady.then(function () {
+      rescan(); onScroll();
+      if ('IntersectionObserver' in window) {
+        var io2 = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) { en.target.classList.add('in'); io2.unobserve(en.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        Array.prototype.forEach.call(document.querySelectorAll('.rv:not(.in)'), function (el) { io2.observe(el); });
+      }
+    });
+  }
+
+  /* ── current year ───────────────────────────────────────────── */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

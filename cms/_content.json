@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "title": "Anupam Sarkar — Design Leader, Enterprise UX & AI",
+    "description": "Anupam Sarkar — design leader working on enterprise platforms and AI-augmented design. Case studies: Smart Mining, Falcon View, Incident Management for Microsoft Teams, BT Business Billing.",
+    "lang": "en"
+  },
+  "header": {
+    "logoName": "Anupam Sarkar",
+    "logoRole": "— Design Leader",
+    "nav": [
+      {
+        "label": "Philosophy",
+        "href": "#philosophy"
+      },
+      {
+        "label": "Experience",
+        "href": "#experience"
+      },
+      {
+        "label": "Works",
+        "href": "#works"
+      },
+      {
+        "label": "AI Practices",
+        "href": "#ai-practices"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ],
+    "navMobile": [
+      {
+        "label": "Philosophy",
+        "sub": "How I think",
+        "href": "#philosophy"
+      },
+      {
+        "label": "Experience",
+        "sub": "Where I've led",
+        "href": "#experience"
+      },
+      {
+        "label": "Works",
+        "sub": "Four case studies",
+        "href": "#works"
+      },
+      {
+        "label": "AI Practices",
+        "sub": "Pipeline & guardrails",
+        "href": "#ai-practices"
+      },
+      {
+        "label": "Contact",
+        "sub": "Say hello",
+        "href": "#contact"
+      }
+    ],
+    "themeLabelDark": "Dark"
+  },
+  "hero": {
+    "eyebrowLeft": "Design Leader & Product Design Manager",
+    "eyebrowRight": "13+ years · Enterprise UX & AI",
+    "h1First": "Anupam",
+    "h1Last": "Sarkar",
+    "statement": "I take enterprise systems that nobody can read — billing portals, mine control rooms, hospital operations, incident response — and turn them into <span class=\"hl\">a decision someone can make before the shift ends</span>. Currently leading UX strategy for <span class=\"hl\">IBM Power Systems</span>, and building AI-augmented design practice along the way.",
+    "stats": [
+      {
+        "value": "13+",
+        "label": "Years in enterprise product design"
+      },
+      {
+        "value": "340k",
+        "label": "Businesses on systems I've redesigned"
+      },
+      {
+        "value": "4",
+        "label": "Case studies below, start to shipped"
+      }
+    ],
+    "scrollCue": "<i></i> Scroll — or jump straight to <a href=\"#works\" style=\"border-bottom:1px solid currentColor\">the work</a>"
+  },
+  "philosophy": {
+    "labelNum": "01",
+    "labelText": "Philosophy",
+    "heading": "Design for the <span class=\"it\">decision</span>, not the screen.",
+    "lede": "Thirteen years across IBM, BT Group, Siemens and John Deere taught me one thing repeatedly: enterprise software rarely fails on aesthetics. It fails because the person who has to act can't find the thing they need to act on.",
+    "tenets": [
+      {
+        "n": "01",
+        "title": "Start from intent, work backwards to interface",
+        "body": "Before any wireframe I map what the user is actually trying to settle — the alert they must triage, the dispute they must close, the shift they must hand over. Layout follows from that. It's why <span class=\"hl\">supervisors scan Where → Who before Severity</span>, and why the designs I ship put location first."
+      },
+      {
+        "n": "02",
+        "title": "Compress the cycle, never the evidence",
+        "body": "I use AI to do the slow parts faster — coding interview transcripts, drafting documentation, generating prototype variants — so the team spends its hours on judgement instead of transcription. <span class=\"hl\">147 field observations, coded and affinity-grouped in a fraction of the usual time</span>, with the audit trail left visible for whoever challenges the number."
+      },
+      {
+        "n": "03",
+        "title": "Governance is a set of agreements, not a gate",
+        "body": "A design system only holds if the people shipping against it agreed to it. I run <span class=\"hl\">3-in-a-box</span> — PM, engineering and design deciding together — and write the rules down at token level so drift is a diff, not an argument."
+      }
+    ],
+    "kicker": "<span class=\"hl\">Less rework. Higher velocity.</span> <span class=\"mut\">Impact you can put a number on.</span>"
+  },
+  "experience": {
+    "labelNum": "02",
+    "labelText": "Experience",
+    "heading": "Where I've <span class=\"it\">led</span>.",
+    "lede": "Five organisations, one recurring job: arrive where the complexity lives, set the design direction, and leave a team that can hold it without me.",
+    "items": [
+      {
+        "year": "2024 — Present",
+        "role": "Product Design Manager",
+        "org": "IBM · Power Systems Business Unit",
+        "body": "UX strategy for hardware and platform tooling used by <span class=\"hl\">10,000+ enterprise users</span>. Scaled the Carbon Design System across squads, introduced 3-in-a-box governance, and cut UI drift by <span class=\"hl\">20%</span> — first-pass design approvals up <span class=\"hl\">35%</span>.",
+        "location": "Bangalore",
+        "scope": "10k+ users"
+      },
+      {
+        "year": "2024 — 2025",
+        "role": "Product Design Manager",
+        "org": "BT Group · Business Billing & Provisioning",
+        "body": "Directed UX strategy for global billing and provisioning platforms serving <span class=\"hl\">340,000+ businesses</span> and 500,000 users. Reframed a portal redesign as a system fix, and halved feature-discovery cycles from <span class=\"hl\">4 weeks to 2</span>.",
+        "location": "Blr / London",
+        "scope": "340k businesses"
+      },
+      {
+        "year": "2022 — 2024",
+        "role": "Lead UX Strategist",
+        "org": "Siemens AG · Sustainability Intelligence",
+        "body": "Set the design vision for sustainability and workforce dashboards used across <span class=\"hl\">190+ countries</span>. Made evidence-based design the default: prototype validation success rose from <span class=\"hl\">60% to 85%</span>.",
+        "location": "Blr / Munich",
+        "scope": "60 → 85% validation"
+      },
+      {
+        "year": "2022",
+        "role": "Lead Creative Director",
+        "org": "John Deere · Asia Digital Experience",
+        "body": "Digital strategy across immersive XR and virtual showrooms for the Asia market — reducing dependency on physical demos by <span class=\"hl\">40%</span> while keeping the dealer conversation intact.",
+        "location": "Pune",
+        "scope": "−40% physical demos"
+      },
+      {
+        "year": "2019 — 2022",
+        "role": "UX Designer & Researcher",
+        "org": "Tata Consultancy Services",
+        "body": "Led <span class=\"hl\">30+ MVP engagements</span> for enterprise collaboration platforms, and built the team's first AI-in-the-loop research and prototyping workflows.",
+        "location": "Bangalore",
+        "scope": "30+ MVPs"
+      }
+    ]
+  },
+  "works": {
+    "labelNum": "03",
+    "labelText": "Works",
+    "heading": "Four systems, <span class=\"it\">start to shipped</span>.",
+    "lede": "Each case study opens in full — problem, research, the calls I made, and what changed afterwards. All four carry a dark/light switch in the top-right corner, and it remembers your choice across the site.",
+    "shelfLabel": "Also on the shelf — models I reuse",
+    "frames": [
+      {
+        "n": "F.01",
+        "title": "Intent-First UX <span class=\"it\">(IFU)</span>",
+        "body": "An original design language: the interface pre-resolves to the most probable outcome before the user consciously acts. It grew into <b>GRAVITY</b>, a spatial-physics paradigm for enterprise UI."
+      },
+      {
+        "n": "F.02",
+        "title": "AI-Augmented Ops",
+        "body": "A library of reusable AI skills covering UX strategy, design-system guidance and content strategy — built to compress research and documentation cycles for the teams I lead."
+      },
+      {
+        "n": "F.03",
+        "title": "3-in-a-Box Governance",
+        "body": "PM, engineering and design deciding together against one written set of agreements. Established at IBM; first-pass design approvals up <b>35%</b>."
+      }
+    ],
+    "footnote": "Founder &amp; Design Lead, <b>DigitalFirstDevotional</b> — a consumer mobile product on Next.js &amp; Supabase, with AI-assisted personalisation end to end."
+  },
+  "ai": {
+    "labelNum": "04",
+    "labelText": "AI Practices",
+    "heading": "How I put AI to <span class=\"it\">work</span>.",
+    "lede": "<span class=\"todo\">One or two sentences on what AI-augmented practice means on your teams — the outcome you're buying, not the tools you use.</span>",
+    "pipelineLabel": "The augmented pipeline",
+    "pipeline": [
+      {
+        "n": "S.01",
+        "title": "Stage name",
+        "ai": "what the model does here",
+        "human": "what stays human"
+      },
+      {
+        "n": "S.02",
+        "title": "Stage name",
+        "ai": "what the model does here",
+        "human": "what stays human"
+      },
+      {
+        "n": "S.03",
+        "title": "Stage name",
+        "ai": "what the model does here",
+        "human": "what stays human"
+      },
+      {
+        "n": "S.04",
+        "title": "Stage name",
+        "ai": "what the model does here",
+        "human": "what stays human"
+      },
+      {
+        "n": "S.05",
+        "title": "Stage name",
+        "ai": "what the model does here",
+        "human": "what stays human"
+      }
+    ],
+    "pipelineKey": [
+      "<b>AI</b> — delegated",
+      "<b>YOU</b> — judgement, always",
+      "optional third key"
+    ],
+    "practicesLabel": "Practices & proof points",
+    "practices": [
+      {
+        "n": "P.01",
+        "title": "Practice name",
+        "what": "what you actually do, in one line",
+        "withWhat": "tooling, models, or the skill you wrote",
+        "proof": "<span class=\"todo\">The number it moved — before → after</span>"
+      },
+      {
+        "n": "P.02",
+        "title": "Practice name",
+        "what": "what you actually do, in one line",
+        "withWhat": "tooling, models, or the skill you wrote",
+        "proof": "<span class=\"todo\">The number it moved — before → after</span>"
+      },
+      {
+        "n": "P.03",
+        "title": "Practice name",
+        "what": "what you actually do, in one line",
+        "withWhat": "tooling, models, or the skill you wrote",
+        "proof": "<span class=\"todo\">The number it moved — before → after</span>"
+      },
+      {
+        "n": "P.04",
+        "title": "Practice name",
+        "what": "what you actually do, in one line",
+        "withWhat": "tooling, models, or the skill you wrote",
+        "proof": "<span class=\"todo\">The number it moved — before → after</span>"
+      },
+      {
+        "n": "P.05",
+        "title": "Practice name",
+        "what": "what you actually do, in one line",
+        "withWhat": "tooling, models, or the skill you wrote",
+        "proof": "<span class=\"todo\">The number it moved — before → after</span>"
+      },
+      {
+        "n": "P.06",
+        "title": "Practice name",
+        "what": "what you actually do, in one line",
+        "withWhat": "tooling, models, or the skill you wrote",
+        "proof": "<span class=\"todo\">The number it moved — before → after</span>"
+      }
+    ],
+    "guardHeading": "Where I <span class=\"it\">don't</span> use AI.",
+    "guardrails": [
+      "<span class=\"todo\">The first guardrail — the call you never delegate, and why it matters to a hiring manager reading this.</span>",
+      "<span class=\"todo\">The second guardrail — e.g. evidence, consent, or attribution.</span>",
+      "<span class=\"todo\">The third guardrail — e.g. what a model may never ship unreviewed.</span>"
+    ],
+    "fillIn": "<b>Fill me in.</b> Everything highlighted in amber is a placeholder — search this file for <b>class=\"todo\"</b> to find all of them, then delete this paragraph."
+  },
+  "contact": {
+    "heading": "Let's build the <span class=\"it\">future</span>.",
+    "email": "ar.anupamsarkar@gmail.com",
+    "emailHref": "mailto:ar.anupamsarkar@gmail.com",
+    "sub": "Open to design leadership, UX strategy and AI-augmented practice work — Bangalore, or remote across UK / EU time zones.",
+    "copyright": "© <span id=\"yr\">2026</span> Anupam Sarkar",
+    "credential": "IIT Hyderabad Gold Medalist · M.Des",
+    "links": [
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/",
+        "newTab": true
+      },
+      {
+        "label": "Email",
+        "href": "mailto:ar.anupamsarkar@gmail.com",
+        "newTab": false
+      },
+      {
+        "label": "Back to top ↑",
+        "href": "#top",
+        "newTab": false
+      }
+    ]
+  }
+}

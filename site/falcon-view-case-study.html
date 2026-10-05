@@ -1,0 +1,1864 @@
+<!doctype html><html><head><script>(function(){try{var t=localStorage.getItem('as-theme');if(t!=='dark'&&t!=='light'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:var(--falcon-c01);color:var(--falcon-c02)}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<style data-injected="theme-falcon">
+:root{
+  --falcon-c01:#faf9f5;
+  --falcon-c02:#141413;
+  --falcon-c03:#070d12;
+  --falcon-c04:#0c161d;
+  --falcon-c05:#122029;
+  --falcon-c06:#1d3240;
+  --falcon-c07:#28455a;
+  --falcon-c08:#e9eff1;
+  --falcon-c09:#93a7b1;
+  --falcon-c10:#5f7682;
+  --falcon-c11:#4d8dff;
+  --falcon-c12:#2ee6a6;
+  --falcon-c13:#36d3e2;
+  --falcon-c14:#5a7cff;
+  --falcon-c15:#ff4f62;
+  --falcon-c16:#ffb84d;
+  --falcon-c17:#4dd69c;
+  --falcon-c18:#38c6f0;
+  --falcon-c19:#ffffff;
+  --falcon-c20:#09131a;
+  --falcon-c21:#04131a;
+  --falcon-c22:#0f1d26;
+  --falcon-c23:#000000;
+  --falcon-c24:#10302a;
+  --falcon-c25:#0f2e36;
+  --falcon-c26:#0a141b;
+  --falcon-c27:#f3c3c8;
+  --falcon-c28:#081117;
+  --falcon-c29:#17303c;
+  --falcon-c30:#123a46;
+  --falcon-c31:#060b0f;
+  --falcon-c32:#152542;
+  --falcon-k01:rgba(54,211,226,.38);
+  --falcon-k02:rgba(77,141,255,.2);
+  --falcon-k03:rgba(46,230,166,.14);
+}
+html[data-theme="light"]{
+  --falcon-c01:#f7f9fa;
+  --falcon-c02:#0d171d;
+  --falcon-c03:#f4f7f8;
+  --falcon-c04:#ffffff;
+  --falcon-c05:#eaf0f3;
+  --falcon-c06:#dbe4e9;
+  --falcon-c07:#c3d2da;
+  --falcon-c08:#0e1a21;
+  --falcon-c09:#5b7180;
+  --falcon-c10:#8b9aa3;
+  --falcon-c11:#1d5fd6;
+  --falcon-c12:#0b7a51;
+  --falcon-c13:#0b7f92;
+  --falcon-c14:#3b4fd8;
+  --falcon-c15:#d9263d;
+  --falcon-c16:#96600a;
+  --falcon-c17:#0e7a52;
+  --falcon-c18:#0e7fa8;
+  --falcon-c19:#ffffff;
+  --falcon-c20:#eef4f6;
+  --falcon-c21:#eaf2f5;
+  --falcon-c22:#e4edf1;
+  --falcon-c23:#94a3ac;
+  --falcon-c24:#e0f2ea;
+  --falcon-c25:#dff0f2;
+  --falcon-c26:#e9f0f3;
+  --falcon-c27:#b32437;
+  --falcon-c28:#f2f6f8;
+  --falcon-c29:#dde9ee;
+  --falcon-c30:#d7e9ee;
+  --falcon-c31:#f6f8f9;
+  --falcon-c32:#e3e9f7;
+  --falcon-k01:rgba(87,137,142,.38);
+  --falcon-k02:rgba(8,78,201,.2);
+  --falcon-k03:rgba(88,143,124,.14);
+}
+
+/* ══ theme dock (injected) ══════════════════════════════════════ */
+.as-dock{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:clamp(12px,2vw,22px);
+  z-index:4000;display:flex;gap:8px;align-items:center}
+.as-dock a,.as-dock button{font-family:var(--f-body,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif);
+  font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;line-height:1;
+  color:var(--as-fg,#e9eff1);background:var(--as-bg,#0c161d);border:1px solid var(--as-line,#1d3240);
+  border-radius:999px;padding:9px 13px;cursor:pointer;text-decoration:none;white-space:nowrap;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  transition:color .25s ease,border-color .25s ease,background .25s ease,transform .25s ease}
+.as-dock a:hover,.as-dock button:hover{color:var(--as-accent,#2ee6a6);border-color:var(--as-accent,#2ee6a6);transform:translateY(-1px)}
+.as-dock button[aria-pressed="true"]{color:var(--as-accent,#2ee6a6)}
+.as-dock .as-sep{width:1px;height:14px;background:var(--as-line,#1d3240);opacity:.7}
+@media (max-width:560px){.as-dock{gap:6px}.as-dock a,.as-dock button{padding:8px 10px;font-size:10px;letter-spacing:.06em}}
+@media print{.as-dock{display:none}}
+:root{--as-fg:#e9eff1;--as-bg:rgba(12,22,29,.86);--as-line:#1d3240;--as-accent:#2ee6a6;}
+html[data-theme="light"]{--as-fg:#0e1a21;--as-bg:rgba(255,255,255,.9);--as-line:#dbe4e9;--as-accent:#0b7a51;}
+
+/* ── generated: keep chip labels legible when the page flips to paper ── */
+html[data-theme="light"]{
+    --grad:linear-gradient(110deg,#1d5fd6 0%,#0b7f92 50%,#0b7a51 100%);
+  }
+html[data-theme="light"] .phase{color:#fff}
+html[data-theme="light"] .btn{color:#fff}
+html[data-theme="light"] .q .n{color:#fff}
+html[data-theme="light"] .avatar{color:#fff}
+html[data-theme="light"] .bp-grid .hd.on{color:#fff}
+html[data-theme="light"] .ia-root{color:#fff}
+html[data-theme="light"] .ia-node.on{color:#fff}
+html[data-theme="light"] .pin{color:#fff}
+html[data-theme="light"] .anno li.on .k{color:#fff}
+/* generated selectors: 9 */
+
+
+/* targeted light-mode fixes: white ink that sits ON an accent chip */
+html[data-theme="light"] .phase.x{color:#fff}
+html[data-theme="light"] .bp-grid .hd.on,
+html[data-theme="light"] .ia-node.on,
+html[data-theme="light"] .anno li.on .k{color:#04131a}
+html[data-theme="light"]{color-scheme:light}
+html[data-theme="light"] ::selection{background:rgba(11,122,81,.20)}
+html[data-theme="light"] body{background:#f4f7f8}
+/* the Teams window mock is a product shot: keep it dark in both themes */
+html[data-theme="light"] .winbody{background:#ffffff;border-color:#dcdce3}
+
+</style>
+</head><body>
+<title>Falcon View Case Study</title>
+<meta name="description" content="Smart Hospital Management System case study by Anupam Sarkar, rebuilt with live diagrams">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: a clinical monitor wall. Left rail = vitals nav; each section is one "bay" with a headline claim, a live diagram, and a takeaway line.
+   Single committed dark look (the product's own control-room surface). */
+:root{
+  color-scheme:dark;
+  --bg:var(--falcon-c03); --s1:var(--falcon-c04); --s2:var(--falcon-c05); --s3:#18293468; --line:var(--falcon-c06); --line2:var(--falcon-c07);
+  --fg:var(--falcon-c08); --mut:var(--falcon-c09); --dim:var(--falcon-c10);
+  --blue:var(--falcon-c11); --green:var(--falcon-c12); --cyan:var(--falcon-c13); --cobalt:var(--falcon-c14);
+  --crit:var(--falcon-c15); --warn:var(--falcon-c16); --ok:var(--falcon-c17);
+  --grad:linear-gradient(110deg,var(--blue) 0%,var(--falcon-c18) 50%,var(--green) 100%);
+  --f-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-inline:16px;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+::selection{background:#2ee6a640}
+a{color:var(--cyan)}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.gt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:1180px;margin:0 auto;padding-block:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* progress + rail */
+#prog{position:fixed;left:0;right:0;top:0;height:3px;z-index:60;background:transparent}
+#prog i{display:block;height:100%;width:0;background:var(--grad);box-shadow:0 0 12px var(--falcon-c13)}
+#rail{position:fixed;left:14px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:2px}
+#rail button{display:flex;align-items:center;gap:10px;padding:4px 6px;font-size:11px;color:var(--dim);letter-spacing:.04em}
+#rail i{width:8px;height:2px;background:var(--line2);border-radius:2px;transition:all .3s var(--ease)}
+#rail span{opacity:0;transform:translateX(-4px);transition:all .25s var(--ease);white-space:nowrap}
+#rail:hover span,#rail button.on span{opacity:1;transform:none}
+#rail button.on{color:var(--fg)}#rail button.on i{width:22px;background:var(--green);box-shadow:0 0 8px var(--green)}
+@media (max-width:1320px){#rail{display:none}}
+
+/* sections */
+section{padding-block:clamp(64px,9vw,120px);border-top:1px solid var(--line);position:relative}
+.eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:18px;flex-wrap:wrap}
+.phase{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:6px;font-weight:600;color:var(--bg);background:var(--grad);letter-spacing:0}
+.phase.s{background:var(--cyan)}.phase.t{background:var(--blue)}.phase.a{background:var(--green)}.phase.r{background:var(--warn)}.phase.x{background:var(--cobalt);color:var(--falcon-c19)}
+h1,h2,h3{text-wrap:balance;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(28px,4.2vw,48px);line-height:1.1;font-weight:600;max-width:22ch}
+h3{font-size:19px;font-weight:600;line-height:1.3}
+.lede{color:var(--mut);font-size:clamp(16px,1.6vw,18px);max-width:64ch;margin:18px 0 0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}
+.mt{margin-top:40px}.mt2{margin-top:24px}
+
+/* figure shell (every diagram: type tag, the diagram, a takeaway) */
+.fig{margin:40px 0 0;background:linear-gradient(180deg,var(--s1),var(--falcon-c20));border:1px solid var(--line);border-radius:20px;padding:clamp(16px,2.6vw,28px);position:relative;min-width:0}
+.fig-h{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.fig-k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);display:flex;align-items:center;gap:8px}
+.fig-k::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 3px #36d3e226;animation:blink 2.4s infinite}
+@keyframes blink{50%{box-shadow:0 0 0 6px #36d3e200}}
+.fig-t{font-size:17px;font-weight:600;margin-top:6px}
+.take{margin-top:20px;padding-top:16px;border-top:1px dashed var(--line2);font-size:14px;color:var(--mut);display:flex;gap:10px}
+.take b{color:var(--fg);font-weight:600}
+.take::before{content:"→";color:var(--green);font-weight:700}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.note{font-size:12px;color:var(--dim);margin-top:14px;max-width:80ch}
+
+/* chips / toggles */
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{padding:7px 12px;border:1px solid var(--line2);border-radius:999px;font-size:12.5px;color:var(--mut);transition:all .2s var(--ease);background:var(--s1)}
+.chip:hover{color:var(--fg);border-color:var(--mut)}
+.chip.on,.chip[aria-pressed="true"]{color:var(--bg);background:var(--fg);border-color:var(--fg);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:var(--grad);color:var(--falcon-c21);font-weight:600;font-size:13px;transition:transform .2s var(--ease),box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px -8px var(--falcon-c13)}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line2)}
+.tag{display:inline-flex;align-items:center;gap:5px;font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:4px;border:1px solid currentColor;white-space:nowrap}
+.tag.m{color:var(--green)}.tag.rp{color:var(--blue)}.tag.md{color:var(--warn)}.tag.ob{color:var(--cyan)}
+
+/* explainer dots */
+[data-x]{cursor:help;position:relative}
+.xdot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-left:6px;vertical-align:middle;box-shadow:0 0 0 0 #2ee6a6aa;animation:xp 2s infinite}
+@keyframes xp{70%{box-shadow:0 0 0 7px #2ee6a600}100%{box-shadow:0 0 0 0 #2ee6a600}}
+.pop{position:absolute;z-index:80;max-width:320px;background:var(--falcon-c22);border:1px solid var(--line2);border-radius:12px;padding:14px 16px;box-shadow:0 24px 60px -20px var(--falcon-c23);opacity:0;transform:translateY(6px);transition:all .2s var(--ease);font-size:13.5px}
+.pop.in{opacity:1;transform:none}.pop h4{margin:0 0 6px;font-size:13px;color:var(--green)}.pop p{margin:0;color:var(--mut);line-height:1.5}
+
+/* ================= HERO ================= */
+.hero{padding-block:clamp(56px,8vw,96px) 48px;border-top:0}
+#pulse{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;position:relative}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(40px,6.6vw,84px);line-height:.98;font-weight:650;letter-spacing:-.04em}
+.hero h1 small{display:block;font-size:.34em;letter-spacing:-.01em;font-weight:500;color:var(--mut);margin-top:14px;line-height:1.3}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.meta>span{font-size:12.5px;padding:6px 11px;border:1px solid var(--line2);border-radius:8px;color:var(--mut);background:#0c161dcc}
+.meta>span b{color:var(--fg);font-weight:600}
+.conv{aspect-ratio:1/1;width:100%;max-width:520px;margin-inline:auto;position:relative}
+.conv svg{width:100%;height:100%;overflow:visible}
+.conv-ctl{display:flex;justify-content:center;gap:6px;margin-top:4px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px;position:relative}
+@media (max-width:820px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:#0c161de6;border:1px solid var(--line);border-radius:var(--r);padding:16px;min-width:0;transition:border-color .25s,transform .25s var(--ease)}
+.kpi:hover{border-color:var(--line2);transform:translateY(-2px)}
+.kpi .v{font-size:clamp(26px,3.4vw,38px);font-weight:650;letter-spacing:-.03em;line-height:1.1;margin:8px 0 4px}
+.kpi .l{font-size:13px;color:var(--mut)}
+.kpi .d{font-family:var(--f-mono);font-size:11px;color:var(--green);margin-top:8px}
+.kpi svg{display:block;width:100%;height:28px;margin-top:10px}
+.legend-ev{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:12px;color:var(--dim)}
+
+/* ================= STAR ================= */
+.star{display:grid;grid-template-columns:220px 1fr;gap:24px}
+@media (max-width:760px){.star{grid-template-columns:1fr}}
+.star-tabs{display:flex;flex-direction:column;gap:6px}
+@media (max-width:760px){.star-tabs{flex-direction:row;overflow-x:auto}}
+.star-tab{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;border:1px solid transparent;text-align:left;position:relative;overflow:hidden;color:var(--mut);flex:none}
+.star-tab .phase{flex:none}
+.star-tab.on{border-color:var(--line2);background:var(--s2);color:var(--fg)}
+.star-tab .bar{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--green)}
+.star-tab.on .bar{animation:fill 6s linear forwards}
+.star.paused .star-tab.on .bar{animation-play-state:paused}
+@keyframes fill{to{width:100%}}
+.star-panel{background:var(--s2);border:1px solid var(--line);border-radius:var(--r);padding:28px;min-height:180px;min-width:0}
+.star-panel .big{font-size:clamp(20px,2.4vw,26px);font-weight:600;line-height:1.35;letter-spacing:-.01em}
+.star-panel p{color:var(--mut);margin:12px 0 0}
+.fadein{animation:fi .45s var(--ease)}
+@keyframes fi{from{opacity:.0;transform:translateY(8px)}}
+
+/* ================= TEAM ================= */
+.team svg{width:100%;height:auto;display:block}
+.node-b{cursor:pointer}
+.node-b rect{transition:all .25s var(--ease)}
+.node-b:hover rect,.node-b.on rect{stroke:var(--green)}
+.flowline{stroke-dasharray:4 6;animation:dash 1.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-20}}
+.week{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (max-width:700px){.week{grid-template-columns:1fr 1fr}}
+.wk{background:var(--s2);border:1px solid var(--line);border-radius:12px;padding:14px;transition:all .3s var(--ease);min-width:0}
+.wk.on{border-color:var(--green);box-shadow:0 0 0 1px var(--green),0 12px 30px -12px #2ee6a660;transform:translateY(-3px)}
+.wk .d{font-family:var(--f-mono);font-size:12px;color:var(--green)}
+.wk .t{font-weight:600;font-size:14px;margin:4px 0}
+.wk p{margin:0;font-size:13px;color:var(--mut)}
+.ramp{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:8px;position:relative}
+.ramp-step{padding:14px 14px 14px 0;position:relative;min-width:0}
+.ramp-step .lvl{height:var(--h);background:linear-gradient(180deg,var(--falcon-c12),#2ee6a610);border-radius:6px 6px 0 0;margin-bottom:12px;transform-origin:bottom;transition:transform 1s var(--ease)}
+.ramp-step .m{font-family:var(--f-mono);font-size:12px;color:var(--green)}
+.ramp-step p{margin:4px 0 0;font-size:13px;color:var(--mut)}
+.qbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
+.q{display:flex;gap:12px;padding:14px;border-radius:12px;background:var(--s2);border:1px solid var(--line)}
+.q .n{font-family:var(--f-mono);font-weight:600;color:var(--bg);background:var(--green);width:26px;height:26px;flex:none;display:grid;place-items:center;border-radius:7px;font-size:13px}
+.q b{display:block;font-size:14px}.q span{font-size:12.5px;color:var(--mut)}
+
+/* decision map */
+.dm-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.dm svg{width:100%;height:auto;display:block}
+.dm .opt-rej{opacity:.55}
+.dm-draw path,.dm-draw line{stroke-dasharray:var(--l);stroke-dashoffset:var(--l);animation:draw 1s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.dm-node{animation:pop .5s var(--ease) both}
+@keyframes pop{from{opacity:0;transform:scale(.9)}}
+
+/* ================= CANVAS ================= */
+.lean{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:820px){.lean{grid-template-columns:1fr}}
+.lc{background:var(--s2);border:1px solid var(--line);border-radius:12px;padding:16px;transition:transform .25s var(--ease),border-color .25s;min-width:0}
+.lc:hover{transform:translateY(-3px);border-color:var(--line2)}
+.lc h4{margin:0 0 10px;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);font-weight:500}
+.lc ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.lc li{font-size:14px;padding-left:14px;position:relative}
+.lc li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:2px;background:var(--line2)}
+.lc.hot{border-color:#2ee6a655;background:linear-gradient(160deg,var(--falcon-c24),var(--s2))}
+.lc.hot li::before{background:var(--green)}
+.strike{position:relative;color:var(--dim)}
+.strike::after{content:"";position:absolute;left:0;top:52%;height:2px;width:0;background:var(--crit);transition:width .6s var(--ease)}
+.lc.hot.go .strike::after{width:100%}
+
+/* pressures */
+.press-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media (max-width:900px){.press-row{grid-template-columns:repeat(2,1fr)}}
+.press{text-align:left;padding:16px;border-radius:14px;border:1px solid var(--line);background:var(--s2);transition:all .25s var(--ease);min-width:0;position:relative;overflow:hidden}
+.press:hover{border-color:var(--line2)}
+.press.on{border-color:var(--cyan);background:linear-gradient(170deg,var(--falcon-c25),var(--s2))}
+.press .pd{font-size:12.5px;color:var(--mut)}
+.press .pv{font-size:30px;font-weight:650;letter-spacing:-.03em;margin:6px 0 2px}
+.press .pu{font-size:11.5px;color:var(--dim);line-height:1.35}
+.press .meter{height:3px;background:var(--line);border-radius:3px;margin-top:12px;overflow:hidden}
+.press .meter i{display:block;height:100%;background:var(--grad);width:var(--w);transition:width 1s var(--ease)}
+.pdet{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+@media (max-width:700px){.pdet{grid-template-columns:1fr}}
+.pf{display:grid;grid-template-columns:92px 1fr;gap:12px;align-items:start;padding:14px;border-radius:12px;background:var(--falcon-c26);border:1px solid var(--line);animation:fi .4s var(--ease) both}
+.pf .n{font-family:var(--f-mono);font-weight:600;font-size:18px;color:var(--cyan);line-height:1.2}
+.pf p{margin:0 0 6px;font-size:13.5px;color:var(--mut)}.pf p b{color:var(--fg);font-weight:600}
+
+/* friction race */
+.race svg{width:100%;height:auto;display:block;min-width:640px}
+.race-clock{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:6px}
+.race-clock div{font-size:12px;color:var(--mut)}
+.race-clock .mono{display:block;font-size:30px;font-weight:600;color:var(--fg);letter-spacing:-.02em}
+.race-clock .bad .mono{color:var(--warn)}.race-clock .good .mono{color:var(--green)}
+.donut-row{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center}
+@media (max-width:640px){.donut-row{grid-template-columns:1fr}}
+.donut svg{width:200px;height:200px;display:block}
+.fr-list{display:grid;gap:10px}
+.fr{display:flex;gap:14px;align-items:center;padding:12px 14px;background:var(--s2);border-radius:12px;border:1px solid var(--line)}
+.fr .ic{width:34px;height:34px;flex:none;border-radius:9px;display:grid;place-items:center;background:#ff4f6218;color:var(--crit);font-weight:700;font-family:var(--f-mono)}
+.fr b{display:block;font-size:14.5px}.fr span{font-size:13px;color:var(--mut)}
+
+/* ecosystem */
+.eco{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center}
+@media (max-width:900px){.eco{grid-template-columns:1fr}}
+.eco svg{width:100%;height:auto;display:block;max-width:600px;margin-inline:auto;touch-action:manipulation}
+.eco-n{cursor:pointer}
+.eco-n circle.c{transition:r .25s var(--ease),stroke-width .2s}
+.eco-n:hover circle.c,.eco-n.on circle.c{stroke-width:3}
+.eco.f-inner .o2,.eco.f-inner .o3,.eco.f-middle .o1,.eco.f-middle .o3,.eco.f-outer .o1,.eco.f-outer .o2{opacity:.15}
+.eco-panel{background:var(--s2);border:1px solid var(--line);border-radius:var(--r);padding:20px;min-height:200px;min-width:0}
+.eco-panel .o{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.eco-panel h3{margin:8px 0}
+.eco-panel p{color:var(--mut);font-size:14px;margin:0}
+
+/* load */
+.load{display:grid;grid-template-columns:1fr 280px;gap:24px}
+@media (max-width:900px){.load{grid-template-columns:1fr}}
+.lrow{display:grid;grid-template-columns:90px 1fr 140px;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+@media (max-width:560px){.lrow{grid-template-columns:72px 1fr}.lrow .after{grid-column:1/-1}}
+.lrow .num{font-family:var(--f-mono);font-size:26px;font-weight:600;letter-spacing:-.02em;transition:color .4s}
+.lrow .lab b{display:block;font-size:14px}.lrow .lab span{font-size:12.5px;color:var(--mut)}
+.lrow .lbar{height:6px;background:var(--line);border-radius:4px;margin-top:6px;overflow:hidden}
+.lrow .lbar i{display:block;height:100%;border-radius:4px;background:var(--warn);transition:width .9s var(--ease),background .5s}
+.lrow .after{font-size:12.5px;color:var(--green);font-family:var(--f-mono);opacity:.35;transition:opacity .4s}
+.load.on .lrow .after{opacity:1}.load.on .lrow .num{color:var(--green)}.load.on .lrow .lbar i{background:var(--green)}
+.mem{background:var(--s2);border:1px solid var(--line);border-radius:var(--r);padding:20px;text-align:center}
+.mem-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:16px auto;max-width:220px}
+.mem-grid i{aspect-ratio:1;border-radius:50%;background:var(--warn);transition:all .5s var(--ease);box-shadow:0 0 10px #ffb84d55}
+.mem-grid i.off{background:var(--line);box-shadow:none;transform:scale(.6)}
+.mem-grid i.ok{background:var(--green);box-shadow:0 0 10px #2ee6a655}
+.mem .v{font-size:48px;font-weight:650;letter-spacing:-.04em;line-height:1}
+.seg{display:inline-flex;border:1px solid var(--line2);border-radius:999px;padding:3px;position:relative;background:var(--s1)}
+.seg button{padding:7px 16px;border-radius:999px;font-size:13px;color:var(--mut);position:relative;z-index:1;transition:color .25s}
+.seg button[aria-pressed="true"]{color:var(--bg);font-weight:600}
+.seg .pill{position:absolute;top:3px;bottom:3px;border-radius:999px;background:var(--fg);transition:all .35s var(--ease)}
+
+.calc{margin-top:24px;padding:18px 20px;border-radius:12px;background:var(--falcon-c26);border:1px dashed var(--line2)}
+.calc summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.calc summary::-webkit-details-marker{display:none}
+.calc summary::after{content:"+";font-family:var(--f-mono);color:var(--cyan);font-size:16px;line-height:1;transition:transform .25s var(--ease)}
+.calc[open] summary::after{transform:rotate(45deg)}
+.calc[open] summary{margin-bottom:12px}
+.calc h4{margin:0;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);font-weight:500}
+.calc ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.calc li{font-size:13px;color:var(--mut);line-height:1.55}
+.calc li b{color:var(--fg);font-weight:600;margin-right:6px}
+.calc li .tag{margin-right:6px;vertical-align:1px}
+.calc p{margin:14px 0 0;font-size:12px;color:var(--dim)}
+/* research */
+.methods{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media (max-width:760px){.methods{grid-template-columns:repeat(2,1fr)}}
+.mth{padding:16px;border-radius:12px;background:var(--s2);border:1px solid var(--line)}
+.mth .v{font-size:34px;font-weight:650;letter-spacing:-.03em}
+.mth .l{font-size:12.5px;color:var(--mut)}
+.mth .dots{display:flex;flex-wrap:wrap;gap:2px;margin-top:10px}
+.mth .dots i{width:5px;height:5px;border-radius:50%;background:var(--cyan);opacity:.7}
+.themes{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+@media (max-width:900px){.themes{grid-template-columns:1fr}}
+.tbar{display:grid;grid-template-columns:170px 1fr;gap:12px;align-items:center;padding:6px 8px;border-radius:8px;cursor:pointer;transition:background .2s;width:100%;text-align:left}
+@media (max-width:520px){.tbar{grid-template-columns:110px 1fr}}
+.tbar:hover,.tbar.on{background:var(--s2)}
+.tbar .n{font-size:13px;line-height:1.25}
+.tbar .track{position:relative;height:22px}
+.tbar .fill{position:absolute;left:0;top:3px;bottom:3px;border-radius:0 4px 4px 0;transition:width 1s var(--ease),opacity .3s}
+.tbar .val{position:absolute;top:50%;transform:translateY(-50%);font-family:var(--f-mono);font-size:11.5px;color:var(--fg);transition:left 1s var(--ease)}
+.tbar.dim{opacity:.25}
+.quote{background:var(--s2);border:1px solid var(--line);border-radius:var(--r);padding:22px;min-width:0}
+.quote blockquote{margin:10px 0 16px;font-size:19px;line-height:1.4;font-weight:500;letter-spacing:-.01em}
+.quote .resp{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:10px;background:#2ee6a612;color:var(--green);font-size:14px;font-weight:500}
+.survey svg{width:100%;height:auto;display:block}
+.persona{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+.avatar{width:64px;height:64px;border-radius:18px;background:var(--grad);display:grid;place-items:center;font-weight:700;color:var(--falcon-c21);font-size:20px}
+.daybar{display:flex;height:28px;border-radius:8px;overflow:hidden;margin:10px 0 6px;gap:2px}
+.daybar i{display:grid;place-items:center;font-size:11px;font-style:normal;font-family:var(--f-mono);color:var(--falcon-c21);font-weight:600;transition:flex-grow 1s var(--ease)}
+.gf{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+@media (max-width:560px){.gf{grid-template-columns:1fr}}
+.gf h4{margin:0 0 8px;font-size:12px;font-family:var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+.gf ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--mut);display:grid;gap:4px}
+
+/* loops */
+.loops{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:800px){.loops{grid-template-columns:1fr}}
+.loop{background:var(--s2);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.loop svg{width:100%;height:auto;display:block}
+.loop-h{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+
+/* blueprint */
+.bp-curve svg{width:100%;height:auto;display:block;min-width:620px}
+.bp-grid{display:grid;grid-template-columns:130px repeat(6,minmax(130px,1fr));gap:3px;min-width:920px;margin-top:12px}
+.bp-grid .hd{font-size:12px;font-weight:600;padding:10px 8px;border-radius:8px;background:var(--s2);cursor:pointer;transition:all .2s;line-height:1.3}
+.bp-grid .hd.on{background:var(--green);color:var(--falcon-c21)}
+.bp-grid .ln{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);padding:8px 6px;display:flex;align-items:center}
+.bp-grid .cell{font-size:11.5px;line-height:1.4;padding:8px;border-radius:6px;background:var(--falcon-c26);color:var(--mut);transition:all .25s;border:1px solid transparent}
+.bp-grid .cell.man{background:#ff4f6214;color:var(--falcon-c27);border-color:#ff4f6230}
+.bp-grid .cell.col{border-color:var(--green);color:var(--fg)}
+.bp-grid .cell.man.col{border-color:var(--crit)}
+.bp-grid .vis{grid-column:1/-1;border-top:1px dashed var(--cyan);position:relative;height:16px;margin-top:6px}
+.bp-grid .vis span{position:absolute;right:0;top:-9px;font-family:var(--f-mono);font-size:10px;color:var(--cyan);background:var(--s1);padding:0 6px;letter-spacing:.08em}
+.bp-grid .heat{display:flex;flex-direction:column;justify-content:flex-end;height:64px;padding:6px 8px;border-radius:6px;background:var(--falcon-c26)}
+.bp-grid .heat i{display:block;background:var(--crit);border-radius:3px 3px 0 0;transition:height .8s var(--ease)}
+.bp-grid .heat span{font-family:var(--f-mono);font-size:11px;color:var(--fg);margin-top:4px}
+.bp-det{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+@media (max-width:700px){.bp-det{grid-template-columns:1fr}}
+.bp-det>div{padding:16px;border-radius:12px;animation:fi .4s var(--ease)}
+.bp-det .pain{background:#ff4f6212;border:1px solid #ff4f6233}.bp-det .opp{background:#2ee6a610;border:1px solid #2ee6a633}
+.bp-det h4{margin:0 0 6px;font-size:11.5px;font-family:var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+.bp-det .pain h4{color:var(--crit)}.bp-det .opp h4{color:var(--green)}
+.bp-det p{margin:0;font-size:14px;color:var(--fg)}
+
+/* principles */
+.pr-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.pr{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px;align-items:center}
+@media (max-width:820px){.pr{grid-template-columns:1fr}}
+.pr-copy .n{font-family:var(--f-mono);color:var(--green);font-size:13px}
+.pr-copy h3{font-size:24px;margin:6px 0 10px}
+.pr-copy p{color:var(--mut);margin:0}
+.pr-demo{background:var(--falcon-c26);border:1px solid var(--line);border-radius:var(--r);padding:20px;min-height:260px;min-width:0}
+.demo-lbl{font-family:var(--f-mono);font-size:10.5px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.rf-tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.rf-t{padding:12px;border-radius:10px;background:var(--s2);border:1px solid var(--line);font-size:13px;transition:all .45s var(--ease)}
+.rf-t.first{grid-column:1/-1;border-color:var(--green);background:linear-gradient(160deg,var(--falcon-c24),var(--s2));font-size:15px;font-weight:600}
+.sev{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:14px;transition:filter .5s}
+.sev.cvd{filter:grayscale(1)}
+.sv{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:var(--s2);font-size:13px;border-left:3px solid var(--c)}
+.sv svg{flex:none}
+.seven{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:6px;margin-top:14px}
+.seven i{font-style:normal;height:48px;border-radius:8px;background:var(--s2);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--f-mono);font-size:12px;color:var(--mut);animation:pop .3s var(--ease) both}
+.seven i.over{border-color:#ff4f6266;color:var(--crit);background:#ff4f6210}
+.range{width:100%;accent-color:var(--green);margin-top:8px}
+.layers3{position:relative;height:200px;margin-top:10px;perspective:800px}
+.ly{position:absolute;left:8%;right:8%;height:70px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;transition:all .8s var(--ease);transform:rotateX(50deg)}
+.ly.base{bottom:10px;background:var(--falcon-c06);border:1px solid var(--line2);color:var(--mut)}
+.ly.top{bottom:110px;background:linear-gradient(110deg,#4d8dff55,#2ee6a655);border:1px solid var(--green);color:var(--fg);opacity:0;transform:rotateX(50deg) translateY(-30px)}
+.layers3.on .ly.top{opacity:1;transform:rotateX(50deg) translateY(0);bottom:70px}
+.stale-t{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.st{padding:14px;border-radius:10px;background:var(--s2);border:1px solid var(--line);transition:all .5s}
+.st .v{font-family:var(--f-mono);font-size:24px;font-weight:600}
+.st .a{font-size:11.5px;color:var(--mut);font-family:var(--f-mono)}
+.st.stale{opacity:.5;border-style:dashed}.st.stale .v{color:var(--dim)}
+
+/* alignment */
+.sh svg{width:100%;height:auto;display:block}
+.lens{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:820px){.lens{grid-template-columns:1fr 1fr}}
+.lz{padding:16px;border-radius:12px;background:var(--s2);border:1px solid var(--line);cursor:pointer;transition:all .25s var(--ease);text-align:left;min-width:0}
+.lz:hover,.lz.on{border-color:var(--green);transform:translateY(-2px)}
+.lz .r{font-family:var(--f-mono);font-size:11px;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase}
+.lz q{display:block;font-size:14.5px;margin-top:8px;font-weight:500;quotes:"“" "”"}
+.lz .lands{font-size:12px;color:var(--mut);margin-top:10px}
+.dm-core{margin:14px auto 0;max-width:520px;text-align:center;padding:12px;border-radius:12px;border:1px dashed var(--line2);font-size:13px;color:var(--mut);position:relative}
+.dm-core b{color:var(--fg)}
+
+/* IA */
+.ia{display:grid;grid-template-columns:150px 240px 1fr;gap:28px;position:relative;align-items:start}
+@media (max-width:900px){.ia{grid-template-columns:1fr}#iaSvg{display:none}}
+#iaSvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.ia-root{padding:16px;border-radius:12px;background:var(--grad);color:var(--falcon-c21);font-weight:700;text-align:center;align-self:center;position:relative;z-index:1}
+.ia-root small{display:block;font-weight:500;font-size:11px}
+.ia-mods{display:flex;flex-direction:column;gap:6px;position:relative;z-index:1}
+@media (max-width:900px){.ia-mods{flex-direction:row;flex-wrap:wrap}}
+.ia-mod{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--s2);font-size:13px;text-align:left;transition:all .2s}
+.ia-mod .c{margin-left:auto;font-family:var(--f-mono);font-size:11px;color:var(--dim)}
+.ia-mod.on{border-color:var(--green);background:var(--falcon-c24)}
+.ia-tree{display:grid;gap:14px;position:relative;z-index:1;min-width:0}
+.ia-g{animation:fi .4s var(--ease) both}
+.ia-g h5{margin:0 0 8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);font-weight:500}
+.ia-nodes{display:flex;flex-wrap:wrap;gap:6px}
+.ia-node{padding:6px 10px;border-radius:8px;font-size:12.5px;background:var(--falcon-c26);border:1px solid var(--line);color:var(--mut);transition:all .2s;animation:pop .35s var(--ease) both}
+.ia-node.lit{color:var(--fg);border-color:#2ee6a655}
+.ia-node.lit::after{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--green);margin-left:6px;vertical-align:middle}
+.ia-node.on{background:var(--green);color:var(--falcon-c21);border-color:var(--green)}
+.ia-det{margin-top:16px;padding:14px 16px;border-radius:12px;background:var(--s2);border:1px solid var(--line);font-size:14px;min-height:56px}
+.ia-det b{color:var(--green)}
+
+/* product mock */
+.app{border:1px solid var(--line2);border-radius:16px;overflow:hidden;background:var(--falcon-c28);box-shadow:0 40px 80px -40px var(--falcon-c23)}
+.app-top{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:12px;flex-wrap:wrap}
+.app-top .brand{font-family:var(--f-mono);font-weight:600;letter-spacing:.12em;font-size:11px}
+.app-top .st{display:flex;gap:10px;margin-left:auto;color:var(--mut);font-size:11px;padding:0;background:none;border:0;opacity:1}
+.app-top .st span{display:inline-flex;align-items:center;gap:5px}
+.app-top .st i{width:8px;height:8px;border-radius:2px;display:inline-block}
+.app-body{display:grid;grid-template-columns:52px 1fr;min-height:440px}
+.app-side{border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 0}
+.app-side span{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:var(--dim);font-size:14px}
+.app-side span.on{background:#2ee6a61a;color:var(--green)}
+.app-main{padding:16px;min-width:0}
+.role-sw{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+.role-sw .lbl{font-size:11px;color:var(--dim);font-family:var(--f-mono);margin-right:4px}
+.bcards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:760px){.bcards{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.bcards{grid-template-columns:1fr}}
+.bc{border-radius:10px;background:var(--s2);border:1px solid var(--line);padding:12px;position:relative;overflow:hidden;font-size:12px}
+.bc::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--c)}
+.bc .nm{font-weight:600;font-size:13px;margin-bottom:8px;display:flex;justify-content:space-between;gap:6px}
+.bc .kv{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.bc .kv div{color:var(--dim);font-size:10.5px}.bc .kv b{display:block;color:var(--fg);font-size:14px;font-family:var(--f-mono);font-weight:500}
+.bc.flash b.e{animation:fl .6s}
+@keyframes fl{30%{color:var(--cyan)}}
+.wo{width:100%;border-collapse:collapse;font-size:12.5px}
+.wo th{text-align:left;font-weight:500;color:var(--dim);font-size:11px;padding:8px;border-bottom:1px solid var(--line)}
+.wo td{padding:9px 8px;border-bottom:1px solid var(--line)}
+.wo tr{animation:fi .4s var(--ease) both}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600}
+.pill.h{background:#ff4f6222;color:var(--crit)}.pill.m{background:#ffb84d22;color:var(--warn)}.pill.l{background:#36d3e222;color:var(--cyan)}.pill.ok{background:#4dd69c22;color:var(--ok)}
+.adm{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:640px){.adm{grid-template-columns:1fr}}
+.adm>div{background:var(--s2);border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center}
+.adm svg{width:120px;height:72px;display:block;margin:0 auto}
+.adm .l{font-size:12px;color:var(--mut)}
+.audit li{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;animation:fi .4s var(--ease) both}
+.audit{list-style:none;margin:0;padding:0}
+.audit .t{font-family:var(--f-mono);font-size:11px;color:var(--dim);min-width:46px}
+.leed{height:10px;border-radius:6px;background:var(--line);overflow:hidden;margin:6px 0 16px}
+.leed i{display:block;height:100%;background:var(--grad);width:0;transition:width 1.2s var(--ease)}
+.view-note{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+@media (max-width:760px){.view-note{grid-template-columns:1fr}}
+.view-note>div{padding:12px 14px;border-radius:10px;background:var(--s2);font-size:13px;color:var(--mut)}
+.view-note b{display:block;color:var(--fg);font-size:12px;font-family:var(--f-mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+#funnel{width:100%;height:220px;display:block;border-radius:12px;background:var(--falcon-c26)}
+
+
+/* shipped-screen gallery */
+.drill{display:flex;align-items:stretch;gap:0;min-width:760px}
+.dstep{flex:1;position:relative;padding:14px 12px 14px 22px;background:var(--s2);border:1px solid var(--line);text-align:left;transition:all .25s var(--ease);clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%,14px 50%);margin-right:-8px}
+.dstep:first-child{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%);padding-left:14px;border-radius:10px 0 0 10px}
+.dstep:last-child{clip-path:polygon(0 0,100% 0,100% 100%,0 100%,14px 50%);border-radius:0 10px 10px 0;margin-right:0}
+.dstep:hover{background:var(--falcon-c29)}
+.dstep.on{background:linear-gradient(110deg,var(--falcon-c30),var(--falcon-c24))}
+.dstep .n{font-family:var(--f-mono);font-size:10.5px;color:var(--cyan);letter-spacing:.1em}
+.dstep.on .n{color:var(--green)}
+.dstep b{display:block;font-size:13.5px;margin-top:2px}
+.dstep span{display:block;font-size:11.5px;color:var(--mut);margin-top:2px;line-height:1.35}
+.strip-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -4px 18px;padding:4px}
+.strip{display:flex;gap:14px;min-width:max-content}
+.sgrp{display:flex;flex-direction:column;gap:6px}
+.sgrp>.gl{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.sgrp>.gi{display:flex;gap:6px}
+.th{width:118px;border-radius:8px;overflow:hidden;border:2px solid transparent;background:var(--s2);padding:0;position:relative;transition:all .25s var(--ease);flex:none}
+.th img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;opacity:.6;transition:opacity .25s}
+.th small{display:block;font-size:10.5px;padding:5px 6px;color:var(--mut);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.th:hover img{opacity:.9}
+.th.on{border-color:var(--green)}.th.on img{opacity:1}.th.on small{color:var(--fg)}
+.th.dim{opacity:.25}
+.shot-col{position:sticky;top:calc(16px + env(safe-area-inset-top,0px))}
+@media (max-width:1000px){.shot-col{position:static}}
+.gal-body{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:1000px){.gal-body{grid-template-columns:1fr}}
+.shot-frame{border-radius:14px;overflow:hidden;border:1px solid var(--line2);background:var(--falcon-c31);box-shadow:0 30px 70px -30px var(--falcon-c23)}
+.shot-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;border-bottom:1px solid var(--line);font-size:11.5px;color:var(--mut);font-family:var(--f-mono)}
+.shot-bar i{width:9px;height:9px;border-radius:50%;background:var(--line2)}
+.shot-bar span{margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot-bar .cnt{margin-left:auto;color:var(--dim)}
+.shot{position:relative;cursor:zoom-in;line-height:0}
+.shot img{display:block;width:100%;height:auto;transition:opacity .35s var(--ease),transform .5s var(--ease)}
+.shot img.swap{opacity:0;transform:scale(1.01)}
+.pins{position:absolute;inset:0}
+.pin{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;background:var(--green);color:var(--falcon-c21);font:700 12px/26px var(--f-mono);text-align:center;box-shadow:0 0 0 4px #2ee6a640,0 6px 16px -4px var(--falcon-c23);transition:transform .2s var(--ease),background .2s;animation:pinIn .5s var(--ease) both;line-height:26px;padding:0}
+.pin::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--green);animation:ring 2.2s infinite;opacity:0}
+@keyframes ring{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.9);opacity:0}}
+@keyframes pinIn{from{transform:translate(-50%,-50%) scale(0)}}
+@media (max-width:640px){.pin{width:18px;height:18px;font-size:10px;line-height:18px;box-shadow:0 0 0 2px #2ee6a640}}
+.pin:hover,.pin.on{transform:translate(-50%,-50%) scale(1.18);background:var(--falcon-c19)}
+.pin.on::after{border-color:var(--falcon-c19)}
+.shot-ctl{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px}
+.hint-t{font-size:11.5px;color:var(--dim);text-align:center}
+@media (max-width:560px){.hint-t{display:none}}
+.pnl{display:grid;gap:12px;min-width:0}
+.pnl .roles{display:flex;flex-wrap:wrap;gap:6px}
+.pnl .roles span{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;padding:3px 8px;border-radius:999px;border:1px solid var(--line2);color:var(--mut)}
+.pb{padding:14px 16px;border-radius:12px;background:var(--s2);border:1px solid var(--line);animation:fi .4s var(--ease) both}
+.pb h4{margin:0 0 6px;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.pb p{margin:0;font-size:14px;line-height:1.55}
+.pb.pbp h4{color:var(--crit)}.pb.wh h4{color:var(--blue)}.pb.im h4{color:var(--green)}
+.pb.im{background:linear-gradient(160deg,var(--falcon-c24),var(--s2));border-color:#2ee6a640}
+.pb.im .big{font-family:var(--f-mono);font-size:24px;font-weight:600;color:var(--green);display:block;margin-bottom:4px;letter-spacing:-.02em}
+.anno{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.anno li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;padding:8px;border-radius:8px;cursor:pointer;transition:background .2s;font-size:13px;color:var(--mut)}
+.anno li b{display:block;color:var(--fg);font-size:13.5px;font-weight:600}
+.anno li .k{width:22px;height:22px;border-radius:50%;background:var(--line2);color:var(--fg);font:700 11px/22px var(--f-mono);text-align:center}
+.anno li:hover,.anno li.on{background:var(--s2)}
+.anno li.on .k{background:var(--green);color:var(--falcon-c21)}
+.lb[hidden]{display:none!important}
+.lb{position:fixed;inset:0;z-index:100;background:#03070acc;backdrop-filter:blur(6px);display:grid;place-items:center;padding:24px;cursor:zoom-out;animation:fi .25s var(--ease)}
+.lb img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 30px 80px var(--falcon-c23)}
+.lb-x{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;width:40px;height:40px;border-radius:50%;background:var(--s2);border:1px solid var(--line2);font-size:16px}
+
+/* impact */
+.hero-m{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
+@media (max-width:760px){.hero-m{grid-template-columns:1fr}}
+.watch{font-size:clamp(64px,11vw,128px);font-weight:650;letter-spacing:-.05em;line-height:.9}
+.tbars{display:grid;gap:12px}
+.tb .l{display:flex;justify-content:space-between;font-size:13px;color:var(--mut);margin-bottom:6px}
+.tb .t{height:16px;background:var(--line);border-radius:4px;overflow:hidden}
+.tb .t i{display:block;height:100%;border-radius:0 4px 4px 0;width:0}
+.math{font-family:var(--f-mono);font-size:12.5px;color:var(--mut);margin-top:12px;line-height:1.8}
+.math b{color:var(--green)}
+.rounds svg{width:100%;height:auto;display:block}
+.sc-row{display:grid;grid-template-columns:minmax(150px,1.3fr) 90px 1.6fr 80px;gap:14px;align-items:center;padding:12px 4px;border-bottom:1px solid var(--line);transition:opacity .3s}
+@media (max-width:700px){.sc-row{grid-template-columns:1fr auto;}.sc-row .sb{grid-column:1/-1}.sc-row .tg{display:none}}
+.sc-row.hd{font-size:11px;color:var(--dim);font-family:var(--f-mono);letter-spacing:.08em;text-transform:uppercase}
+.sc-row .mn{font-size:14px;font-weight:500}.sc-row .mn small{display:block;color:var(--dim);font-size:11.5px;font-weight:400;font-family:var(--f-mono)}
+.sc-row .ch{font-family:var(--f-mono);font-weight:600;font-size:16px;color:var(--green);text-align:right}
+.sb{display:grid;gap:4px}
+.sb div{display:grid;grid-template-columns:62px 1fr;gap:8px;align-items:center;font-family:var(--f-mono);font-size:11px;color:var(--mut)}
+.sb .bar{height:8px;border-radius:0 3px 3px 0;background:var(--line2);width:0;transition:width 1s var(--ease)}
+.sb .bar.a{background:var(--green)}
+.sc-row.hide{display:none}
+.annx{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:700px){.annx{grid-template-columns:1fr}}
+.annx>div{padding:18px;border-radius:12px;background:var(--s2);border:1px solid var(--line)}
+.annx .v{font-size:34px;font-weight:650;letter-spacing:-.03em}
+.annx .l{font-size:13px;color:var(--mut)}
+details.reg{margin-top:20px;border:1px solid var(--line);border-radius:12px;padding:0 16px;background:var(--s1)}
+details.reg summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:14px}
+.regt{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:14px}
+.regt th,.regt td{text-align:left;padding:9px 8px;border-top:1px solid var(--line);vertical-align:top}
+.regt th{font-weight:500;color:var(--dim);font-size:11.5px}
+.regt td:first-child{font-weight:500}.regt td:last-child{color:var(--mut)}
+
+/* business */
+.chain svg{width:100%;height:auto;display:block;min-width:760px}
+.ch-row{cursor:pointer}
+.ch-row rect{transition:all .25s}
+.chain.focus .ch-row:not(.on){opacity:.25}
+.who{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+@media (max-width:820px){.who{grid-template-columns:1fr 1fr}}
+@media (max-width:460px){.who{grid-template-columns:1fr}}
+.wc{padding:16px;border-radius:12px;background:var(--s2);border:1px solid var(--line);transition:all .3s var(--ease);min-width:0}
+.wc.hide{opacity:.18;transform:scale(.98)}
+.wc .r{font-weight:600;font-size:14.5px}
+.wc .k{font-family:var(--f-mono);font-size:11px;margin:6px 0;display:inline-block}
+.wc p{margin:0;font-size:13px;color:var(--mut)}
+.funnel2 .row{display:grid;grid-template-columns:150px 1fr 56px;gap:12px;align-items:center;margin-bottom:10px}
+@media (max-width:520px){.funnel2 .row{grid-template-columns:100px 1fr 46px}}
+.funnel2 .row .l{font-size:13px}.funnel2 .row .l small{display:block;color:var(--dim);font-size:11.5px}
+.funnel2 .t{height:26px;background:var(--line);border-radius:6px;overflow:hidden}
+.funnel2 .t i{display:block;height:100%;background:var(--grad);border-radius:6px;width:0;transition:width 1.1s var(--ease)}
+.funnel2 .v{font-family:var(--f-mono);font-weight:600;text-align:right}
+.steps svg{width:100%;height:auto;display:block}
+
+/* reflection */
+.refl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:820px){.refl{grid-template-columns:1fr}}
+.rc{perspective:1000px;min-height:230px;cursor:pointer}
+.rc-in{position:relative;width:100%;height:100%;min-height:230px;transition:transform .7s var(--ease);transform-style:preserve-3d}
+.rc.flip .rc-in{transform:rotateY(180deg)}
+.rc-f,.rc-b{position:absolute;inset:0;border-radius:14px;padding:20px;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.rc-f{background:var(--s2)}
+.rc-b{background:linear-gradient(160deg,var(--falcon-c32),var(--s2));transform:rotateY(180deg);border-color:#4d8dff55}
+.rc .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--green)}
+.rc-b .k{color:var(--blue)}
+.rc h3{margin:10px 0 8px;font-size:17px}
+.rc p{margin:0;font-size:13.5px;color:var(--mut)}
+.rc .hint{margin-top:auto;font-size:11.5px;color:var(--dim);font-family:var(--f-mono)}
+footer{border-top:1px solid var(--line);padding-block:40px 60px;color:var(--dim);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* svg text defaults */
+svg text{fill:var(--mut);font-family:var(--f-body)}
+svg .tf{fill:var(--fg)}svg .tm{font-family:var(--f-mono)}
+.tip{position:fixed;z-index:90;pointer-events:none;background:var(--falcon-c22);border:1px solid var(--line2);border-radius:8px;padding:8px 10px;font-size:12.5px;opacity:0;transition:opacity .15s;max-width:240px}
+.tip b{color:var(--fg)}.tip span{color:var(--mut);display:block;font-size:11.5px}
+</style>
+
+<div id="prog"><i></i></div>
+<nav id="rail" aria-label="Sections"></nav>
+<div class="tip" id="tip"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="overview">
+  <canvas id="pulse" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="phase">CS</span> Case study · Nakheel, Dubai · 2024</div>
+        <h1>From seven systems to <span class="gt">one live operating picture</span>
+          <small>Smart Hospital Management System · Falcon View</small></h1>
+        <p class="lede">Four hospitals tracked energy, water, compliance and maintenance on spreadsheets, vendor portals and radio. I led the design of one role-aware platform that turns live building data into the morning's first decision, for four teams with very different jobs.</p>
+        <div class="meta">
+          <span data-x-t="Lead UX Designer" data-x="I owned UX strategy, research synthesis, the role-aware IA and the design system, ran stakeholder workshops, and led 3 designers through delivery."><b>Lead UX Designer</b> · project leadership</span>
+          <span data-x-t="The client" data-x="Nakheel, Dubai. A four-hospital network, 20 buildings, ~294 monitored zones. Rising energy cost, compliance pressure and slow incident response triggered the brief in 2024."><b>Nakheel</b> · Dubai</span>
+          <span data-x-t="6 months" data-x="6 weeks of research and the reframe, a hi-fi design system, two usability rounds and a pilot-ready build scaled from one hospital to eight."><b>6 months</b> · 2024</span>
+          <span data-x-t="Platform" data-x="A web app over GIS building maps and floor plans, fed by IoT sensors and the legacy building-management system through an edge gateway at each site."><b>Web · GIS · IoT</b></span>
+        </div>
+      </div>
+      <figure class="conv" aria-label="Seven disconnected systems converging into one live view">
+        <svg id="conv" viewBox="0 0 520 520" role="img"></svg>
+        <div class="conv-ctl"><div class="seg" id="convSeg"><span class="pill"></span><button aria-pressed="true" data-c="0">Before · 7 systems</button><button aria-pressed="false" data-c="1">After · Falcon View</button></div></div>
+      </figure>
+    </div>
+    <div class="kpis">
+      <div class="kpi" data-x-t="How 1:04 was measured" data-x="Stopwatch timing from the moment a critical reading appeared to the moment the participant confirmed an action, averaged across simulated scenarios. On the spreadsheet workflow the same scenarios took 3:42. Usability round 3, moderated, small sample.">
+        <span class="tag m">Measured</span><div class="v mono">1:04</div><div class="l">time to first decision</div><div class="d">from 3:42 · −71%</div><svg data-spark="222,140,96,64" data-inv="1" viewBox="0 0 120 28" preserveAspectRatio="none"></svg></div>
+      <div class="kpi" data-x-t="Where 25% comes from" data-x="Client-reported energy reduction across the four-hospital network over the first 12 months of operation. Attribution is shared with operational and policy changes running in parallel; the platform enabled the decisions, it is not the sole cause.">
+        <span class="tag rp">Reported</span><div class="v mono"><span data-count="25">25</span>%</div><div class="l">energy reduction, year one</div><div class="d">network · client review</div><svg data-bar="100,75" viewBox="0 0 120 28" preserveAspectRatio="none"></svg></div>
+      <div class="kpi" data-x-t="Where 3.7h → 0.5h comes from" data-x="Leak-to-fix time on the maintenance logs: from ~3.7 hours of guessing the source to about half an hour once the anomaly, location and likely cause surfaced together. Reported from the pilot site.">
+        <span class="tag rp">Reported</span><div class="v mono">3.7→0.5h</div><div class="l">leak-to-fix time</div><div class="d">maintenance logs · −86%</div><svg data-bar="3.7,0.5" viewBox="0 0 120 28" preserveAspectRatio="none"></svg></div>
+      <div class="kpi" data-x-t="Where 72% comes from" data-x="Daily active use across the four roles, observed from usage 18 months after launch. This is the number I weight most. It is where the augment-don't-replace decision paid off, where most comparable rollouts lose adoption.">
+        <span class="tag ob">Observed</span><div class="v mono"><span data-count="72">72</span>%</div><div class="l">daily adoption, 18 months on</div><div class="d">scaled 1 → 8 sites</div><svg data-spark="100,88,72" viewBox="0 0 120 28" preserveAspectRatio="none"></svg></div>
+    </div>
+    <div class="legend-ev"><span><span class="tag m">Measured</span> simulated usability testing, small sample</span><span><span class="tag rp">Reported</span> client's 12-month review, not audited</span><span><span class="tag ob">Observed</span> product usage</span><span><span class="tag md">Modelled</span> from research assumptions</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ STAR ============ -->
+<section id="summary">
+  <div class="eyebrow">30-second read</div>
+  <h2>The whole story, in five beats.</h2>
+  <div class="star mt" id="star">
+    <div class="star-tabs" role="tablist"></div>
+    <div class="star-panel" id="starPanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ============ LEAD ============ -->
+<section id="lead">
+  <div class="eyebrow"><span class="phase t">T</span> How I led · team, rhythm, quality bar, decisions</div>
+  <h2>I set the quality bar and made the hard calls, so <span class="gt">three designers could move fast</span>.</h2>
+
+  <figure class="fig team">
+    <div class="fig-h"><div><div class="fig-k">Ownership map</div><div class="fig-t">One owner per surface, one system underneath</div></div><div class="chips" id="ownChips"></div></div>
+    <div class="scroll-x"><svg id="ownSvg" viewBox="0 0 960 330" role="img" aria-label="Team ownership diagram" style="min-width:700px"></svg></div>
+    <div class="take"><span><b>Clear lanes, shared system.</b> Each designer owned whole surfaces end to end. I owned the strategy and the system that kept their work consistent.</span></div>
+  </figure>
+
+  <div class="grid2">
+    <figure class="fig">
+      <div class="fig-h"><div><div class="fig-k">Cadence · week loop</div><div class="fig-t">Every ritual ends in a decision</div></div><button class="btn ghost" id="wkPlay">▶ Play a week</button></div>
+      <div class="week" id="week">
+        <div class="wk"><div class="d">MON</div><div class="t">Brief &amp; priorities · 30 min</div><p>One problem per designer. Success criteria written before any pixels.</p></div>
+        <div class="wk"><div class="d">WED</div><div class="t">Design crit · 60 min</div><p>Feedback against shared criteria: observation, reason, recommendation.</p></div>
+        <div class="wk"><div class="d">FRI</div><div class="t">Decision review</div><p>PM + engineer. Ends with a logged decision or one named open question.</p></div>
+        <div class="wk"><div class="d">2 WKS</div><div class="t">Field check</div><p>A flow tested with facility managers before it moves to hi-fi.</p></div>
+      </div>
+    </figure>
+    <figure class="fig">
+      <div class="fig-h"><div><div class="fig-k">Coaching ramp · autonomy</div><div class="fig-t">Junior designer → compliance owner</div></div></div>
+      <div class="ramp" id="ramp">
+        <div class="ramp-step" style="--h:36px"><div class="lvl"></div><div class="m">MONTH 1</div><p>Paired on wireframes. I set the brief and reviewed daily.</p></div>
+        <div class="ramp-step" style="--h:72px"><div class="lvl"></div><div class="m">MONTH 2</div><p>Presented in Wednesday crit, with me as backup.</p></div>
+        <div class="ramp-step" style="--h:120px"><div class="lvl"></div><div class="m">MONTHS 3–4</div><p>Owned the compliance flow end to end. I moved to review only.</p></div>
+      </div>
+      <div class="take"><span><b>Outcome:</b> they led the compliance screen independently by month 4, which freed me for client workshops. Bar height shows autonomy level, not a measured score.</span></div>
+    </figure>
+  </div>
+
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Quality bar</div><div class="fig-t">Four tests every screen had to pass</div></div></div>
+    <div class="qbar">
+      <div class="q"><span class="n">1</span><div><b>Where → Who → What</b><span>Location and the affected role visible before severity.</span></div></div>
+      <div class="q"><span class="n">2</span><div><b>≤ 7 primary readings</b><span>A hard ceiling from control-room research. The rest is one tap deeper.</span></div></div>
+      <div class="q"><span class="n">3</span><div><b>Never colour alone</b><span>Every status carries an icon, a shape and a label.</span></div></div>
+      <div class="q"><span class="n">4</span><div><b>Honest about stale data</b><span>Each view states what happens when a sensor drops.</span></div></div>
+    </div>
+    <div class="grid3 mt2">
+      <div class="annx" style="grid-column:1/-1">
+        <div><div class="v mono"><span data-count="32">32</span></div><div class="l">components in the shared library</div></div>
+        <div><div class="v mono"><span data-count="6">6</span></div><div class="l">product surfaces from 10 wireframes</div></div>
+        <div><div class="v mono"><span data-count="0">0</span></div><div class="l">daily design check-ins needed by engineering</div></div>
+      </div>
+    </div>
+    <p class="note">Annotated specs let engineers build without daily design consultation. Developer question volume and build time saved were not measured.</p>
+  </figure>
+
+  <figure class="fig dm">
+    <div class="fig-h"><div><div class="fig-k">Decision map · 3 calls I made as lead</div><div class="fig-t" id="dmTitle"></div></div></div>
+    <div class="dm-tabs chips" id="dmTabs"></div>
+    <div class="scroll-x"><svg id="dmSvg" viewBox="0 0 960 300" role="img" style="min-width:680px"></svg></div>
+    <div class="take" id="dmTake"></div>
+  </figure>
+</section>
+
+<!-- ============ STATEMENT ============ -->
+<section id="statement">
+  <div class="eyebrow"><span class="phase s">S</span> Problem statement · Lean UX canvas</div>
+  <h2>Hospitals ran on lagging, siloed data, and <span class="gt">no one could act in time</span>.</h2>
+  <p class="lede">Hospitals burn 2.5× the energy and about 133,000 gallons of water a day compared with a typical commercial building. The cost and compliance pressure were real, but the deeper failure was informational.</p>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Lean UX canvas</div><div class="fig-t">Six boxes, one reframe</div></div></div>
+    <div class="lean" id="lean">
+      <div class="lc"><h4>Who</h4><ul><li>Facility managers across 20 buildings</li><li>Administrators &amp; sustainability officers</li><li>Maintenance crews in the field</li></ul></div>
+      <div class="lc"><h4>Problem</h4><ul><li>Data split across 7 systems</li><li>37% of work-time lost hunting for it</li><li>3.2 hrs to locate a single leak</li><li>Reactive, not preventative</li></ul></div>
+      <div class="lc"><h4>Current workaround</h4><ul><li>Weekly meter readings by hand</li><li>Three vendor portals + paper logs</li><li>Tribal knowledge of 1–2 engineers</li></ul></div>
+      <div class="lc"><h4>Business cost</h4><ul><li>High operating cost &amp; carbon</li><li>Compliance exposure</li><li>Sustainability stalled as a boardroom topic</li></ul></div>
+      <div class="lc hot" id="reframe"><h4>The reframe</h4><ul><li><span class="strike">A dashboard</span></li><li><b>One view that lets four roles act this morning</b></li><li>Sustainability as a by-product of legibility</li></ul></div>
+      <div class="lc"><h4>Success looks like</h4><ul><li>Time-to-decision, not chart count</li><li>Fewer reactive events</li><li>Adoption that holds</li></ul></div>
+    </div>
+  </figure>
+</section>
+
+<!-- ============ PRESSURES ============ -->
+<section id="pressures">
+  <div class="eyebrow"><span class="phase s">S</span> Context · sizing the world the system lives in</div>
+  <h2>Five pressures hit at once, and <span class="gt">not one was visible in time</span>.</h2>
+  <p class="lede">Secondary research and our own site study found five compounding pressures. Pick a domain for the evidence. The failure underneath all five is the same.</p>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Pressure index</div><div class="fig-t">Each domain sized against a typical building</div></div></div>
+    <div class="press-row" id="pressRow"></div>
+    <div class="pdet" id="pressDet" aria-live="polite"></div>
+    <div class="take"><span><b>The through-line:</b> five pressures, four teams, seven disconnected systems, one identical failure. Nothing was visible in time to act.</span></div>
+    <p class="note">Reported = industry benchmarks (EIA, AHA, Practice Greenhealth, USGBC). Observed = our 5-site audit, 57 interviews and 120 surveys. Figures size the opportunity; they are not outcomes.</p>
+  </figure>
+</section>
+
+<!-- ============ FRICTION ============ -->
+<section id="friction">
+  <div class="eyebrow"><span class="phase s">S</span> The friction, quantified</div>
+  <h2>Seven systems and a phone tree stood between <span class="gt">a reading and a decision</span>.</h2>
+  <figure class="fig race">
+    <div class="fig-h"><div><div class="fig-k">Task flow race · same clock, both paths</div><div class="fig-t">A critical reading appears. Who decides first?</div></div><button class="btn" id="raceBtn">▶ Run the race</button></div>
+    <div class="race-clock"><div class="bad">Spreadsheet + radio<span class="mono" id="clkA">0:00</span></div><div class="good">Falcon View<span class="mono" id="clkB">0:00</span></div><div>Playback<span class="mono" style="font-size:16px;color:var(--mut)">30× real time</span></div></div>
+    <div class="scroll-x"><svg id="raceSvg" viewBox="0 0 960 300" role="img" aria-label="Task flow comparison"></svg></div>
+    <div class="take"><span><b>3:42 vs 1:04 on the same clock.</b> The old path hops through seven systems and a phone call. The new path arrives ranked, with location and owner attached. Step positions show sequence, not per-step timing.</span></div>
+  </figure>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Where the morning went</div><div class="fig-t">Time lost before a single decision</div></div></div>
+    <div class="donut-row">
+      <div class="donut" data-x-t="37% of work-time" data-x="From interviews and shadowing: roughly 37% of staff work-time went to documentation and gathering information across systems, before any decision or action. The single largest recoverable cost in the research."><svg id="donut" viewBox="0 0 200 200" role="img" aria-label="37 percent of work time"></svg></div>
+      <div class="fr-list">
+        <div class="fr" data-x-t="Seven systems" data-x="Building-management system, two vendor energy portals, a water meter spreadsheet, a maintenance log, an incident tracker, and email. A facility manager logged into six of them before 9am."><span class="ic">7</span><div><b>Disconnected systems</b><span>logged into before a day could start</span></div></div>
+        <div class="fr"><span class="ic">3.2</span><div><b>Hours per leak</b><span>spent locating the source before anyone could act</span></div></div>
+        <div class="fr"><span class="ic">wk</span><div><b>Weekly meter readings</b><span>so data was days old when it was read</span></div></div>
+        <div class="fr"><span class="ic">70</span><div><b>% reactive maintenance</b><span>problems found when someone walked past them</span></div></div>
+      </div>
+    </div>
+  </figure>
+</section>
+
+<!-- ============ ECOSYSTEM ============ -->
+<section id="ecosystem">
+  <div class="eyebrow"><span class="phase s">S</span> Ecosystem · the system sits in an orbit</div>
+  <h2>Fifteen actors, three orbits, <span class="gt">one question: who acts this morning?</span></h2>
+  <p class="lede">The platform couldn't serve all fifteen equally. Distance from the daily decision set design priority. The inner orbit acts every morning; the outer orbits set the rules and pay the bills.</p>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Ecosystem map · node size = proximity to the daily decision</div><div class="fig-t">Tap a node. Filter an orbit.</div></div><div class="chips" id="ecoChips"><button class="chip on" data-f="all">All 15</button><button class="chip" data-f="inner">Inner · acts daily</button><button class="chip" data-f="middle">Middle · tech &amp; vendors</button><button class="chip" data-f="outer">Outer · forces</button></div></div>
+    <div class="eco" id="eco">
+      <svg id="ecoSvg" viewBox="0 0 600 600" role="img" aria-label="Ecosystem orbit map"></svg>
+      <div class="eco-panel" id="ecoPanel" aria-live="polite"></div>
+    </div>
+    <div class="take"><span><b>Interface budget follows the inner orbit.</b> Promoting maintenance crews, low power but high stake, into it reshaped the whole alert-and-work-order flow.</span></div>
+  </figure>
+</section>
+
+<!-- ============ LOAD ============ -->
+<section id="memory">
+  <div class="eyebrow"><span class="phase s">S</span> Cognitive load · what a supervisor held in their head</div>
+  <h2>Everything a manager needed lived in <span class="gt">six places and one memory</span>.</h2>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Before / after · same scale</div><div class="fig-t">Flip the morning</div></div><div class="seg" id="loadSeg"><span class="pill"></span><button aria-pressed="true" data-l="0">Today · spreadsheets</button><button aria-pressed="false" data-l="1">With Falcon View</button></div></div>
+    <div class="load" id="load">
+      <div id="loadRows"></div>
+      <div class="mem">
+        <div class="demo-lbl">Working memory load</div>
+        <div class="v mono" id="memV">24</div><div style="font-size:12px;color:var(--mut)">items held without a single source of truth</div>
+        <div class="mem-grid" id="memGrid"></div>
+        <p class="note" style="margin:0">Illustrative load index, not a clinical measure.</p>
+      </div>
+    </div>
+    <details class="calc">
+      <summary><h4>How these numbers are calculated</h4></summary>
+      <ul>
+        <li><b>6 → 1</b> <span class="tag ob">Observed</span> Logins before 9am, counted while shadowing.</li>
+        <li><b>240 → 18</b> <span class="tag md">Modelled</span> Readings per shift from the log audit; 18 surfaced for a confirm in testing.</li>
+        <li><b>~2 h → ~5 s</b> <span class="tag md">Modelled</span> Sheets updated every ~4 h, so ~2 h old on average.</li>
+        <li><b>12 → ≤ 7</b> <span class="tag ob">Observed</span> First concept screen vs the 7-reading design rule.</li>
+        <li><b>15 h → 3 h</b> <span class="tag md">Modelled</span> Monthly reporting hours, from interviews.</li>
+        <li><b>70%</b> <span class="tag ob">Observed</span> From interviews; no after figure measured.</li>
+        <li><b>24 → 7</b> <span class="tag md">Illustrative</span> Rough index from shadowing notes, not measured.</li>
+      </ul>
+      <p>Each bar is scaled to its own row's before value.</p>
+    </details>
+  </figure>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section id="research">
+  <div class="eyebrow"><span class="phase a">A</span> Research · methods, synthesis, the person it was for</div>
+  <h2>147 observations pointed to <span class="gt">eight recurring themes</span>.</h2>
+  <p class="lede">Layered deliberately: benchmark the macro landscape, then talk to people, and let the synthesis, not the brief, set the structure.</p>
+  <div class="methods mt" id="methods"></div>
+
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Affinity synthesis · ranked by weight</div><div class="fig-t">Six themes of friction, two of ambition</div></div><div class="chips" id="thChips"><button class="chip on" data-f="all">All 8</button><button class="chip" data-f="f">Friction · 6</button><button class="chip" data-f="a">Latent ambition · 2</button></div></div>
+    <div class="themes">
+      <div id="thBars" role="list"></div>
+      <div class="quote" id="thQuote" aria-live="polite"></div>
+    </div>
+    <div class="take"><span><b>Every theme became a design response.</b> Pick a bar to hear it in a user's words and see what it turned into.</span></div>
+  </figure>
+
+  <div class="grid2">
+    <figure class="fig survey" data-x-t="Survey signal" data-x="From 120 staff: 85% relied on monthly utility bills, 73% named cost as the primary motivator, 67% flagged compliance reporting as the top pain, 91% were open to real-time behaviour change, and only 43% could demonstrate impact today.">
+      <div class="fig-h"><div><div class="fig-k">Survey · 120 staff</div><div class="fig-t">The motivation gap</div></div></div>
+      <svg id="survey" viewBox="0 0 480 250" role="img" aria-label="Survey results bar chart"></svg>
+      <div class="take"><span><b>Motivation sits at 91%. Capability sits at 43%.</b> The design job was to close that 48-point gap.</span></div>
+    </figure>
+    <figure class="fig">
+      <div class="fig-h"><div><div class="fig-k">Primary persona</div><div class="fig-t">Who the reframe was built around</div></div></div>
+      <div class="persona">
+        <div class="avatar">SC</div>
+        <div>
+          <h3>Sarah Chen</h3><div style="font-size:13px;color:var(--mut)">Facility Manager · 42 · 15+ yrs · manages 12 staff</div>
+          <p style="margin:12px 0 0;font-size:14.5px">“My role is to make sustainability metrics meaningful to everyone from executives to maintenance staff, but I need the right tools.”</p>
+          <div style="margin-top:14px;font-family:var(--f-mono);font-size:11px;color:var(--dim)">HOW HER DAY SPLITS</div>
+          <div class="daybar" id="daybar"><i style="flex-grow:40;background:var(--blue)">Office 40%</i><i style="flex-grow:50;background:var(--green)">Field 50%</i><i style="flex-grow:10;background:var(--cyan)">10</i></div>
+          <div style="font-size:11.5px;color:var(--dim)">Office · field · meetings. Half her day is away from a desk, so the product had to read on a tablet in a corridor.</div>
+        </div>
+      </div>
+      <div class="gf">
+        <div><h4 style="color:var(--green)">Goals</h4><ul><li>Cut operating cost</li><li>Shift reactive → preventative</li><li>Secure funding by showing gains</li><li>Better staff allocation</li></ul></div>
+        <div><h4 style="color:var(--crit)">Frustrations</h4><ul><li>Six systems; 7–10 h/wk on reports</li><li>70% of work is reactive</li><li>Small issues found when costly</li><li>Hard to justify budget</li></ul></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ INSIGHT ============ -->
+<section id="insight">
+  <div class="eyebrow"><span class="phase a">A</span> The pivotal insight</div>
+  <h2>Motivation wasn't the bottleneck. <span class="gt">Visibility was.</span></h2>
+  <p class="lede">Six of eight themes described friction; two described ambition held back by it. The job wasn't to motivate change. It was to remove the friction blocking it.</p>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Loop comparison · one cycle each</div><div class="fig-t">The reactive loop vs the proactive loop</div></div><button class="btn ghost" id="loopBtn">↻ Replay both loops</button></div>
+    <div class="loops">
+      <div class="loop"><div class="loop-h"><b style="color:var(--warn)">Today · reactive</b><span class="mono" style="font-size:12px;color:var(--mut)" id="loopA">cycle ≈ 3:42+</span></div><svg id="loopSvgA" viewBox="-50 0 500 320"></svg></div>
+      <div class="loop"><div class="loop-h"><b style="color:var(--green)">Falcon View · proactive</b><span class="mono" style="font-size:12px;color:var(--mut)" id="loopB">cycle ≈ 1:04</span></div><svg id="loopSvgB" viewBox="-50 0 500 320"></svg></div>
+    </div>
+    <div class="take"><span><b>Same four beats, opposite order of knowledge.</b> In the old loop people discover the problem last. In the new one, the problem finds the person first.</span></div>
+  </figure>
+</section>
+
+<!-- ============ BLUEPRINT ============ -->
+<section id="blueprint">
+  <div class="eyebrow"><span class="phase a">A</span> Service blueprint · the current state, end to end</div>
+  <h2>The patient barely sees it. Behind the line of visibility, <span class="gt">every resource decision ran on paper</span>.</h2>
+  <p class="lede">Six journey stages, ten layers. Red cells are manual or paper-based. Pick a stage to light its column and read the pain point next to the Falcon View fix.</p>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Emotion vs load · two lines, one scale (0–100)</div><div class="fig-t">Patient sentiment recovers. Staff manual load never does.</div></div><div class="legend-ev" style="margin:0"><span><svg width="18" height="6"><line x1="0" y1="3" x2="18" y2="3" stroke="var(--falcon-c12)" stroke-width="3"/></svg> Patient sentiment</span><span><svg width="18" height="6"><line x1="0" y1="3" x2="18" y2="3" stroke="var(--falcon-c16)" stroke-width="3" stroke-dasharray="4 3"/></svg> Staff manual load</span></div></div>
+    <div class="scroll-x"><div style="min-width:920px"><svg id="bpCurve" viewBox="0 0 920 190" role="img" style="width:100%;height:auto;display:block" aria-label="Patient sentiment and staff load by stage"></svg><div class="bp-grid" id="bpGrid"></div></div></div>
+    <div class="bp-det" id="bpDet" aria-live="polite"></div>
+    <div class="take"><span><b>The pattern is the point.</b> Manual work fills nearly every backstage cell, peaking at resource monitoring. That is exactly the surface Falcon View replaced.</span></div>
+  </figure>
+</section>
+
+<!-- ============ PRINCIPLES ============ -->
+<section id="principles">
+  <div class="eyebrow"><span class="phase a">A</span> Design principles · what every screen had to honour</div>
+  <h2>Five principles that turned <span class="gt">data into decisions</span>.</h2>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Principle playground · each one, working</div><div class="fig-t">Try them</div></div></div>
+    <div class="pr-tabs chips" id="prTabs"></div>
+    <div class="pr" id="pr"></div>
+  </figure>
+</section>
+
+<!-- ============ ALIGNMENT ============ -->
+<section id="align">
+  <div class="eyebrow"><span class="phase t">T</span> Alignment · four roles wanted four things</div>
+  <h2>Four teams, four first questions, <span class="gt">one shared surface</span>.</h2>
+  <div class="grid2">
+    <figure class="fig sh">
+      <div class="fig-h"><div><div class="fig-k">Stakeholder map · power × interest</div><div class="fig-t">The move that reshaped the build</div></div><button class="btn ghost" id="shBtn">↗ Show the move</button></div>
+      <svg id="shSvg" viewBox="0 0 480 400" role="img" aria-label="Stakeholder power interest map"></svg>
+      <div class="take"><span><b>Maintenance crews: low power, high stake.</b> Nearly treated as recipients, promoted to a primary audience. Positions are qualitative.</span></div>
+    </figure>
+    <figure class="fig">
+      <div class="fig-h"><div><div class="fig-k">Role lenses · one data model</div><div class="fig-t">What each role sees first</div></div></div>
+      <div class="lens" id="lens" style="grid-template-columns:1fr 1fr"></div>
+      <div class="dm-core"><b>One data model</b> · four role-aware default views · resolved by who is looking</div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ IA ============ -->
+<section id="ia">
+  <div class="eyebrow"><span class="phase a">A</span> Information architecture · one system, eight modules</div>
+  <h2>Eight modules hang off <span class="gt">one shared data model</span>.</h2>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Sitemap tree · glowing nodes carry an explainer</div><div class="fig-t">Pick a module, then a node</div></div>
+      <div class="chips" style="gap:16px;font-size:13px;color:var(--mut)"><span><b class="mono" style="color:var(--fg);font-size:18px" data-count="8">8</b> modules</span><span><b class="mono" style="color:var(--fg);font-size:18px" data-count="91">91</b> surfaces &amp; data points</span><span><b class="mono" style="color:var(--fg);font-size:18px" data-count="4">4</b> roles</span></div></div>
+    <div class="ia" id="iaWrap">
+      <svg id="iaSvg" aria-hidden="true"></svg>
+      <div class="ia-root" id="iaRoot">◆ Falcon<small>shared data model</small></div>
+      <div class="ia-mods" id="iaMods" role="tablist"></div>
+      <div><div class="ia-tree" id="iaTree"></div><div class="ia-det" id="iaDet"></div></div>
+    </div>
+  </figure>
+</section>
+
+<!-- ============ PRODUCT ============ -->
+<section id="product">
+  <div class="eyebrow"><span class="phase a">A</span> Product · Falcon View, the build</div>
+  <h2>One map, one visual language, <span class="gt">four role-aware front doors</span>.</h2>
+  <p class="lede">Fourteen screens from the shipped product, in the order a user drills through them: map, network, building, floor, room, then act. Pick a role to see its front door. Tap a numbered pin to read what that part of the screen does.</p>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Drill path · one map, six levels</div><div class="fig-t">Every screen is one click from the one above it</div></div></div>
+    <div class="scroll-x"><div class="drill" id="drill"></div></div>
+  </figure>
+  <figure class="fig gal" id="gal">
+    <div class="fig-h"><div><div class="fig-k">Shipped screens · annotated</div><div class="fig-t" id="galTitle"></div></div>
+      <div class="chips" id="galRoles"></div></div>
+    <div class="strip-wrap"><div class="strip" id="galStrip" role="tablist" aria-label="Screens"></div></div>
+    <div class="gal-body">
+      <div class="shot-col">
+        <div class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i><span id="galCrumb"></span><span class="cnt mono" id="galCount"></span></div>
+          <div class="shot" id="galShot"><img id="galImg" alt="" decoding="async"><div class="pins" id="galPins"></div></div>
+        </div>
+        <div class="shot-ctl"><button class="btn ghost" id="galPrev" aria-label="Previous screen">← Prev</button><span class="hint-t">Tap the screen to enlarge · ← → keys to move</span><button class="btn ghost" id="galNext" aria-label="Next screen">Next →</button></div>
+      </div>
+      <div class="pnl" id="galPanel" aria-live="polite"></div>
+    </div>
+  </figure>
+  <div class="lb" id="lb" hidden><button class="lb-x" id="lbX" aria-label="Close">✕</button><img id="lbImg" alt=""></div>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Exception surfacing · live stream</div><div class="fig-t">240 readings a shift go in. 18 reach a human.</div></div><div class="mono" style="font-size:13px;color:var(--mut)">surfaced this shift <b id="fCount" style="color:var(--green);font-size:20px">0</b> / 18</div></div>
+    <canvas id="funnel" aria-label="Animated stream of readings filtered to ranked exceptions"></canvas>
+    <div class="take"><span><b>The anomaly finds the user.</b> Routine readings stream, log and stay quiet. Only the ranked exceptions break through to a one-tap confirm.</span></div>
+  </figure>
+</section>
+
+<!-- ============ IMPACT ============ -->
+<section id="impact">
+  <div class="eyebrow"><span class="phase r">R</span> Impact · tested, piloted, reported</div>
+  <h2>From spreadsheets to live data: 3:42 became <span class="gt">1:04</span>.</h2>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Hero metric · time to decision <span class="tag m">Measured</span></div></div><button class="btn ghost" id="watchBtn">↻ Replay</button></div>
+    <div class="hero-m">
+      <div class="watch mono gt" id="watch">1:04</div>
+      <div>
+        <div class="tbars">
+          <div class="tb"><div class="l"><span>Spreadsheets + radio</span><span class="mono">222 s</span></div><div class="t"><i id="tbA" style="background:var(--warn)"></i></div></div>
+          <div class="tb"><div class="l"><span>Falcon View, round 3</span><span class="mono">64 s</span></div><div class="t"><i id="tbB" style="background:var(--green)"></i></div></div>
+        </div>
+        <div class="math">3:42 = 222 s · 1:04 = 64 s<br>222 − 64 = 158 s saved<br>158 ÷ 222 = 0.71 → <b>71% less time</b></div>
+      </div>
+    </div>
+  </figure>
+
+  <figure class="fig rounds">
+    <div class="fig-h"><div><div class="fig-k">Usability rounds · concept → round 3</div><div class="fig-t" id="rdTitle">Faster in every round</div></div><div class="chips" id="rdChips"></div></div>
+    <div class="scroll-x"><svg id="rdSvg" viewBox="0 0 960 300" role="img" aria-label="Metric across usability rounds" style="min-width:620px"></svg></div>
+    <p class="note" id="rdNote"></p>
+  </figure>
+
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Scorecard · spreadsheet workflow vs Falcon View</div><div class="fig-t">Outcomes after 12 months, tagged by evidence</div></div><div class="chips" id="scChips"><button class="chip on" data-f="all">All</button><button class="chip" data-f="m">Measured</button><button class="chip" data-f="rp">Reported</button><button class="chip" data-f="md">Modelled</button><button class="chip" data-f="ob">Observed</button></div></div>
+    <div id="sc"></div>
+    <div class="annx mt2">
+      <div><span class="tag rp">Reported</span><div class="v mono"><span data-count="320">320</span>%</div><div class="l">first-year ROI on the platform build · client business case</div></div>
+      <div><span class="tag ob">Observed</span><div class="v mono">1 → 8</div><div class="l">hospitals scaled from a single pilot</div></div>
+      <div><span class="tag rp">Reported</span><div class="v">LEED Gold</div><div class="l">network certification · +18% CO₂ footprint cut</div></div>
+    </div>
+    <details class="reg"><summary>Evidence register &amp; model assumptions</summary>
+      <table class="regt"><thead><tr><th>Measure</th><th>Result</th><th>Boundary</th></tr></thead><tbody>
+        <tr><td>Time to decision</td><td class="mono">3:42 → 1:04</td><td>Simulated scenarios, small sample. Not live incident resolution.</td></tr>
+        <tr><td>Task completion</td><td class="mono">31 → 54 → 78 → 89%</td><td>Seven tasks per round, small cohort.</td></tr>
+        <tr><td>NASA-TLX</td><td class="mono">74 → 58 → 42 → 31</td><td>Post-session scores.</td></tr>
+        <tr><td>SUS</td><td class="mono">44 → 68 → 82 → 92</td><td>Final cohort provisional (pilot).</td></tr>
+        <tr><td>Energy / water / ROI</td><td class="mono">−25% · −30% · 320%</td><td>Client-reported, 12-month review. Attribution shared with parallel changes.</td></tr>
+        <tr><td>Adoption</td><td class="mono">72% daily, 18 mo</td><td>Observed from usage. Scaled 1 → 8 sites.</td></tr>
+      </tbody></table>
+      <ul style="font-size:13px;color:var(--mut);margin:0 0 16px;padding-left:18px;display:grid;gap:4px">
+        <li>240 readings and events per shift, from the three-shift log audit; today each is typed by hand.</li>
+        <li>About 45 seconds per manual entry; about 10 seconds per Falcon confirmation.</li>
+        <li>Shared sheets updated in ~4-hour batches, so data is ~2 hours old on average.</li>
+        <li>Reporting at ~15 hours/month per officer; ~3 hours to review an auto-generated report.</li>
+        <li>5-second refresh and one-tap confirmation are validated in testing, not yet live at all sites.</li>
+      </ul>
+    </details>
+  </figure>
+</section>
+
+<!-- ============ BUSINESS ============ -->
+<section id="business">
+  <div class="eyebrow"><span class="phase r">R</span> Business &amp; organisational impact</div>
+  <h2>Faster decisions turn into <span class="gt">energy, hours and evidence</span> the organisation can count.</h2>
+  <figure class="fig chain" id="chainFig">
+    <div class="fig-h"><div><div class="fig-k">Impact chain · design change → business outcome</div><div class="fig-t">Hover or tap a chain to trace it</div></div></div>
+    <div class="scroll-x"><svg id="chainSvg" viewBox="0 0 980 330" role="img" aria-label="Impact chain"></svg></div>
+  </figure>
+  <figure class="fig">
+    <div class="fig-h"><div><div class="fig-k">Who is affected · 4 roles, 3 kinds of change</div></div><div class="chips" id="whoChips"><button class="chip on" data-f="all">All</button><button class="chip" data-f="g">↑ Gains time</button><button class="chip" data-f="c">⇄ Role changes</button><button class="chip" data-f="s">◇ Needs support</button></div></div>
+    <div class="who" id="who">
+      <div class="wc" data-k="g"><div class="r">Facility Manager</div><span class="k" style="color:var(--green)">↑ GAINS TIME</span><p>Triage in seconds, not a morning of reconciliation. The reframe was built around her.</p></div>
+      <div class="wc" data-k="g"><div class="r">Administrator</div><span class="k" style="color:var(--green)">↑ GAINS TIME</span><p>A board-ready cost and compliance story on demand, no two-week scramble.</p></div>
+      <div class="wc" data-k="c"><div class="r">Sustainability Officer</div><span class="k" style="color:var(--blue)">⇄ ROLE CHANGES</span><p>From compiling reports to reviewing an automated audit trail and acting on evidence.</p></div>
+      <div class="wc" data-k="s"><div class="r">Maintenance Lead</div><span class="k" style="color:var(--warn)">◇ NEEDS SUPPORT</span><p>From firefighting to a routed queue. Needed training and in-app tips to trust the new flow.</p></div>
+    </div>
+  </figure>
+  <div class="grid2">
+    <figure class="fig funnel2">
+      <div class="fig-h"><div><div class="fig-k">Adoption funnel · network</div><div class="fig-t">Where rollouts usually collapse, this one held</div></div></div>
+      <div class="row"><div class="l">Trained<small>all roles before go-live</small></div><div class="t"><i data-w="100"></i></div><div class="v">100%</div></div>
+      <div class="row"><div class="l">First week active<small>across four roles</small></div><div class="t"><i data-w="88"></i></div><div class="v">88%</div></div>
+      <div class="row"><div class="l">Daily active, 18 mo<small>observed</small></div><div class="t"><i data-w="72"></i></div><div class="v">72%</div></div>
+    </figure>
+    <figure class="fig steps">
+      <div class="fig-h"><div><div class="fig-k">Rollout · sites live by phase</div><div class="fig-t">Each phase scaled only when the last met its guardrails</div></div></div>
+      <svg id="stepSvg" viewBox="0 0 480 220" role="img" aria-label="Sites live by phase"></svg>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ REFLECTION ============ -->
+<section id="reflection">
+  <div class="eyebrow"><span class="phase x">✦</span> Reflection · what carries forward</div>
+  <h2>Reframe the problem, protect attention, and <span class="gt">say what the system can't do</span>.</h2>
+  <p class="lede">Each card holds a learning on the front and what I'd change next time on the back. Tap to flip.</p>
+  <div class="refl mt" id="refl">
+    <div class="rc" tabindex="0" role="button"><div class="rc-in"><div class="rc-f"><span class="k">LEARNING 01</span><h3>The reframe was the real deliverable</h3><p>Moving from "sustainability dashboard" to "the one view four roles act on this morning" reorganised everything downstream.</p><span class="hint">tap · next time ↻</span></div><div class="rc-b"><span class="k">NEXT TIME</span><h3>Hold the KPI ceiling from day one</h3><p>I let stakeholder requests push the first canvas to 12 KPIs; testing forced the cut to ≤7 anyway. I'd defend the ceiling from the start.</p><span class="hint">tap · back ↻</span></div></div></div>
+    <div class="rc" tabindex="0" role="button"><div class="rc-in"><div class="rc-f"><span class="k">LEARNING 02</span><h3>Low-power users can be the real audience</h3><p>Maintenance crews scored low power, high stake, and were nearly treated as recipients. Promoting them shaped the alert-and-work-order flow.</p><span class="hint">tap · next time ↻</span></div><div class="rc-b"><span class="k">NEXT TIME</span><h3>Bring maintenance in earlier</h3><p>Their position surfaced late and reshaped the build. That insight was cheap to get and expensive to get late.</p><span class="hint">tap · back ↻</span></div></div></div>
+    <div class="rc" tabindex="0" role="button"><div class="rc-in"><div class="rc-f"><span class="k">LEARNING 03</span><h3>Augment beats replace</h3><p>The clean-slate rebuild is the instinct; the evidence said the opposite. Wrapping the trusted legacy system is why adoption held.</p><span class="hint">tap · next time ↻</span></div><div class="rc-b"><span class="k">NEXT TIME</span><h3>Make security a week-1 stream</h3><p>IT's SSO and IoT concerns nearly stalled rollout. Next time, security research runs from the first week, not the last.</p><span class="hint">tap · back ↻</span></div></div></div>
+  </div>
+</section>
+
+<footer><span>Smart Hospital Management System · Falcon View · Case study</span><span>Anupam Sarkar · Lead UX Designer · 2024</span></footer>
+</main>
+<script>
+(function(){
+"use strict";
+var RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var NS='http://www.w3.org/2000/svg';
+function $(s,r){return (r||document).querySelector(s);}
+function $$(s,r){return [].slice.call((r||document).querySelectorAll(s));}
+function S(tag,a,parent){var e=document.createElementNS(NS,tag);for(var k in a)e.setAttribute(k,a[k]);if(parent)parent.appendChild(e);return e;}
+function T(parent,x,y,txt,a){a=a||{};a.x=x;a.y=y;var t=S('text',a,parent);t.textContent=txt;return t;}
+function wrap(str,max){var w=str.split(' '),lines=[],cur='';w.forEach(function(x){if((cur+' '+x).trim().length>max&&cur){lines.push(cur);cur=x;}else cur=(cur+' '+x).trim();});if(cur)lines.push(cur);return lines;}
+function TW(parent,x,y,str,max,lh,a){a=a||{};a.x=x;a.y=y;var t=S('text',a,parent);wrap(str,max).forEach(function(l,i){var ts=S('tspan',{x:x,dy:i?lh:0},t);ts.textContent=l;});return t;}
+function onView(el,fn,th){if(!el)return;if(!('IntersectionObserver' in window)){fn();return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){fn();io.unobserve(e.target);}});},{threshold:th||.3});io.observe(el);}
+function ease(p){return 1-Math.pow(1-p,3);}
+function tween(dur,step,done){if(RM){step(1);if(done)done();return;}var st=null;function f(now){if(!st)st=now;var p=Math.min((now-st)/dur,1);step(ease(p));if(p<1)requestAnimationFrame(f);else if(done)done();}requestAnimationFrame(f);}
+function mmss(s){s=Math.round(s);return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2);}
+var tip=$('#tip');
+function showTip(e,html){tip.innerHTML=html;tip.style.opacity=1;var x=e.clientX+14,y=e.clientY+14;if(x+250>innerWidth)x=e.clientX-254;tip.style.left=x+'px';tip.style.top=y+'px';}
+function hideTip(){tip.style.opacity=0;}
+window.__cs={$:$,$$:$$,S:S,T:T,TW:TW,wrap:wrap,onView:onView,tween:tween,mmss:mmss,RM:RM,showTip:showTip,hideTip:hideTip,ease:ease};
+
+/* ---------- segmented control helper ---------- */
+function seg(el,cb){var pill=$('.pill',el),btns=$$('button',el);
+  function set(b){btns.forEach(function(x){x.setAttribute('aria-pressed',x===b);});pill.style.left=b.offsetLeft+'px';pill.style.width=b.offsetWidth+'px';}
+  btns.forEach(function(b,i){b.addEventListener('click',function(){set(b);cb(i,true);});});
+  requestAnimationFrame(function(){set(btns[0]);});addEventListener('resize',function(){set($('[aria-pressed="true"]',el));});
+  return function(i){set(btns[i]);};}
+window.__cs.seg=seg;
+
+/* ---------- rail + progress ---------- */
+var secs=[['overview','Overview'],['summary','30-sec'],['lead','How I led'],['statement','Statement'],['pressures','Pressures'],['friction','Friction'],['ecosystem','Ecosystem'],['memory','Load'],['research','Research'],['insight','Insight'],['blueprint','Blueprint'],['principles','Principles'],['align','Alignment'],['ia','Architecture'],['product','Product'],['impact','Impact'],['business','Business'],['reflection','Reflection']];
+var rail=$('#rail');
+secs.forEach(function(s){var b=document.createElement('button');b.innerHTML='<i></i><span>'+s[1]+'</span>';b.onclick=function(){$('#'+s[0]).scrollIntoView({behavior:RM?'auto':'smooth'});};rail.appendChild(b);});
+var rb=$$('button',rail),prog=$('#prog i');
+function onScroll(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight,y=h.scrollTop||document.body.scrollTop;prog.style.width=(max>0?y/max*100:0)+'%';
+  var cur=0;secs.forEach(function(s,i){var el=document.getElementById(s[0]);if(el&&el.getBoundingClientRect().top<=160)cur=i;});rb.forEach(function(b,i){b.classList.toggle('on',i===cur);});}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* ---------- explainer popovers ---------- */
+$$('[data-x]').forEach(function(el){var d=document.createElement('i');d.className='xdot';
+  var target=el.classList.contains('kpi')?el.querySelector('.l'):el.classList.contains('fig')?el.querySelector('.fig-t'):el.classList.contains('fr')?el.querySelector('b'):el.classList.contains('donut')?null:el;
+  if(target)target.appendChild(d);});
+var openPop=null,openEl=null;
+function closePop(){if(openPop){openPop.remove();openPop=null;}openEl=null;}
+document.addEventListener('click',function(e){var t=e.target.closest('[data-x]');
+  if(!t||e.target.closest('button,.chip,svg .eco-n')){if(!e.target.closest('.pop'))closePop();return;}
+  if(openEl===t){closePop();return;}closePop();openEl=t;
+  var p=document.createElement('div');p.className='pop';p.innerHTML='<h4>'+t.getAttribute('data-x-t')+'</h4><p>'+t.getAttribute('data-x')+'</p>';document.body.appendChild(p);
+  var r=t.getBoundingClientRect(),pw=p.offsetWidth,ph=p.offsetHeight,sx=scrollX,sy=scrollY;
+  var left=Math.max(12+sx,Math.min(r.left+sx+r.width/2-pw/2,sx+innerWidth-pw-12)),top=r.bottom+sy+10;
+  if(r.bottom+ph+20>innerHeight)top=r.top+sy-ph-10;p.style.left=left+'px';p.style.top=top+'px';requestAnimationFrame(function(){p.classList.add('in');});openPop=p;});
+addEventListener('scroll',closePop,{passive:true});
+
+/* ---------- count-up (text already shows final value at rest) ---------- */
+$$('[data-count]').forEach(function(el){onView(el,function(){var t=parseFloat(el.getAttribute('data-count')),dec=t%1!==0;tween(1100,function(p){el.textContent=dec?(t*p).toFixed(1):Math.round(t*p);});},.6);});
+
+/* ---------- hero pulse ---------- */
+var cv=$('#pulse');
+if(cv&&!RM){var ctx=cv.getContext('2d'),W,H,tt=0;function rs(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}rs();addEventListener('resize',rs);
+  (function draw(){ctx.clearRect(0,0,W,H);var mid=H*.42;
+    for(var L=0;L<3;L++){ctx.beginPath();var amp=16+L*10,sp=.011-L*.002;
+      for(var x=0;x<=W;x+=5){var seg2=((x*sp)+tt*.02+L)%6.283,b;if(seg2>2.6&&seg2<3.0)b=-amp*2.4*Math.sin((seg2-2.6)/.4*Math.PI);else b=Math.sin(x*sp+tt*.02+L*2)*amp*.25;var y=mid+b+L*40;x?ctx.lineTo(x,y):ctx.moveTo(x,y);}
+      ctx.strokeStyle=['var(--falcon-k01)','var(--falcon-k02)','var(--falcon-k03)'][L];ctx.lineWidth=L?1.1:1.8;ctx.stroke();}
+    tt++;requestAnimationFrame(draw);})();}
+
+/* ---------- hero convergence ---------- */
+(function(){var svg=$('#conv');if(!svg)return;var C=260;
+  var sys=['BMS','Energy portal A','Energy portal B','Water sheet','Maint. log','Incident tracker','Email'];
+  var scat=[[90,95],[420,70],[470,250],[400,440],[150,450],[40,300],[250,40]];
+  var defs=S('defs',{},svg);var g=S('radialGradient',{id:'cg'},defs);S('stop',{offset:'0%','stop-color':'var(--falcon-c12)'},g);S('stop',{offset:'100%','stop-color':'var(--falcon-c11)'},g);
+  var ring=S('circle',{cx:C,cy:C,r:190,fill:'none',stroke:'var(--falcon-c06)','stroke-dasharray':'2 6',opacity:0},svg);
+  var lines=[],nodes=[],parts=[];
+  sys.forEach(function(n,i){var ln=S('path',{fill:'none','stroke-width':1.5},svg);lines.push(ln);});
+  sys.forEach(function(n,i){var gg=S('g',{},svg);var c=S('circle',{r:9,fill:'var(--falcon-c04)','stroke-width':2},gg);var t=T(gg,0,0,n,{'font-size':14,'text-anchor':'middle',class:'tf'});nodes.push({g:gg,c:c,t:t,a:-Math.PI/2+i*2*Math.PI/7});
+    for(var k=0;k<2;k++)parts.push({i:i,o:Math.random(),el:S('circle',{r:2.6,fill:'var(--falcon-c16)'},svg)});});
+  var core=S('g',{},svg);var halo=S('circle',{cx:C,cy:C,r:62,fill:'url(#cg)',opacity:.12},core);var cc=S('circle',{cx:C,cy:C,r:44,fill:'var(--falcon-c04)','stroke-width':2.5},core);
+  var ct=T(core,C,C-2,'You',{'text-anchor':'middle','font-size':15,'font-weight':600,class:'tf'});var cs=T(core,C,C+16,'6 logins by 9am',{'text-anchor':'middle','font-size':9.5});
+  var state=0,k=0,target=0,auto=true,last=0;
+  function pos(i,kk){var a=nodes[i].a,rx=C+190*Math.cos(a),ry=C+190*Math.sin(a);return [scat[i][0]+(rx-scat[i][0])*kk,scat[i][1]+(ry-scat[i][1])*kk];}
+  function frame(now){var dk=(target-k);k+=dk*(RM?1:.06);
+    ring.setAttribute('opacity',k*.9);
+    nodes.forEach(function(n,i){var p=pos(i,k);n.g.setAttribute('transform','translate('+p[0].toFixed(1)+','+p[1].toFixed(1)+')');
+      n.c.setAttribute('stroke',k>.5?'var(--falcon-c13)':'var(--falcon-c16)');n.t.setAttribute('y',p[1]<C?-16:24);
+      var mx=(p[0]+C)/2+(1-k)*((i%2?1:-1)*60),my=(p[1]+C)/2+(1-k)*((i%2?-1:1)*40);
+      lines[i].setAttribute('d','M'+p[0].toFixed(1)+' '+p[1].toFixed(1)+' Q'+mx.toFixed(1)+' '+my.toFixed(1)+' '+C+' '+C);
+      lines[i].setAttribute('stroke',k>.5?'var(--falcon-c13)':'var(--falcon-c16)');lines[i].setAttribute('stroke-opacity',.25+k*.35);lines[i].setAttribute('stroke-dasharray',k>.5?'none':'3 6');});
+    cc.setAttribute('stroke',k>.5?'var(--falcon-c12)':'var(--falcon-c16)');halo.setAttribute('opacity',.05+k*.25);halo.setAttribute('r',58+k*14+(RM?0:Math.sin(now/400)*3*k));
+    ct.textContent=k>.5?'Falcon View':'You';cs.textContent=k>.5?'one live picture':'6 logins by 9am';
+    parts.forEach(function(p){var spd=k>.5?.012:.0035;if(!RM)p.o=(p.o+spd*(k>.5?1:(Math.sin(now/300+p.i)>0?1:.1)))%1;var ln=lines[p.i],L=ln.getTotalLength(),pt=ln.getPointAtLength(L*p.o);p.el.setAttribute('cx',pt.x);p.el.setAttribute('cy',pt.y);p.el.setAttribute('fill',k>.5?'var(--falcon-c12)':'var(--falcon-c16)');});
+    if(auto&&!RM&&now-last>4200){last=now;target=target?0:1;setSeg(target);}
+    requestAnimationFrame(frame);}
+  var setSeg=seg($('#convSeg'),function(i,user){if(user)auto=false;target=i;});
+  requestAnimationFrame(frame);})();
+
+/* ---------- KPI micro charts ---------- */
+$$('[data-spark]').forEach(function(s){var d=s.getAttribute('data-spark').split(',').map(Number),mx=Math.max.apply(0,d),mn=Math.min.apply(0,d);
+  var pts=d.map(function(v,i){return [4+i*(112/(d.length-1)),24-((v-mn)/((mx-mn)||1))*18];});
+  var dd=pts.map(function(p,i){return (i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1);}).join(' ');
+  S('path',{d:dd+' L116 28 L4 28Z',fill:'var(--falcon-c12)',opacity:.08},s);var l=S('path',{d:dd,fill:'none',stroke:'var(--falcon-c12)','stroke-width':2,'stroke-linecap':'round','vector-effect':'non-scaling-stroke'},s);
+  var e=pts[pts.length-1];S('circle',{cx:e[0],cy:e[1],r:3,fill:'var(--falcon-c12)'},s);
+  onView(s,function(){if(RM)return;var L=l.getTotalLength();l.style.strokeDasharray=L;l.style.strokeDashoffset=L;l.getBoundingClientRect();l.style.transition='stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1)';l.style.strokeDashoffset=0;});});
+$$('[data-bar]').forEach(function(s){var d=s.getAttribute('data-bar').split(',').map(Number),mx=Math.max(d[0],d[1]);
+  var a=S('rect',{x:0,y:3,height:9,rx:2,width:120,fill:'var(--falcon-c07)'},s),b=S('rect',{x:0,y:16,height:9,rx:2,width:120*d[1]/mx,fill:'var(--falcon-c12)'},s);
+  onView(s,function(){var w=120*d[1]/mx;tween(1000,function(p){b.setAttribute('width',w*p);});});});
+
+/* ---------- STAR ---------- */
+(function(){var D=[['S','s','Situation','Energy, water, compliance and maintenance lived in 7 disconnected systems.','Acting on a critical reading took 3:42, and 37% of staff time went to hunting for data.'],
+  ['T','t','Task','Lead UX for 6 months, leading 3 designers.','Working with a PM, environmental engineers, IT and sustainability consultants to give four roles one place to act.'],
+  ['A','a','Action','Three calls: reframe dashboard → decision engine, augment the legacy system, cap the canvas at ≤7 readings.','Plus a role-aware IA over one shared data model, and a rule that AI recommends while a person confirms.'],
+  ['R','r','Result','1:04 to decide (−71%), 25% energy saved, 72% daily adoption.','Shipped a pilot and scaled it from 1 to 8 hospitals.'],
+  ['✦','x','Next','Prove the model never hides a critical alert on replayed shifts.','Then extend offline resilience across all sites.']];
+  var wrapEl=$('#star'),tabs=$('.star-tabs',wrapEl),panel=$('#starPanel'),cur=0;
+  D.forEach(function(d,i){var b=document.createElement('button');b.className='star-tab';b.setAttribute('role','tab');b.innerHTML='<span class="phase '+d[1]+'">'+d[0]+'</span>'+d[2]+'<span class="bar"></span>';b.onclick=function(){go(i);};
+    $('.bar',b).addEventListener('animationend',function(){go((cur+1)%D.length);});tabs.appendChild(b);});
+  function go(i){cur=i;$$('.star-tab',tabs).forEach(function(b,j){b.classList.remove('on');void b.offsetWidth;b.classList.toggle('on',j===i);});
+    panel.innerHTML='<div class="fadein"><div class="eyebrow" style="margin-bottom:10px">'+D[i][2]+'</div><div class="big">'+D[i][3]+'</div><p>'+D[i][4]+'</p></div>';}
+  wrapEl.addEventListener('mouseenter',function(){wrapEl.classList.add('paused');});wrapEl.addEventListener('mouseleave',function(){wrapEl.classList.remove('paused');});
+  if(RM)wrapEl.classList.add('paused');go(0);})();
+
+/* ---------- ownership map ---------- */
+(function(){var svg=$('#ownSvg');if(!svg)return;
+  var people=[{k:'me',x:480,y:44,w:300,n:'Me · Lead UX',s:'Strategy & system',items:['UX strategy','Role-aware IA','Research synthesis','Canvas pattern','Workshops','Decision log']},
+    {k:'p1',x:160,y:150,w:250,n:'Product designer 1',s:'Network & building views',items:['Falcon View','Building detail','Energy & water']},
+    {k:'p2',x:480,y:150,w:250,n:'Product designer 2',s:'Work orders & alerts',items:['Alert triage','Work-order queue','Floor utilization']},
+    {k:'jr',x:800,y:150,w:250,n:'Junior designer',s:'Compliance & reporting',items:['Audit trail','Report templates','KPI Works']}];
+  var lg=S('g',{},svg);
+  [1,2,3].forEach(function(i){var p=people[i];S('path',{d:'M480 100 V112 H'+p.x+' V124',fill:'none',stroke:'var(--falcon-c07)','stroke-width':1.5,class:'flowline'},lg);
+    S('path',{d:'M'+p.x+' 236 V272',fill:'none',stroke:'var(--falcon-c07)','stroke-width':1.5,class:'flowline'},lg);});
+  var sysR=S('rect',{x:40,y:272,width:880,height:42,rx:10,fill:'var(--falcon-c24)',stroke:'var(--falcon-c12)','stroke-opacity':.5},svg);
+  T(svg,480,298,'Shared design system · 32 components · one visual language for 6 surfaces',{'text-anchor':'middle','font-size':13,'font-weight':600,class:'tf'});
+  var groups={};
+  people.forEach(function(p,i){var g=S('g',{class:'node-b','data-k':p.k,tabindex:0},svg);groups[p.k]=g;
+    S('rect',{x:p.x-p.w/2,y:p.y-26,width:p.w,height:52,rx:12,fill:i?'var(--falcon-c05)':'var(--falcon-c32)',stroke:i?'var(--falcon-c07)':'var(--falcon-c11)','stroke-width':1.5},g);
+    T(g,p.x,p.y-4,p.n,{'text-anchor':'middle','font-size':14,'font-weight':600,class:'tf'});T(g,p.x,p.y+15,p.s,{'text-anchor':'middle','font-size':12});
+    if(i){p.items.forEach(function(it,j){var yy=196+j*0;var w=74,xx=p.x-117+j*80;var gr=S('g',{},g);S('rect',{x:xx,y:192,width:w,height:40,rx:8,fill:'var(--falcon-c26)',stroke:'var(--falcon-c06)'},gr);TW(gr,xx+w/2,208,it,11,12,{'text-anchor':'middle','font-size':10.5});});}});
+  var meItems=people[0].items.join(' · ');T(svg,480,92,meItems,{'text-anchor':'middle','font-size':11,fill:'var(--falcon-c10)'}).setAttribute('fill','var(--falcon-c10)');
+  var chips=$('#ownChips');[['all','Everyone'],['me','Me'],['p1','PD 1'],['p2','PD 2'],['jr','Junior']].forEach(function(c,i){var b=document.createElement('button');b.className='chip'+(i?'':' on');b.textContent=c[1];b.onclick=function(){$$('.chip',chips).forEach(function(x){x.classList.toggle('on',x===b);});
+    Object.keys(groups).forEach(function(k){groups[k].style.opacity=(c[0]==='all'||c[0]===k)?1:.2;groups[k].classList.toggle('on',c[0]===k);});};chips.appendChild(b);});
+  Object.keys(groups).forEach(function(k){groups[k].style.transition='opacity .3s';});})();
+
+/* ---------- week + ramp ---------- */
+(function(){var wks=$$('#week .wk'),btn=$('#wkPlay'),run=false;
+  function play(){if(run)return;run=true;var i=0;(function step(){wks.forEach(function(w,j){w.classList.toggle('on',j===i);});i++;if(i<=wks.length)setTimeout(step,RM?50:900);else{run=false;wks.forEach(function(w){w.classList.remove('on');});}})();}
+  btn.onclick=play;onView($('#week'),play,.5);
+  var steps=$$('#ramp .lvl');onView($('#ramp'),function(){if(RM)return;steps.forEach(function(s,i){s.style.transition='none';s.style.transform='scaleY(0)';s.getBoundingClientRect();setTimeout(function(){s.style.transition='';s.style.transform='scaleY(1)';},150+i*300);});},.5);})();
+
+/* ---------- decision map ---------- */
+(function(){var svg=$('#dmSvg');if(!svg)return;
+  var D=[{t:'Reframe: dashboard → decision engine',w:'Week 3',q:'What is this product, really?',stake:'The brief and three weeks of charting work framed it as a sustainability reporting tool.',yes:'A decision engine organised around four roles',no:'A sustainability dashboard with ESG charts and a 3D twin',push:'Stakeholders expected ESG charts and a 3D twin showpiece.',trade:'Less demo spectacle, for a system people act on every morning.',out:'Time-to-decision fell 3:42 → 1:04'},
+    {t:'Augment the legacy system, don\'t replace it',w:'Architecture',q:'Rebuild the building system, or wrap it?',stake:'A clean-slate rebuild would look better, and the brief leaned that way.',yes:'Wrap the trusted BMS with a legible layer',no:'A clean-slate flagship platform',push:'There was real appetite for a flagship new platform.',trade:'Harder integration with legacy data quirks, for trust and adoption.',out:'Adoption held at 72% after 18 months'},
+    {t:'AI recommends, a person confirms',w:'Architecture',q:'Who dispatches: the AI or a person?',stake:'Fully automatic escalation would look faster on paper.',yes:'AI ranks and recommends; one confirm tap',no:'AI escalates and dispatches on its own',push:'The brief asked for AI that could dispatch on its own.',trade:'One confirm tap per action.',out:'Met the clinical-safety rule; named audit trail; became the AI principles'}];
+  var tabs=$('#dmTabs');
+  D.forEach(function(d,i){var b=document.createElement('button');b.className='chip'+(i?'':' on');b.textContent=(i+1)+' · '+d.t.split(':')[0].split(',')[0];b.onclick=function(){$$('.chip',tabs).forEach(function(x){x.classList.toggle('on',x===b);});draw(i);};tabs.appendChild(b);});
+  function box(g,x,y,w,h,fill,stroke,dash,delay){var r=S('rect',{x:x,y:y,width:w,height:h,rx:10,fill:fill,stroke:stroke,'stroke-width':1.5,class:'dm-node',style:'animation-delay:'+delay+'s;transform-origin:'+(x+w/2)+'px '+(y+h/2)+'px'},g);if(dash)r.setAttribute('stroke-dasharray','5 5');return r;}
+  function edge(g,d,stroke,dash,delay){var p=S('path',{d:d,fill:'none',stroke:stroke,'stroke-width':2},g);if(dash)p.setAttribute('stroke-dasharray','5 5');else{var L=p.getTotalLength();p.style.setProperty('--l',L);p.style.animationDelay=delay+'s';p.parentNode.classList.add('dm-draw');}return p;}
+  function draw(i){var d=D[i];svg.innerHTML='';$('#dmTitle').textContent=d.t+' · '+d.w;
+    var g=S('g',{},svg),eg=S('g',{},g),ng=S('g',{},g);
+    edge(eg,'M220 150 C250 150 250 70 280 70','var(--falcon-c12)',false,.2);
+    S('path',{d:'M220 150 C250 150 250 230 280 230',fill:'none',stroke:'var(--falcon-c10)','stroke-width':1.5,'stroke-dasharray':'5 5'},eg);
+    edge(eg,'M520 70 H560','var(--falcon-c12)',false,.6);edge(eg,'M760 70 H790','var(--falcon-c12)',false,.9);
+    S('path',{d:'M520 230 H560',fill:'none',stroke:'var(--falcon-c10)','stroke-width':1.5,'stroke-dasharray':'5 5'},eg);
+    box(ng,20,96,200,108,'var(--falcon-c32)','var(--falcon-c11)',false,0);T(ng,34,118,'DESIGN QUESTION',{'font-size':10,class:'tm',fill:'var(--falcon-c11)'}).setAttribute('fill','var(--falcon-c11)');TW(ng,34,140,d.q,24,17,{'font-size':14,'font-weight':600,class:'tf'});
+    TW(ng,34,184,'',30,13,{});
+    box(ng,280,34,240,72,'var(--falcon-c24)','var(--falcon-c12)',false,.25);T(ng,294,54,'✓ CHOSEN',{'font-size':10,class:'tm'}).setAttribute('fill','var(--falcon-c12)');TW(ng,294,74,d.yes,32,15,{'font-size':12.5,'font-weight':600,class:'tf'});
+    var rj=S('g',{opacity:.6},ng);box(rj,280,194,240,72,'var(--falcon-c26)','var(--falcon-c10)',true,.3);T(rj,294,214,'✕ NOT CHOSEN',{'font-size':10,class:'tm'});TW(rj,294,234,d.no,32,15,{'font-size':12.5});
+    box(ng,560,30,200,80,'var(--falcon-c05)','var(--falcon-c07)',false,.6);T(ng,572,50,'TRADE-OFF ACCEPTED',{'font-size':10,class:'tm'});TW(ng,572,68,d.trade,28,14,{'font-size':12,class:'tf'});
+    box(ng,790,30,155,80,'var(--falcon-c24)','var(--falcon-c12)',false,.9);T(ng,802,50,'OUTCOME',{'font-size':10,class:'tm'}).setAttribute('fill','var(--falcon-c12)');TW(ng,802,68,d.out,21,14,{'font-size':12,'font-weight':600,class:'tf'});
+    var pg=S('g',{opacity:.7},ng);box(pg,560,194,385,72,'var(--falcon-c26)','var(--falcon-c15)',true,.4);T(pg,572,214,'PUSHBACK',{'font-size':10,class:'tm'}).setAttribute('fill','var(--falcon-c15)');TW(pg,572,232,d.push,58,14,{'font-size':12});
+    T(ng,20,236,'AT STAKE',{'font-size':10,class:'tm'});TW(ng,20,254,d.stake,32,14,{'font-size':11.5});
+    $('#dmTake').innerHTML='<span><b>'+d.out+'.</b> The rejected path stays on the map, dotted, with the pushback it carried.</span>';}
+  draw(0);})();
+
+/* ---------- reframe strike ---------- */
+onView($('#reframe'),function(){setTimeout(function(){$('#reframe').classList.add('go');},400);},.6);
+
+/* ---------- pressures ---------- */
+(function(){var P=[
+ {ic:'⚡',d:'Energy consumption',v:'2.8×',u:'31 vs 11 kWh/ft²·yr vs a typical commercial building',f:[['40%','HVAC alone draws <b>40% of total hospital energy</b>; operating rooms demand 3–4× a standard space.','r'],['30–40','kWh per MRI scan. Imaging and lab equipment create a <b>heavy baseline</b>.','r'],['62%','of hospitals in our study ran building systems <b>15+ years old</b>, a 15–25% efficiency loss.','o'],['Bldg','energy was monitored only at <b>building level</b>, with no department or equipment detail.','o']]},
+ {ic:'💧',d:'Water management',v:'133k',u:'gallons a day per hospital, about 280 homes',f:[['3.7 d','average leak detection delay. Monitoring caught leaks only after <b>visible damage</b>.','o'],['10–15%','of total water consumption <b>wasted</b> through undetected leaks.','r'],['8–12%','of hospital utility cost is water, <b>and rising</b>.','r'],['Med','dialysis, labs and sterilisation need medical-grade water and create heavy wastewater load.','r']]},
+ {ic:'☁',d:'Environmental impact',v:'11k',u:'tCO₂ a year per hospital; healthcare is 4.4% of global emissions',f:[['29 lb','of waste per patient per day, including regulated medical waste.','r'],['Weeks','sustainability data sat in disconnected systems, so impact assessment was <b>delayed by weeks</b>.','o'],['73%','of surveyed administrators cited <b>community perception</b> as a key driver.','o'],['4.4%','of all global greenhouse-gas emissions come from healthcare operations.','r']]},
+ {ic:'▦',d:'Operational silos',v:'7.2',u:'management systems per facility, minimal integration',f:[['3–5 d','average delay <b>communicating an issue</b> between departments.','o'],['65%','of facilities managed sustainability budgets <b>separately</b> from operations.','o'],['4 ways','critical data split across paper, databases, the BMS and tribal knowledge.','o'],['Isolated','sustainability initiatives sat inside single departments.','o']]},
+ {ic:'◇',d:'Compliance & reporting',v:'+45%',u:'more regulation over the past decade',f:[['120–180 h','of staff time per certification application (LEED, WELL, Energy Star).','r'],['78%','of sustainability managers reported <b>audit-prep stress and overtime</b>.','o'],['Estimates','without monitoring, impact was validated on <b>estimates, not measured data</b>.','o'],['Many','board, community and regulators each needed different formats.','o']]}];
+  var row=$('#pressRow'),det=$('#pressDet');
+  function show(i){$$('.press',row).forEach(function(b,j){b.classList.toggle('on',j===i);});
+    det.innerHTML=P[i].f.map(function(f,k){return '<div class="pf" style="animation-delay:'+(k*.07)+'s"><div class="n">'+f[0]+'</div><div><p>'+f[1]+'</p><span class="tag '+(f[2]==='r'?'rp':'ob')+'">'+(f[2]==='r'?'Reported':'Observed')+'</span></div></div>';}).join('');}
+  P.forEach(function(p,i){var b=document.createElement('button');b.className='press';b.innerHTML='<div class="pd">'+p.ic+' '+p.d+'</div><div class="pv mono">'+p.v+'</div><div class="pu">'+p.u+'</div>';b.onclick=function(){show(i);};row.appendChild(b);});
+  show(0);})();
+})();
+</script>
+<script>
+(function(){
+"use strict";
+var C=window.__cs,$=C.$,$$=C.$$,S=C.S,T=C.T,TW=C.TW,onView=C.onView,tween=C.tween,mmss=C.mmss,RM=C.RM;
+
+/* ---------- friction race ---------- */
+(function(){var svg=$('#raceSvg');if(!svg)return;
+  var A=['Critical reading','BMS','Energy portal A','Energy portal B','Water sheet','Maint. log','Incident tracker','Email','Phone tree','Decision'];
+  var B=['Critical reading','Ranked in Falcon View','Location + owner attached','Confirm','Decision'];
+  T(svg,20,26,'BEFORE · SPREADSHEET + RADIO',{'font-size':11,class:'tm'}).setAttribute('fill','var(--falcon-c16)');
+  T(svg,20,196,'AFTER · FALCON VIEW',{'font-size':11,class:'tm'}).setAttribute('fill','var(--falcon-c12)');
+  function lane(names,y,zig,col){var x0=50,x1=910,pts=names.map(function(n,i){return [x0+i*(x1-x0)/(names.length-1),y+(zig&&i>0&&i<names.length-1?(i%2?-22:22):0)];});
+    var d=pts.map(function(p,i){return (i?'L':'M')+p[0].toFixed(1)+' '+p[1];}).join(' ');
+    S('path',{d:d,fill:'none',stroke:'var(--falcon-c06)','stroke-width':3,'stroke-linejoin':'round'},svg);
+    var prog=S('path',{d:d,fill:'none',stroke:col,'stroke-width':3,'stroke-linejoin':'round','stroke-linecap':'round'},svg);
+    var L=prog.getTotalLength();prog.style.strokeDasharray=L;prog.style.strokeDashoffset=0;
+    var cs=pts.map(function(p,i){var g=S('g',{},svg);var c=S('circle',{cx:p[0],cy:p[1],r:i===0||i===names.length-1?9:7,fill:'var(--falcon-c04)',stroke:col,'stroke-width':2},g);
+      var up=zig?(p[1]<y):false,ty=zig?(p[1]<y?p[1]-16:p[1]+26):p[1]+30;if(!zig)ty=p[1]-18;
+      TW(g,p[0],ty,names[i],zig?12:16,12,{'text-anchor':'middle','font-size':11,class:'tf'});return c;});
+    var dot=S('circle',{r:6,fill:col,cx:pts[0][0],cy:pts[0][1]},svg);dot.style.filter='drop-shadow(0 0 6px '+col+')';
+    return {prog:prog,L:L,dot:dot,cs:cs,pts:pts,col:col};}
+  var la=lane(A,100,true,'var(--falcon-c16)'),lb=lane(B,250,false,'var(--falcon-c12)');
+  var clkA=$('#clkA'),clkB=$('#clkB');clkA.textContent='3:42';clkB.textContent='1:04';
+  var running=false;
+  function run(){if(running)return;running=true;var st=null,DA=222,DB=64,speed=RM?2000:30;
+    [la,lb].forEach(function(l){l.prog.style.strokeDashoffset=l.L;l.cs.forEach(function(c){c.setAttribute('fill','var(--falcon-c04)');});});
+    function f(now){if(!st)st=now;var sec=(now-st)/1000*speed;
+      [[la,DA,clkA],[lb,DB,clkB]].forEach(function(o){var l=o[0],p=Math.min(sec/o[1],1);l.prog.style.strokeDashoffset=l.L*(1-p);var pt=l.prog.getPointAtLength(l.L*p);l.dot.setAttribute('cx',pt.x);l.dot.setAttribute('cy',pt.y);
+        o[2].textContent=mmss(Math.min(sec,o[1]));l.cs.forEach(function(c,i){if(pt.x>=l.pts[i][0]-1)c.setAttribute('fill',l.col);});});
+      if(sec<DA)requestAnimationFrame(f);else running=false;}
+    requestAnimationFrame(f);}
+  $('#raceBtn').onclick=run;onView(svg,run,.5);
+  la.cs.forEach(function(c){c.setAttribute('fill','var(--falcon-c16)');});lb.cs.forEach(function(c){c.setAttribute('fill','var(--falcon-c12)');});
+  var e=la.pts[la.pts.length-1];la.dot.setAttribute('cx',e[0]);la.dot.setAttribute('cy',e[1]);e=lb.pts[lb.pts.length-1];lb.dot.setAttribute('cx',e[0]);lb.dot.setAttribute('cy',e[1]);})();
+
+/* ---------- donut 37% ---------- */
+(function(){var svg=$('#donut');if(!svg)return;var R=80,Cc=2*Math.PI*R;
+  S('circle',{cx:100,cy:100,r:R,fill:'none',stroke:'var(--falcon-c06)','stroke-width':18},svg);
+  var arc=S('circle',{cx:100,cy:100,r:R,fill:'none',stroke:'var(--falcon-c15)','stroke-width':18,'stroke-linecap':'round',transform:'rotate(-90 100 100)','stroke-dasharray':Cc,'stroke-dashoffset':Cc*(1-.37)},svg);
+  var t=T(svg,100,104,'37%',{'text-anchor':'middle','font-size':38,'font-weight':650,class:'tf tm'});T(svg,100,128,'of work-time',{'text-anchor':'middle','font-size':12});T(svg,100,143,'spent finding data',{'text-anchor':'middle','font-size':12});
+  onView(svg,function(){tween(1300,function(p){arc.setAttribute('stroke-dashoffset',Cc*(1-.37*p));t.textContent=Math.round(37*p)+'%';});},.5);})();
+
+/* ---------- ecosystem orbits ---------- */
+(function(){var svg=$('#ecoSvg');if(!svg)return;var Cx=300,Cy=300;
+  var O={inner:{r:110,col:'var(--falcon-c12)',sz:24,lbl:'Inner orbit · acts every morning',spd:.00006},middle:{r:190,col:'var(--falcon-c13)',sz:16,lbl:'Middle orbit · tech & vendor partners',spd:-.00004},outer:{r:268,col:'var(--falcon-c11)',sz:12,lbl:'Outer orbit · forces & community',spd:.000025}};
+  var N=[['inner','Facility Managers','Primary persona. Opens Falcon View first thing to triage 20 buildings and decide what needs her this morning.'],
+    ['inner','Administrators','Need a board-ready cost and compliance story on demand, without a two-week scramble.'],
+    ['inner','Sustainability Officers','Need measured evidence and an audit trail for LEED and ESG, instead of estimates.'],
+    ['inner','Maintenance crews','Low power, high stake. Promoted to a primary audience; they receive routed work orders with location and likely cause.'],
+    ['middle','IoT sensor vendors','Stream readings through an edge gateway at each site into the shared data model.'],
+    ['middle','Cloud infrastructure','Hosts the shared data model and the ~5-second refresh.'],
+    ['middle','Legacy BMS','The building-management system engineers trust. Wrapped with a legible layer, not replaced.'],
+    ['middle','Utility providers','Bills and tariffs. The monthly-bill habit 85% of surveyed staff relied on started here.'],
+    ['middle','Equipment suppliers','HVAC, pumps and lighting. Their faults become routed work orders.'],
+    ['outer','Regulators','Set the compliance rules. Each certification cost 120–180 staff hours before automation.'],
+    ['outer','ESG investors & boards','Want measured, not estimated, sustainability evidence.'],
+    ['outer','LEED / net-zero targets','The scoreboard for ambition. The network reached LEED Gold.'],
+    ['outer','Energy-cost volatility','Turns every wasted kWh into budget pressure.'],
+    ['outer','Patients & community','Barely see the system but feel comfort and trust; 73% of administrators cite community perception.']];
+  Object.keys(O).forEach(function(k,i){S('circle',{cx:Cx,cy:Cy,r:O[k].r,fill:'none',stroke:O[k].col,'stroke-opacity':.22,'stroke-dasharray':i?'2 6':'none',class:'o'+(i+1)},svg);});
+  var bg=S('circle',{cx:Cx,cy:Cy,r:110,fill:'var(--falcon-c12)',opacity:.04,class:'o1'},svg);
+  var linkG=S('g',{},svg);
+  var core=S('g',{class:'eco-n',tabindex:0},svg);S('circle',{cx:Cx,cy:Cy,r:58,fill:'var(--falcon-c12)',opacity:.08},core);S('circle',{class:'c',cx:Cx,cy:Cy,r:44,fill:'var(--falcon-c04)',stroke:'var(--falcon-c12)','stroke-width':2},core);
+  T(core,Cx,Cy-2,'Falcon',{'text-anchor':'middle','font-size':14,'font-weight':650,class:'tf'});T(core,Cx,Cy+14,'View',{'text-anchor':'middle','font-size':12});
+  var counts={inner:0,middle:0,outer:0},tot={inner:4,middle:5,outer:5};
+  var nodes=N.map(function(n,i){var o=O[n[0]],idx=counts[n[0]]++,a0=-Math.PI/2+idx*2*Math.PI/tot[n[0]]+(n[0]==='middle'?.3:n[0]==='outer'?.6:0);
+    var cls=n[0]==='inner'?'o1':n[0]==='middle'?'o2':'o3';
+    var ln=S('line',{stroke:o.col,'stroke-opacity':n[0]==='inner'?.35:.12,'stroke-width':n[0]==='inner'?1.6:1,class:cls},linkG);
+    var g=S('g',{class:'eco-n '+cls,tabindex:0,role:'button','aria-label':n[1]},svg);var c=S('circle',{class:'c',r:o.sz,fill:'var(--falcon-c04)',stroke:o.col,'stroke-width':2},g);
+    var dot=S('circle',{r:o.sz*.32,fill:o.col},g);var t=T(g,0,0,n[1],{'font-size':n[0]==='inner'?12.5:11,'text-anchor':'middle',class:n[0]==='inner'?'tf':''});
+    var obj={n:n,o:o,a:a0,g:g,ln:ln,t:t};g.addEventListener('click',function(){pick(obj);});g.addEventListener('keydown',function(e){if(e.key==='Enter')pick(obj);});
+    g.addEventListener('mouseenter',function(){paused=true;});g.addEventListener('mouseleave',function(){paused=false;});return obj;});
+  var panel=$('#ecoPanel'),paused=false,sel=null;
+  function pick(o){sel=o;nodes.forEach(function(x){x.g.classList.toggle('on',x===o);});
+    panel.innerHTML='<div class="fadein"><div class="o" style="color:'+o.o.col+'">'+o.o.lbl+'</div><h3>'+o.n[1]+'</h3><p>'+o.n[2]+'</p></div>';}
+  core.addEventListener('click',function(){panel.innerHTML='<div class="fadein"><div class="o" style="color:var(--falcon-c12)">Focal node</div><h3>Falcon View</h3><p>One role-aware platform over one shared data model. Fourteen actors around it; four of them act on it every morning.</p></div>';});
+  pick(nodes[3]);
+  var last=performance.now();
+  function frame(now){var dt=now-last;last=now;
+    nodes.forEach(function(x){if(!paused&&!RM)x.a+=x.o.spd*dt*(x.n[0]==='inner'?1:1)*4;var px=Cx+x.o.r*Math.cos(x.a),py=Cy+x.o.r*Math.sin(x.a);
+      x.g.setAttribute('transform','translate('+px.toFixed(1)+','+py.toFixed(1)+')');x.ln.setAttribute('x1',Cx);x.ln.setAttribute('y1',Cy);x.ln.setAttribute('x2',px.toFixed(1));x.ln.setAttribute('y2',py.toFixed(1));
+      var below=py>Cy;x.t.setAttribute('y',below?x.o.sz+15:-x.o.sz-7);});
+    requestAnimationFrame(frame);}
+  requestAnimationFrame(frame);
+  var eco=$('#eco'),chips=$('#ecoChips');chips.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;$$('.chip',chips).forEach(function(x){x.classList.toggle('on',x===b);});
+    eco.classList.remove('f-inner','f-middle','f-outer');if(b.dataset.f!=='all')eco.classList.add('f-'+b.dataset.f);});})();
+
+/* ---------- cognitive load ---------- */
+(function(){var rows=[[6,1,'systems to reconcile','by hand, each morning','→ 1 live surface',function(v){return Math.round(v);}],
+  [240,18,'readings / shift','typed manually','→ streamed, 18 confirms',function(v){return Math.round(v);}],
+  [120,0.083,'data age','when someone reads it','→ ~5 s refresh',function(v){return v>=60?'~'+(v/60).toFixed(v>=90?0:1)+' h':v>=1?'~'+Math.round(v)+' m':'~5 s';}],
+  [12,7,'KPIs on screen','in the first concept','→ ≤ 7, rest one tap down',function(v){return Math.round(v);}],
+  [15,3,'h reporting / month','compiled manually','→ auto, review only',function(v){return Math.round(v)+' h';}],
+  [70,null,'% reactive work','firefighting','→ surfaced before it escalates',function(v){return Math.round(v)+'%';}]];
+  var host=$('#loadRows');
+  rows.forEach(function(r){var d=document.createElement('div');d.className='lrow';d.innerHTML='<div class="num">'+r[5](r[0])+'</div><div class="lab"><b>'+r[2]+'</b><span>'+r[3]+'</span><div class="lbar"><i style="width:100%"></i></div></div><div class="after">'+r[4]+'</div>';host.appendChild(d);r.el=d;});
+  var grid=$('#memGrid');for(var i=0;i<28;i++){var dd=document.createElement('i');if(i>=24)dd.className='off';grid.appendChild(dd);}
+  var dots=$$('i',grid),memV=$('#memV'),state=0;
+  function set(s){if(s===state)return;state=s;$('#load').classList.toggle('on',!!s);
+    rows.forEach(function(r){var num=$('.num',r.el),bar=$('.lbar i',r.el);
+      if(r[1]===null){bar.style.width=s?'100%':'100%';bar.style.opacity=s?.25:1;return;}
+      var from=s?r[0]:r[1],to=s?r[1]:r[0];tween(900,function(p){num.textContent=r[5](from+(to-from)*p);});
+      bar.style.width=(s?Math.max(r[1]/r[0]*100,2):100)+'%';});
+    var from=s?24:7,to=s?7:24;tween(800,function(p){memV.textContent=Math.round(from+(to-from)*p);});
+    dots.forEach(function(d,i){setTimeout(function(){d.className=s?(i<7?'ok':'off'):(i<24?'':'off');},RM?0:i*25);});}
+  C.seg($('#loadSeg'),function(i){set(i);});})();
+
+/* ---------- research methods ---------- */
+(function(){var M=[[57,'Stakeholder interviews'],[120,'Quantitative surveys'],[5,'Hospital site audits'],[4,'Full-day shadowings'],[5,'Co-design workshops']];
+  var h=$('#methods');M.forEach(function(m){var d=document.createElement('div');d.className='mth';var dots='';for(var i=0;i<m[0];i++)dots+='<i></i>';
+    d.innerHTML='<div class="v mono" data-n="'+m[0]+'">'+m[0]+'</div><div class="l">'+m[1]+'</div><div class="dots">'+dots+'</div>';h.appendChild(d);
+    onView(d,function(){var v=$('.v',d),is=$$('.dots i',d);tween(1100,function(p){v.textContent=Math.round(m[0]*p);var n=Math.round(m[0]*p);is.forEach(function(x,j){x.style.opacity=j<n?.75:.08;});});},.5);});})();
+
+/* ---------- themes ---------- */
+(function(){var D=[['Data Fragmentation',412,'f','I log into three systems just to check water usage.','Unify the sources'],['Reactive Maintenance',387,'f','We only know about leaks when someone walks past one.','Surface before escalation'],
+  ['Operational Blind Spots',324,'f','I don\'t know which floor uses the most energy.','Make consumption legible'],['Compliance Burden',298,'f','Reporting eats 15 hours of my month.','Automate the audit trail'],
+  ['Cross-Role Friction',256,'f','Maintenance and sustainability never talk.','One shared data model'],['Latent Demand',218,'a','If I knew the cost, I\'d change my pattern.','Connect action to impact'],
+  ['Trust in Legacy Tools',192,'f','The old system works. Don\'t break it.','Augment, don\'t replace'],['Ambition + Pride',163,'a','I want LEED Gold. It\'s a personal goal.','Give ambition a scoreboard']];
+  var host=$('#thBars'),q=$('#thQuote'),MAX=450;
+  var ax=document.createElement('div');ax.className='tbar';ax.style.cursor='default';ax.innerHTML='<span class="n" style="font-size:11px;color:var(--dim);font-family:var(--f-mono)">WEIGHT · CODED REFS</span><div class="track" style="height:14px">'+[0,100,200,300,400].map(function(v){return '<span style="position:absolute;left:'+(v/MAX*100)+'%;font-size:10px;color:var(--dim);font-family:var(--f-mono);transform:translateX(-50%)">'+v+'</span>';}).join('')+'</div>';host.appendChild(ax);
+  D.forEach(function(d,i){var b=document.createElement('button');b.className='tbar';b.setAttribute('role','listitem');var col=d[2]==='f'?'var(--falcon-c13)':'var(--falcon-c12)',w=d[1]/MAX*100;
+    b.innerHTML='<span class="n">'+d[0]+'</span><span class="track"><span class="fill" style="width:'+w+'%;background:'+col+'"></span><span class="val" style="left:calc('+w+'% + 6px)">'+d[1]+'</span></span>';
+    b.onclick=function(){pick(i);};host.appendChild(b);d.el=b;d.w=w;});
+  function pick(i){var d=D[i];D.forEach(function(x,j){x.el.classList.toggle('on',j===i);});
+    q.innerHTML='<div class="fadein"><span class="tag '+(d[2]==='f'?'ob':'m')+'">'+(d[2]==='f'?'Friction':'Latent ambition')+'</span><blockquote>“'+d[3]+'”</blockquote><div style="font-size:12px;color:var(--dim);margin-bottom:8px;font-family:var(--f-mono)">'+d[0].toUpperCase()+' · '+d[1]+' REFS · RANK '+(i+1)+' OF 8</div><div class="resp">→ Design response: '+d[4]+'</div></div>';}
+  pick(0);
+  $('#thChips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;$$('#thChips .chip').forEach(function(x){x.classList.toggle('on',x===b);});
+    D.forEach(function(d){d.el.classList.toggle('dim',b.dataset.f!=='all'&&d[2]!==b.dataset.f);});});
+  onView(host,function(){if(RM)return;D.forEach(function(d,i){var f=$('.fill',d.el),v=$('.val',d.el);f.style.transition='none';v.style.transition='none';f.style.width=0;v.style.left='6px';f.getBoundingClientRect();
+    setTimeout(function(){f.style.transition='';v.style.transition='';f.style.width=d.w+'%';v.style.left='calc('+d.w+'% + 6px)';},80+i*70);});},.3);})();
+
+/* ---------- survey ---------- */
+(function(){var svg=$('#survey');if(!svg)return;var D=[['Rely on monthly bills',85],['Cost = top motivator',73],['Compliance is the pain',67],['Open to real-time change',91],['Can show impact today',43]];
+  var x0=160,x1=440,W=x1-x0;
+  [0,25,50,75,100].forEach(function(v){var x=x0+v/100*W;S('line',{x1:x,y1:14,x2:x,y2:222,stroke:'var(--falcon-c06)'},svg);T(svg,x,240,v+'%',{'text-anchor':'middle','font-size':10,class:'tm'});});
+  var bars=[];D.forEach(function(d,i){var y=24+i*40,col=i===3?'var(--falcon-c12)':i===4?'var(--falcon-c15)':'var(--falcon-c07)';T(svg,x0-10,y+13,d[0],{'text-anchor':'end','font-size':12,class:i>=3?'tf':''});
+    var r=S('rect',{x:x0,y:y,height:18,rx:3,width:d[1]/100*W,fill:col},svg);var t=T(svg,x0+d[1]/100*W+6,y+13,d[1]+'%',{'font-size':12,'font-weight':600,class:'tf tm'});bars.push([r,t,d[1]]);});
+  var gx=x0+43/100*W,gx2=x0+91/100*W,gy=24+4*40+28;
+  var gap=S('g',{},svg);S('path',{d:'M'+gx+' '+(gy-6)+' V'+gy+' H'+gx2+' V'+(24+3*40+22),fill:'none',stroke:'var(--falcon-c16)','stroke-width':1.5,'stroke-dasharray':'4 3'},gap);
+  T(gap,(gx+gx2)/2,gy+12,'48-point gap',{'text-anchor':'middle','font-size':11,'font-weight':600}).setAttribute('fill','var(--falcon-c16)');
+  onView(svg,function(){bars.forEach(function(b,i){var w=b[2]/100*W;tween(1000+i*120,function(p){b[0].setAttribute('width',w*p);b[1].setAttribute('x',x0+w*p+6);});});
+    gap.style.opacity=0;setTimeout(function(){gap.style.transition='opacity .6s';gap.style.opacity=1;},RM?0:1400);},.4);})();
+
+/* ---------- day split ---------- */
+onView($('#daybar'),function(){if(RM)return;var is=$$('#daybar i');var g=[40,50,10];is.forEach(function(i){i.style.flexGrow=0.001;});setTimeout(function(){is.forEach(function(i,k){i.style.flexGrow=g[k];});},100);},.6);
+
+/* ---------- loops ---------- */
+(function(){function loop(svg,labels,col,dur,timerEl,lbl){var cx=200,cy=160,R=110;svg.innerHTML='';
+  S('circle',{cx:cx,cy:cy,r:R,fill:'none',stroke:'var(--falcon-c06)','stroke-width':2},svg);
+  var trail=S('circle',{cx:cx,cy:cy,r:R,fill:'none',stroke:col,'stroke-width':3,transform:'rotate(-90 '+cx+' '+cy+')','stroke-linecap':'round'},svg);var Cc=2*Math.PI*R;trail.setAttribute('stroke-dasharray',Cc);trail.setAttribute('stroke-dashoffset',0);
+  var nodes=labels.map(function(l,i){var a=-Math.PI/2+i*Math.PI/2,x=cx+R*Math.cos(a),y=cy+R*Math.sin(a);var g=S('g',{},svg);
+    var c=S('circle',{cx:x,cy:y,r:12,fill:col,stroke:col,'stroke-width':2},g);T(g,x,y+4,String(i+1),{'text-anchor':'middle','font-size':11,'font-weight':700,fill:'var(--falcon-c21)'}).setAttribute('fill','var(--falcon-c21)');
+    var tx=x+(i===1?20:i===3?-20:0),ty=y+(i===0?-22:i===2?30:4),anc=i===1?'start':i===3?'end':'middle';
+    TW(g,tx,ty,l[0],14,13,{'text-anchor':anc,'font-size':12,'font-weight':600,class:'tf'});TW(g,tx,ty+(i===0?-0:14)+(i===0?14:0)+(i===0?-28:0),'',14,13,{});
+    return c;});
+  var big=T(svg,cx,cy+2,lbl,{'text-anchor':'middle','font-size':28,'font-weight':650,class:'tf tm'});T(svg,cx,cy+22,'decision time',{'text-anchor':'middle','font-size':11});
+  var dot=S('circle',{r:7,fill:col,cx:cx,cy:cy-R},svg);dot.style.filter='drop-shadow(0 0 6px '+col+')';
+  function play(){var secs=dur;tween(secs/30*1000,function(p){},null);var st=null;nodes.forEach(function(n){n.setAttribute('fill','var(--falcon-c04)');});
+    (function f(now){if(!st)st=now;var p=Math.min((now-st)/(secs/30*1000),1);if(RM)p=1;var a=-Math.PI/2+p*2*Math.PI;dot.setAttribute('cx',cx+R*Math.cos(a));dot.setAttribute('cy',cy+R*Math.sin(a));
+      trail.setAttribute('stroke-dashoffset',Cc*(1-p));big.textContent=mmss(secs*p);nodes.forEach(function(n,i){if(p>=i/4)n.setAttribute('fill',col);});if(p<1)requestAnimationFrame(f);})(performance.now());}
+  return play;}
+  var pa=loop($('#loopSvgA'),[['Notice late'],['Reconcile by hand'],['Guess the source'],['Act, maybe too late']],'var(--falcon-c16)',222,null,'3:42');
+  var pb=loop($('#loopSvgB'),[['Surfaced first'],['Context attached'],['Decide'],['Confirm & route']],'var(--falcon-c12)',64,null,'1:04');
+  function both(){pa();pb();}$('#loopBtn').onclick=both;onView($('#loopSvgA'),both,.5);})();
+
+/* ---------- blueprint ---------- */
+(function(){var M='<span class="m">';
+ var BP=[
+ {n:'Patient Admission',e:'😟',mood:'Anxious about wait times',sent:30,load:60,L:['Arrive at hospital · complete registration forms','Registration desk · paper forms · waiting area','Registers patient, assigns room, updates occupancy logs','Updates bed-management system #manually, assigns staff','Paper forms · basic scheduling software · clipboards','Registration system · #paper-based occupancy tracking','Reception lighting · basic electrical tracking','Public-restroom usage · basic tracking','Basic sorting guidelines · visitor waste tracking','Patient billing occupancy · #manual cost tracking'],
+  pain:'Occupancy lived in paper logs and a bed-management system updated by hand. Capacity was always a guess, and the morning started by reconciling it.',opp:'Falcon View streams occupancy and surfaces live capacity per building and floor, with no manual reconciliation to start the day.'},
+ {n:'Patient Care',e:'🤔',mood:'Expectant, concerned about care',sent:45,load:65,L:['Request assistance · use facilities','Patient rooms · call buttons · water/electrical controls','Attend to needs, #document resource usage, manage equipment','Order supplies · #document consumption per department','Patient charts · call system · #manual logs','Inventory management · equipment maintenance','Equipment power tracking · room energy usage','Patient-room water tracking · sterilisation usage','Medical-waste segregation · biohazard management','Department budget allocation · resource cost tracking'],
+  pain:'Resource use was documented by hand, department by department, so consumption was never legible at floor or equipment level.',opp:'Per-building, per-zone consumption streams automatically. "Which floor uses the most?" is answered on one screen.'},
+ {n:'Facilities & Ops',e:'😓',mood:'Comfort-focused, temperature concerns',sent:55,load:75,L:['Experience comfort (temperature, air quality)','Room thermostats · lighting controls · waste receptacles','Maintain environment, adjust conditions, report issues','#Schedule maintenance, coordinate repairs, log requests','Request forms · #manual thermostats · simple HVAC','Work-order systems · #manual HVAC controls','HVAC management · #manual thermostat control','Plumbing maintenance · #manual valve control','Waste collection schedules · air-quality monitoring','Maintenance costs · #manual calculations'],
+  pain:'HVAC and repairs were manual and reactive. Issues surfaced only when a patient was already uncomfortable or a system had failed.',opp:'Role-aware alerts route a work order with location and likely cause before it escalates. Firefighting becomes a tracked queue.'},
+ {n:'Resource Monitoring',e:'😐',mood:'No direct interaction',sent:50,load:90,L:['No direct interaction','No direct touchpoints','Read meters · #record consumption in spreadsheets','#Manually calculate consumption rates · compile data','Analog meters · #spreadsheet software · calculators','Utility meters · #manual data collection · paper logs','#Monthly meter readings · utility-bill tracking','#Monthly water-meter readings · allocations','Waste-volume tracking · #manual CO₂ calculations','Feeds reporting · no live cost view'],
+  pain:'Analog meters were read monthly into spreadsheets, so data was ~2 hours old on average and ~240 readings a shift were typed by hand.',opp:'~5-second refresh over the legacy building system. Sensors stream directly, leaving ~18 one-tap confirmations instead of 240 entries.'},
+ {n:'Reporting & Analysis',e:'😐',mood:'No direct interaction',sent:50,load:85,L:['No direct interaction','No direct touchpoints','Collect departmental reports · #file monthly reports','#Prepare reports manually · compare to benchmarks','Report templates · simple visualisation tools','#Spreadsheet software · #manual calculations','Energy usage reports · seasonal trend analysis','Water consumption reports · trend analysis','Waste reports · emissions calculations','#Compiled by hand from every source above'],
+  pain:'Reports were compiled by hand and compared to benchmarks manually: ~15 hours a month per officer, always weeks behind.',opp:'An automated audit trail. Officers review an auto-generated report instead of compiling it; reporting time falls about 80%.'},
+ {n:'Sustainability Mgmt',e:'🙂',mood:'May feel positive about eco practice',sent:75,load:70,L:['May notice certifications displayed','Signage · recycling stations · pamphlets','Promote sustainability initiatives','#Update documentation · prepare audit materials','Checklists · certification manuals · templates','Standards documentation · certification criteria','Efficiency-initiative planning · benchmarking','Conservation initiatives · consumption targets','Carbon-reduction planning · waste minimisation','Certification cost · #prepared from estimates'],
+  pain:'Certifications like LEED were validated on estimates, not measured data: 120–180 staff hours per application, and 78% of managers reported audit stress.',opp:'Continuous, measured evidence with LEED tracking built in. The network reached LEED Gold and audit prep stopped being a scramble.'}];
+ var lanes=['Patient action','Touchpoints','Staff · frontstage','Staff · backstage','Tools','Support process','Energy','Water','Waste & CO₂','Cost & reporting'];
+ var grid=$('#bpGrid'),det=$('#bpDet'),cells=[],heads=[],heats=[];
+ function el(cls,html){var d=document.createElement('div');d.className=cls;d.innerHTML=html||'';grid.appendChild(d);return d;}
+ el('ln','Stage');BP.forEach(function(s,i){var h=el('hd',s.e+' '+s.n);h.setAttribute('role','button');h.tabIndex=0;h.onclick=function(){pick(i);};h.onkeydown=function(e){if(e.key==='Enter')pick(i);};heads.push(h);cells[i]=[];});
+ lanes.forEach(function(ln,li){if(li===3){var v=el('vis','<span>LINE OF VISIBILITY</span>');}el('ln',ln);BP.forEach(function(s,i){var txt=s.L[li],man=txt.indexOf('#')>-1;var c=el('cell'+(man?' man':''),txt.replace(/#/g,''));cells[i].push(c);});});
+ el('ln','Manual cells');var mx=0;BP.forEach(function(s){s.mc=s.L.filter(function(t){return t.indexOf('#')>-1;}).length;mx=Math.max(mx,s.mc);});
+ BP.forEach(function(s,i){var h=el('heat','<i style="height:'+(s.mc/10*40)+'px"></i><span>'+s.mc+' of 10</span>');heats.push($('i',h));});
+ // curve
+ var svg=$('#bpCurve'),X=function(i){return 133+64+i*131.2;},Y=function(v){return 168-(v/100)*140;};
+ [0,50,100].forEach(function(v){S('line',{x1:130,x2:915,y1:Y(v),y2:Y(v),stroke:'var(--falcon-c06)'},svg);T(svg,120,Y(v)+4,String(v),{'text-anchor':'end','font-size':10,class:'tm'});});
+ T(svg,8,22,'SCORE 0–100',{'font-size':10,class:'tm'});
+ function pth(k){return BP.map(function(s,i){return (i?'L':'M')+X(i)+' '+Y(s[k]);}).join(' ');}
+ var guide=S('rect',{x:X(0)-62,y:10,width:124,height:170,rx:8,fill:'var(--falcon-c12)',opacity:.06},svg);
+ var lL=S('path',{d:pth('load'),fill:'none',stroke:'var(--falcon-c16)','stroke-width':2.5,'stroke-dasharray':'6 4'},svg),lS=S('path',{d:pth('sent'),fill:'none',stroke:'var(--falcon-c12)','stroke-width':3},svg);
+ BP.forEach(function(s,i){S('circle',{cx:X(i),cy:Y(s.load),r:4,fill:'var(--falcon-c04)',stroke:'var(--falcon-c16)','stroke-width':2},svg);S('circle',{cx:X(i),cy:Y(s.sent),r:5,fill:'var(--falcon-c04)',stroke:'var(--falcon-c12)','stroke-width':2.5},svg);
+   var hit=S('rect',{x:X(i)-60,y:8,width:120,height:175,fill:'var(--falcon-c23)',opacity:0,style:'cursor:pointer'},svg);hit.addEventListener('click',function(){pick(i);});
+   hit.addEventListener('mousemove',function(e){C.showTip(e,'<b>'+s.n+'</b><span>Sentiment '+s.sent+' · Staff load '+s.load+'</span><span>'+s.mood+'</span>');});hit.addEventListener('mouseleave',C.hideTip);});
+ T(svg,X(5)+14,Y(BP[5].sent)+4,'sentiment',{'font-size':10}).setAttribute('fill','var(--falcon-c12)');T(svg,X(3)+10,Y(BP[3].load)-8,'load peaks',{'font-size':10}).setAttribute('fill','var(--falcon-c16)');
+ onView(svg,function(){if(RM)return;[lS,lL].forEach(function(p,k){var L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=L;p.getBoundingClientRect();p.style.transition='stroke-dashoffset 1.6s cubic-bezier(.2,.8,.2,1) '+(k*.3)+'s';p.style.strokeDashoffset=0;
+   if(k)setTimeout(function(){p.style.transition='';p.style.strokeDasharray='6 4';p.style.strokeDashoffset=0;},2100);});},.4);
+ function pick(i){heads.forEach(function(h,j){h.classList.toggle('on',j===i);});cells.forEach(function(col,j){col.forEach(function(c){c.classList.toggle('col',j===i);});});
+   guide.setAttribute('x',X(i)-62);var s=BP[i];det.innerHTML='<div class="pain"><h4>⚠ Pain point · '+s.n+'</h4><p>'+s.pain+'</p></div><div class="opp"><h4>✦ Falcon View fix</h4><p>'+s.opp+'</p></div>';}
+ pick(3);})();
+})();
+</script>
+<script>
+(function(){
+"use strict";
+var C=window.__cs,$=C.$,$$=C.$$,S=C.S,T=C.T,TW=C.TW,onView=C.onView,tween=C.tween,mmss=C.mmss,RM=C.RM;
+
+/* ---------- principles playground ---------- */
+(function(){var host=$('#pr'),tabs=$('#prTabs'),timers=[];
+ var P=[
+ {k:'01 · Role-first',t:'Role-first, not feature-first',p:'What appears first is decided by who is looking. One data model, four lenses: the facility manager lands on alerts, the maintenance lead on a work queue.',demo:function(d){
+   var roles=[['Facility Manager','Alerts · which building needs me'],['Maintenance Lead','Work queue · what to fix, where'],['Administrator','Cost & compliance story'],['Sustainability Officer','Audit trail & evidence']];
+   d.innerHTML='<div class="demo-lbl">Pick a role · watch the first panel change</div><div class="chips" id="rfC"></div><div class="rf-tiles" id="rfT"></div>';
+   var cc=$('#rfC',d),tt=$('#rfT',d);roles.forEach(function(r,i){var b=document.createElement('button');b.className='chip'+(i?'':' on');b.textContent=r[0];b.onclick=function(){$$('.chip',cc).forEach(function(x){x.classList.toggle('on',x===b);});draw(i);};cc.appendChild(b);});
+   function draw(i){var order=[i].concat([0,1,2,3].filter(function(x){return x!==i;}));tt.innerHTML=order.map(function(o,j){return '<div class="rf-t'+(j?'':' first')+' fadein">'+(j?'':'<span style="font-size:11px;font-family:var(--f-mono);color:var(--green);display:block">LANDS FIRST</span>')+roles[o][1]+'</div>';}).join('');}draw(0);}},
+ {k:'02 · Severity = colour',t:'Colour means one thing: severity',p:'Cyan live, green healthy, amber attention, red act-now. Status colour is the only alarm, never decoration, and it always ships with a shape and a label.',demo:function(d){
+   var sv=[['var(--falcon-c13)','Live','<circle cx="9" cy="9" r="6" fill="none" stroke="var(--falcon-c13)" stroke-width="2.5"/>'],['var(--falcon-c17)','Healthy','<path d="M3 9.5l4 4 8-9" fill="none" stroke="var(--falcon-c17)" stroke-width="2.5"/>'],['var(--falcon-c16)','Attention','<path d="M9 2l7.5 13h-15z" fill="var(--falcon-c16)"/>'],['var(--falcon-c15)','Act now','<path d="M6 1.5h6l4.5 4.5v6L12 16.5H6L1.5 12V6z" fill="var(--falcon-c15)"/>']];
+   d.innerHTML='<div class="demo-lbl">Never colour alone</div><button class="btn ghost" id="cvdB">◐ Simulate colour-blind view</button><div class="sev" id="sevG">'+sv.map(function(s){return '<div class="sv" style="--c:'+s[0]+'"><svg width="18" height="18" viewBox="0 0 18 18">'+s[2]+'</svg><b>'+s[1]+'</b></div>';}).join('')+'</div><p class="note">Toggle the simulation: every status still reads by shape and label.</p>';
+   $('#cvdB',d).onclick=function(){$('#sevG',d).classList.toggle('cvd');};}},
+ {k:'03 · ≤ 7 readings',t:'A hard ceiling of seven',p:'At most seven primary readings per canvas, from control-room research. Decision latency degrades past that, so everything else lives one tap deeper. Stakeholders pushed the first concept to 12.',demo:function(d){
+   d.innerHTML='<div class="demo-lbl">Drag to add readings to the canvas</div><label for="sevR" style="font-size:13px">Readings on canvas: <b class="mono" id="sevN">7</b></label><input type="range" class="range" id="sevR" min="3" max="14" value="7"><div class="seven" id="sevT"></div><p class="note" id="sevM"></p>';
+   var names=['Energy','Water','Capacity','Incidents','CO₂','Cost','Rating','Visitors','Waste','Air','Contracts','Certs','Budget','Zones'];
+   function draw(n){$('#sevN',d).textContent=n;$('#sevT',d).innerHTML=names.slice(0,n).map(function(x,i){return '<i class="'+(i>=7?'over':'')+'" style="animation-delay:'+(i*.02)+'s">'+x+'</i>';}).join('');
+     $('#sevM',d).innerHTML=n>7?'<span style="color:var(--crit)">'+(n-7)+' over the ceiling.</span> These move one tap deeper.':'Within the ceiling. Each reading earns its place.';}
+   $('#sevR',d).oninput=function(e){draw(+e.target.value);};draw(7);}},
+ {k:'04 · Augment',t:'Augment the legacy system',p:'Wrap the building-management system the engineers trust and add a legible layer. Don\'t rip it out. Adoption depended on this.',demo:function(d){
+   d.innerHTML='<div class="demo-lbl">Layer, don\'t replace</div><button class="btn ghost" id="augB">＋ Add the Falcon layer</button><div class="layers3" id="augL"><div class="ly top">Falcon View · role-aware, legible layer</div><div class="ly base">Legacy BMS · the system engineers trust</div></div>';
+   var on=false;$('#augB',d).onclick=function(){on=!on;$('#augL',d).classList.toggle('on',on);this.textContent=on?'− Remove the layer':'＋ Add the Falcon layer';};
+   timers.push(setTimeout(function(){var b=$('#augB',d);if(b&&!on)b.click();},700));}},
+ {k:'05 · Honest when stale',t:'Honest when data is stale',p:'A dropped sensor is shown greyed with its age, never as live. Offline actions are queued, not lost.',demo:function(d){
+   d.innerHTML='<div class="demo-lbl">Two sensors · drop one</div><button class="btn ghost" id="stB">⨯ Drop sensor B</button><div class="stale-t"><div class="st" id="stA"><div class="a">SENSOR A · LIVE</div><div class="v">0</div><div class="a">kWh · updated now</div></div><div class="st" id="stBx"><div class="a">SENSOR B · LIVE</div><div class="v">0</div><div class="a">L/min · updated now</div></div></div><p class="note">Values are illustrative.</p>';
+   var a=212,b=48,dropped=false,age=0;function tick(){a+=Math.round(Math.random()*6-3);$('.v',$('#stA',d)).textContent=a;
+     var B=$('#stBx',d);if(!B)return;if(!dropped){b+=Math.round(Math.random()*4-2);$('.v',B).textContent=b;}else{age++;$$('.a',B)[1].textContent='last seen '+age+'s ago · not live';}}
+   tick();timers.push(setInterval(tick,1000));
+   $('#stB',d).onclick=function(){dropped=!dropped;age=0;var B=$('#stBx',d);B.classList.toggle('stale',dropped);$$('.a',B)[0].textContent=dropped?'SENSOR B · STALE':'SENSOR B · LIVE';if(!dropped)$$('.a',B)[1].textContent='L/min · updated now';this.textContent=dropped?'↺ Reconnect sensor B':'⨯ Drop sensor B';};}}];
+ P.forEach(function(p,i){var b=document.createElement('button');b.className='chip'+(i?'':' on');b.textContent=p.k;b.onclick=function(){$$('.chip',tabs).forEach(function(x){x.classList.toggle('on',x===b);});show(i);};tabs.appendChild(b);});
+ function show(i){timers.forEach(function(t){clearTimeout(t);clearInterval(t);});timers=[];var p=P[i];
+   host.innerHTML='<div class="pr-copy fadein"><div class="n">PRINCIPLE '+p.k.split(' ')[0]+'</div><h3>'+p.t+'</h3><p>'+p.p+'</p></div><div class="pr-demo fadein"></div>';p.demo($('.pr-demo',host));}
+ show(0);})();
+
+/* ---------- stakeholder map ---------- */
+(function(){var svg=$('#shSvg');if(!svg)return;var x0=50,x1=465,y0=16,y1=356,X=function(v){return x0+v*(x1-x0);},Y=function(v){return y1-v*(y1-y0);};
+ S('rect',{x:x0,y:y0,width:x1-x0,height:y1-y0,fill:'var(--falcon-c26)',stroke:'var(--falcon-c06)',rx:8},svg);
+ S('line',{x1:X(.5),y1:y0,x2:X(.5),y2:y1,stroke:'var(--falcon-c06)'},svg);S('line',{x1:x0,y1:Y(.5),x2:x1,y2:Y(.5),stroke:'var(--falcon-c06)'},svg);
+ [['Keep satisfied',.02,.97],['Manage closely',.52,.97],['Monitor',.02,.06],['Keep informed',.52,.06]].forEach(function(q){T(svg,X(q[1])+6,Y(q[2])+(q[2]>.5?10:0),q[0].toUpperCase(),{'font-size':9.5,class:'tm',fill:'var(--falcon-c10)'}).setAttribute('fill','var(--falcon-c10)');});
+ T(svg,(x0+x1)/2,y1+30,'Interest in the daily decision →',{'text-anchor':'middle','font-size':11});
+ var ty=T(svg,16,(y0+y1)/2,'Power →',{'text-anchor':'middle','font-size':11,transform:'rotate(-90 16 '+(y0+y1)/2+')'});
+ var hull=S('rect',{x:X(.64),y:Y(.93),width:X(.99)-X(.64),height:Y(.42)-Y(.93),rx:14,fill:'var(--falcon-c12)','fill-opacity':.06,stroke:'var(--falcon-c12)','stroke-dasharray':'5 4','stroke-width':1.5},svg);
+ var hl=T(svg,X(.66),Y(.93)+16,'PRIMARY AUDIENCE',{'font-size':9.5,class:'tm'});hl.setAttribute('fill','var(--falcon-c12)');
+ var N=[['Administrators',.8,.82,'var(--falcon-c12)'],['Facility managers',.9,.66,'var(--falcon-c12)'],['Sustainability officers',.76,.52,'var(--falcon-c12)'],['IT & security',.3,.78,'var(--falcon-c11)'],['Regulators',.16,.9,'var(--falcon-c11)'],['ESG board',.42,.68,'var(--falcon-c11)'],['Vendors',.22,.3,'var(--falcon-c10)'],['Patients',.36,.14,'var(--falcon-c10)']];
+ N.forEach(function(n){var g=S('g',{},svg);S('circle',{cx:X(n[1]),cy:Y(n[2]),r:7,fill:n[3]},g);T(g,X(n[1])+(n[1]>.7?-11:11),Y(n[2])+4,n[0],{'font-size':11.5,'text-anchor':n[1]>.7?'end':'start',class:'tf'});});
+ var mg=S('g',{},svg);var mc=S('circle',{cx:X(.86),cy:Y(.2),r:9,fill:'var(--falcon-c16)'},mg);var ring=S('circle',{cx:X(.86),cy:Y(.2),r:9,fill:'none',stroke:'var(--falcon-c16)','stroke-width':2,opacity:0},mg);
+ T(mg,X(.86)-14,Y(.2)+4,'Maintenance crews',{'font-size':11.5,'text-anchor':'end','font-weight':600}).setAttribute('fill','var(--falcon-c16)');
+ T(mg,X(.86)-14,Y(.2)+19,'low power · high stake',{'font-size':10,'text-anchor':'end'});
+ var on=false;function move(v){on=v;var top=Y(.93),bot=v?Y(.08):Y(.42);tween(900,function(p){var b=v?Y(.42)+(Y(.08)-Y(.42))*p:Y(.08)+(Y(.42)-Y(.08))*p;hull.setAttribute('height',b-top);});
+   ring.style.transition='all .8s';ring.setAttribute('opacity',v?1:0);ring.setAttribute('r',v?16:9);$('#shBtn').textContent=v?'↺ Reset':'↗ Show the move';}
+ $('#shBtn').onclick=function(){move(!on);};onView(svg,function(){setTimeout(function(){if(!on)move(true);},600);},.6);})();
+
+/* ---------- role lenses (linked to product) ---------- */
+var ROLES=[{k:'fm',r:'Facility Manager',q:'Which building needs me this morning?',lands:'Lands on: network triage, incidents first'},{k:'admin',r:'Administrator',q:'What\'s the board-ready cost & compliance story?',lands:'Lands on: Campus Insight'},{k:'sust',r:'Sustainability Officer',q:'Where\'s my evidence and audit trail?',lands:'Lands on: Environment › Energy'},{k:'maint',r:'Maintenance Lead',q:'What do I fix, where, and why?',lands:'Lands on: routed work-order queue'}];
+(function(){var host=$('#lens');ROLES.forEach(function(r,i){var b=document.createElement('button');b.className='lz';b.innerHTML='<div class="r">'+r.r+'</div><q>'+r.q+'</q><div class="lands">'+r.lands+' →</div>';
+  b.onclick=function(){$$('.lz',host).forEach(function(x){x.classList.toggle('on',x===b);});window.__setRole&&window.__setRole(r.k);$('#gal').scrollIntoView({behavior:RM?'auto':'smooth'});};host.appendChild(b);});})();
+
+/* ---------- IA tree ---------- */
+(function(){var IA=[
+ {ic:'◳',n:'Main Navigation',g:[{t:'Core modules',i:[['Falcon View','The network overview, the morning triage surface every role opens first.'],['Building Detail View','One building, deep: energy, water, economics, zones and contractors.'],['Campus Insight','Portfolio rollup across all four hospitals, for administrators.'],['Work Order','The maintenance queue. Alerts become routed, tracked tasks.'],['Food Utilization','']]},{t:'Secondary navigation',i:[['Search Building',''],['User Profile',''],['Notifications','Role-scoped alerts that never hide a critical signal.'],['System Health Status','Live status of sensors and legacy-system integrations.']]}]},
+ {ic:'◎',n:'Falcon View',g:[{t:'Building card',i:[['Energy usage (daily & weekly)','Per-building consumption trend at a glance.'],['Building rating (A+)','Efficiency grade, so a manager ranks sites instantly.'],['Capacity utilization',''],['Major incidents','The red hook: the single cue that pulls attention to a building.'],['Visitors flow','']]},{t:'Metrics displayed',i:[['Energy (kWh)',''],['Rating',''],['Capacity',''],['Incident tracking',''],['Visitor traffic','']]}]},
+ {ic:'▣',n:'Building Detail',g:[{t:'Sections',i:[['Building overview',''],['Zones (1–6)','Drill from building to zone to room.'],['Budget vs expenses',''],['Energy cost',''],['Utilization',''],['CO₂ emission',''],['Water',''],['Expiring certificates','LEED and compliance renewals surfaced before they lapse.'],['Active contractors','']]},{t:'Environment tab',i:[['Environmental metrics',''],['Sustainability indicators','']]},{t:'Ecosystem tab',i:[['Financial performance',''],['Cost analysis','']]}]},
+ {ic:'◈',n:'Campus Insight',g:[{t:'Overview tab',i:[['Building count',''],['Health status summary','Healthy / attention / warning: severity colour at portfolio scale.'],['Budget vs expenses',''],['Avg energy cost',''],['Energy by sector',''],['Utilization',''],['CO₂',''],['Water',''],['LEED expiring',''],['Contractors','']]},{t:'Data visualisation',i:[['Status counters',''],['Circular progress',''],['Bar charts',''],['Gauges','The verdict-in-a-second pattern used across the product.'],['Data lists','']]},{t:'History',i:[['Orders history','A record of actions taken, feeding the audit trail.']]}]},
+ {ic:'☰',n:'Work Orders',g:[{t:'Features',i:[['Listing',''],['Filter & sort',''],['Date selection','']]},{t:'Work order data',i:[['ID',''],['Description',''],['Building',''],['Area',''],['Created by',''],['Date',''],['State','Status is colour, shape and label, never colour alone.'],['Work type','']]},{t:'Dashboard',i:[['Total',''],['New',''],['In progress',''],['Completed',''],['By type','']]}]},
+ {ic:'▦',n:'Floor Utilization',g:[{t:'Features',i:[['Floor plan','Status colours read spatially on the real floor plan.'],['Room status',''],['Usage type',''],['Space allocation','']]},{t:'Room types',i:[['Medical clinic',''],['Offices',''],['Meeting rooms',''],['Cafeteria',''],['Refreshment',''],['Archive','']]},{t:'Metrics',i:[['Total rooms',''],['Available',''],['Occupied','']]}]},
+ {ic:'◔',n:'Authentication',g:[{t:'Components',i:[['Login',''],['User authentication','SSO was a hard IT requirement; a week-1 research stream next time.'],['Password management',''],['Profile creation','']]}]},
+ {ic:'⚙',n:'System & Roles',g:[{t:'Capabilities',i:[['Real-time monitoring','~5-second refresh over the legacy building system.'],['Data visualisation',''],['2D / 3D views','3D moved to a later phase where survey data allowed.'],['Widget customisation',''],['Search',''],['Notification center','']]},{t:'User roles',i:[['Administrator','Board-ready cost and compliance story.'],['Facility Manager','Primary persona; the reframe was built around Sarah.'],['Maintenance Staff','From firefighting to a routed queue.'],['Building Occupants','']]}]}];
+ var mods=$('#iaMods'),tree=$('#iaTree'),det=$('#iaDet'),svg=$('#iaSvg'),wrapEl=$('#iaWrap'),cur=0;
+ IA.forEach(function(m,i){var n=m.g.reduce(function(a,g){return a+g.i.length;},0);var b=document.createElement('button');b.className='ia-mod'+(i?'':' on');b.setAttribute('role','tab');b.innerHTML='<span>'+m.ic+'</span>'+m.n+'<span class="c">'+n+'</span>';
+   b.onclick=function(){$$('.ia-mod',mods).forEach(function(x){x.classList.toggle('on',x===b);});render(i);};mods.appendChild(b);});
+ function render(i){cur=i;var m=IA[i],k=0;tree.innerHTML=m.g.map(function(g,gi){return '<div class="ia-g" style="animation-delay:'+(gi*.08)+'s"><h5>'+g.t+'</h5><div class="ia-nodes">'+g.i.map(function(it){k++;return '<button class="ia-node'+(it[1]?' lit':'')+'" style="animation-delay:'+(k*.025)+'s" data-n="'+it[0]+'" data-e="'+(it[1]||'')+'">'+it[0]+'</button>';}).join('')+'</div></div>';}).join('');
+   det.innerHTML='<b>'+m.n+'</b> · '+m.g.length+' groups, '+k+' nodes. Tap a node; glowing ones carry an explainer.';requestAnimationFrame(lines);}
+ tree.addEventListener('click',function(e){var n=e.target.closest('.ia-node');if(!n)return;$$('.ia-node',tree).forEach(function(x){x.classList.toggle('on',x===n);});
+   det.innerHTML='<b>'+n.dataset.n+'</b> · '+(n.dataset.e||'A surface in this module. It shares the one data model and visual language with every other screen.');});
+ function lines(){svg.innerHTML='';if(innerWidth<=900)return;var wr=wrapEl.getBoundingClientRect(),root=$('#iaRoot').getBoundingClientRect();
+   var rx=root.right-wr.left,ry=root.top+root.height/2-wr.top;
+   $$('.ia-mod',mods).forEach(function(b,i){var r=b.getBoundingClientRect(),x=r.left-wr.left,y=r.top+r.height/2-wr.top,on=i===cur;
+     var p=S('path',{d:'M'+rx+' '+ry+' C'+(rx+(x-rx)/2)+' '+ry+' '+(rx+(x-rx)/2)+' '+y+' '+x+' '+y,fill:'none',stroke:on?'var(--falcon-c12)':'var(--falcon-c06)','stroke-width':on?2:1.2},svg);if(on)p.setAttribute('class','flowline');});
+   var mb=$('.ia-mod.on',mods).getBoundingClientRect(),mx=mb.right-wr.left,my=mb.top+mb.height/2-wr.top;
+   $$('.ia-g h5',tree).forEach(function(h){var r=h.getBoundingClientRect(),x=r.left-wr.left-6,y=r.top+r.height/2-wr.top;S('path',{d:'M'+mx+' '+my+' C'+(mx+(x-mx)/2)+' '+my+' '+(mx+(x-mx)/2)+' '+y+' '+x+' '+y,fill:'none',stroke:'var(--falcon-c12)','stroke-opacity':.55,'stroke-width':1.5,class:'flowline'},svg);S('circle',{cx:x,cy:y,r:3,fill:'var(--falcon-c12)'},svg);});}
+ addEventListener('resize',lines);render(0);setTimeout(lines,600);})();
+
+/* ---------- shipped-screen gallery ---------- */
+(function(){
+ var R={fm:'Facility Manager',admin:'Administrator',sust:'Sustainability Officer',maint:'Maintenance Lead'};
+ var G=[
+ {id:'map',g:'Locate',t:'GIS map · status pins',crumb:'Falcon View › Map',roles:['fm','maint'],lvl:0,
+  pr:'Twenty buildings were spread across Palm Jumeirah. In spreadsheets a problem had a row number, not a place, so nobody could see where trouble was clustering.',
+  wh:'Where comes before what. Each building is a pin on the real map, coloured by its worst open status. Hovering shows a photo and an arrow straight into that building. 2D is fast; 3D is there when height and neighbours matter.',
+  im:['1 click','from the map to a building’s detail. Location shows before severity, which is the first test on the quality bar.'],
+  p:[[74.6,8.1,'Shared status legend','Healthy, Need attention, Warning. The same three states appear on every screen.'],[40.4,41,'Status pin','Pin colour shows the building’s worst open state.'],[41.5,49.5,'Hover card','Photo, location and one arrow to drill in.'],[97.5,94,'2D / 3D + minimap','Switch the view without losing your place.']]},
+ {id:'network',g:'Locate',t:'Falcon View · network triage',crumb:'Falcon View',roles:['fm'],lvl:1,
+  pr:'Scanning the portfolio meant opening six systems, one building at a time. There was no single place to triage the morning.',
+  wh:'Every building gets an identical card. A photo helps people recognise the site; a coloured strip on the top edge carries status; six facts sit in fixed positions so the eye compares down columns instead of reading labels. Call, locate and message are on every card.',
+  im:['< 1 s','to spot the buildings that need attention. The orange top edge is the only hook needed. Six facts per card keeps each card inside the ≤ 7 ceiling.'],
+  p:[[34.3,17.8,'Status edge','Colour on the top edge, so trouble is visible before any number is read.'],[37.6,33.4,'Quick actions','Call, locate or message the site team without leaving the grid.'],[13.3,44,'Fixed fact grid','Same six readings in the same place on every card.'],[2.5,33,'Role-aware nav','Network, work orders, alerts and settings. The landing tab depends on the role.']]},
+ {id:'campus',g:'Portfolio',t:'Campus Insight · portfolio rollup',crumb:'Falcon View › Campus Insight',roles:['admin'],lvl:2,
+  pr:'Administrators needed a board-ready story on cost, health and compliance. It took two weeks of pulling numbers from vendor portals and paper logs.',
+  wh:'Summary before detail. The top row counts buildings by status (20 · 16 · 2 · 2). Below it sit eight widgets in one grid: gauges give a verdict, bar lists compare. The building list on the left drills down; Add widget lets each role tune the view.',
+  im:['On demand','board-ready cost and compliance view, with no two-week scramble. LEED renewals show up 30, 60 and 90 days before they lapse.'],
+  p:[[53.8,34.5,'Health counts first','How many buildings are healthy, need attention or are in warning, before any chart.'],[39.4,23.2,'Three lenses','Overview, Environment, Economics. The same data, cut three ways.'],[13.9,36.5,'Building list','Expand any building to drill to its zones.'],[61.6,79.3,'LEED expiring','Certificates surfaced before they lapse, not after.'],[74.7,15.2,'Add widget','Each role can shape its own dashboard.']]},
+ {id:'building',g:'Portfolio',t:'Building detail · Nakheel Mall',crumb:'Falcon View › Nakheel Mall',roles:['fm','admin'],lvl:3,
+  pr:'Each building had its own report format, so moving from portfolio to a single site meant learning a new layout every time.',
+  wh:'The same widget grid, scoped to one building. Learn the layout once and it holds at every level. The breadcrumb and filter chip always show where you are; zones 1 to 6 open in the side list.',
+  im:['Learn once','One layout from portfolio to building to zone. Fewer screens to learn means faster adoption, which held at 72% after 18 months.'],
+  p:[[30,15.1,'Breadcrumb','Always shows the level you’re on and the way back.'],[13.3,34.4,'Zones list','Drill from building to zone to floor.'],[62.6,54.3,'Same widgets','Identical charts to the portfolio view, scoped to this site.'],[26,8.2,'Filter chip','The active scope stays visible and can be cleared in one tap.']]},
+ {id:'floor-ground',g:'Space',t:'Floor utilization · ground floor',crumb:'… › Zone 1 › Ground Floor › Utilization',roles:['fm'],lvl:4,
+  pr:'There was no view of how space was actually used. Occupancy lived in paper logs and a bed-management system updated by hand.',
+  wh:'Status colour reads spatially on the real floor plan: red is occupied, green is available. Counts sit top left (15 · 04 · 10) so the verdict lands before the plan. Hovering a room confirms its number and state.',
+  im:['At a glance','floor pressure: 10 of 15 rooms occupied, readable without a single spreadsheet.'],
+  p:[[18,33.4,'Counts first','Total, available, occupied. The verdict before the detail.'],[29.2,63.6,'Room tooltip','Room number and state on hover.'],[33,74,'Available room','Green means free. The same colour logic as the rest of the product.'],[83.3,24.6,'Floor + metric','Switch floor or swap utilization for another metric.']]},
+ {id:'floor-2',g:'Space',t:'Floor 2 · departments overlaid',crumb:'… › Building 1 › Floor 2 › Utilization',roles:['fm'],lvl:4,
+  pr:'Managers could see that a floor was full, but not which department was under pressure.',
+  wh:'Departments are dashed outlines, a second encoding kept apart from the status fill. Colour still means one thing (state), while the outline answers “whose space is it?”. A legend names each department.',
+  im:['75 of 85','rooms occupied, broken down by department. Space conversations move from opinion to evidence.'],
+  p:[[18,33.4,'Floor verdict','85 rooms, 10 free, 75 occupied.'],[26,66.7,'Department outline','Dashed line = department boundary. It never competes with status colour.'],[86.8,82.9,'Department legend','Names each outlined area.']]},
+ {id:'floor-4',g:'Space',t:'Floor 4 · near capacity',crumb:'… › Building 1 › Floor 4 › Utilization',roles:['fm'],lvl:4,
+  pr:'A nearly full floor looked the same as a half-empty one until someone walked it.',
+  wh:'The same template at a different floor. The single green room stands out immediately against 19 red ones. Zoom controls make large halls readable on a tablet in the corridor, where Sarah spends half her day.',
+  im:['1 free room','spotted instantly on a 20-room floor. The exception finds the user.'],
+  p:[[18,33.4,'1 available','The count tells you before the plan does.'],[50.9,64.2,'The one free room','Green against red pops without searching.'],[48.1,30,'Large occupied hall','Big spaces read at the same glance as small rooms.'],[97.6,88.2,'Zoom','Readable on a tablet in the field.']]},
+ {id:'work-orders',g:'Act',t:'Work orders · routed queue',crumb:'Work Order',roles:['maint'],lvl:5,
+  pr:'70% of maintenance was reactive. Alerts arrived with no owner, no floor and no history.',
+  wh:'This is the maintenance lead’s front door. Every alert becomes a row with building, floor, creator, date, state and work type. State pills pair colour with a word, so they never rely on colour alone. Status totals sit on the right; filter and date narrow the queue.',
+  im:['3.7 → 0.5 h','leak-to-fix time once location and likely cause arrived together. Reported from the pilot site’s maintenance logs.'],
+  p:[[63.3,36.7,'State pill','New, In progress, Completed. Colour plus label.'],[72,36.7,'Work type','General or maintenance, for routing to the right crew.'],[95.5,22,'Status totals','201 total · 65 new · 123 in progress · 13 completed.'],[70.3,19.4,'Filter + date','Narrow the queue to today, one site or one type.'],[78,31.8,'Open order','Jump to the full work order and its audit trail.']]},
+ {id:'env-energy',g:'Environment',t:'Environment › Energy',crumb:'Falcon View › Environment › Energy',roles:['sust','fm'],lvl:2,
+  pr:'“I don’t know which floor uses the most energy.” Consumption was split across two vendor portals and read monthly.',
+  wh:'Exactly seven widgets, the control-room ceiling. Today’s use is split gas vs electricity, the month split HVAC 40% vs lighting 60%, then CO₂, predicted cost and use by building. Sub-tabs keep energy, water, waste and air one tap apart.',
+  im:['≤ 7','readings on the canvas. Everything else is one tap deeper. Energy use fell 25% across the network in year one (client-reported).'],
+  p:[[46.3,28.4,'Four sub-tabs','Energy, water, waste and air under one Environment lens.'],[32.1,51,'Gas vs electricity','Today’s 210 mWh split in one bar.'],[63.5,49.1,'Month split','HVAC 40% · lighting & power 60%: where to act first.'],[32.1,77.8,'Cost predicted','Energy turned into money, the number boards respond to.']]},
+ {id:'env-waste',g:'Environment',t:'Environment › Waste',crumb:'Falcon View › Environment › Waste',roles:['sust'],lvl:2,
+  pr:'Waste volumes and segregation were tracked on paper, so compliance evidence was always an estimate.',
+  wh:'Three widgets only. Gauges show the min–max scale so 2,650 kg reads against a 3,500 kg capacity. The segregation rate is a percentage, and waste type bars carry a target tick.',
+  im:['78%','segregation rate visible as measured evidence, not an estimate built for the audit.'],
+  p:[[32.5,49.1,'Collected vs capacity','Gauge with its scale, so the number has context.'],[46.9,49.1,'Segregation rate','The compliance number, front and centre.'],[62.4,50.2,'By waste type','Plastic, syringes & metals, glass, general, each against a target.']]},
+ {id:'env-air',g:'Environment',t:'Environment › Air quality',crumb:'Falcon View › Environment › Air Quality',roles:['sust'],lvl:2,
+  pr:'Air quality mattered for patients and certification, but readings sat in separate sensor dashboards nobody opened.',
+  wh:'Five pollutant gauges share one visual pattern and each shows its own safe scale (PM2.5 to 60, PM10 to 100, VOC to 800). Humidity, wind and temperature sit on a second row as context, not alarms.',
+  im:['One pattern','for every pollutant. Learn one gauge and you can read all five.'],
+  p:[[31.1,50.2,'Air quality index','Overall verdict first.'],[62.9,50.2,'Pollutant gauges','Each with its own scale, so “high” means the same thing visually.'],[62.9,75.8,'Ambient context','Humidity, wind and temperature to explain the readings.']]},
+ {id:'air-trend',g:'Analyse',t:'Air quality · trend & compare',crumb:'Campus Insights › Air Quality',roles:['sust'],lvl:3,
+  pr:'Spot readings hid patterns. Officers couldn’t tell whether a spike was a one-off or a daily cycle, or which building caused it.',
+  wh:'Pollutant chips switch the series; time presets jump from a day to a month; a brush under the chart zooms into a window. Compare building overlays sites, with a legend that names each one.',
+  im:['Patterns, not points','Hourly PM10 shows the daily cycle, so action targets the cause rather than the reading.'],
+  p:[[23.7,24.3,'Pollutant chips','CO₂, PM2.5, PM10, VOC.'],[46.3,36.3,'Time presets','All, 1 day, 1 week, 1 month, or a date.'],[30.4,68.6,'Range brush','Drag to zoom into the hours that matter.'],[61.2,36.3,'Compare building','Overlay sites to find the source.']]},
+ {id:'energy-trend',g:'Analyse',t:'Energy · consumption analysis',crumb:'All Buildings › Energy Analysis',roles:['sust','fm'],lvl:3,
+  pr:'Monthly bills, which 85% of surveyed staff relied on, can’t show when energy is wasted, only that it was.',
+  wh:'One chart for electricity, gas, water and HVAC, with every building as its own line. The tooltip names the moment and its value. A brush zooms into the window where a line breaks away from the others.',
+  im:['Late-day spike','one building jumps after 16:00 while the rest stay flat. That is the kind of anomaly the 25% saving came from.'],
+  p:[[20.3,27,'Utility tabs','Electricity, gas, water, HVAC.'],[35.9,58,'Point tooltip','Exact time and value.'],[60.8,55.9,'The outlier','One building breaks from the pack: the place to act.'],[30.7,77.1,'Range brush','Zoom into the hours that matter.']]},
+ {id:'economics',g:'Money',t:'Economics · budget & revenue',crumb:'Falcon View › Economics',roles:['admin'],lvl:2,
+  pr:'65% of facilities ran sustainability budgets separately from operations, so savings never showed up next to spend.',
+  wh:'The same gauge as everywhere else, now showing budget vs expenses, next to revenue by department. Money becomes a third lens on the same buildings rather than a separate system.',
+  im:['320%','first-year ROI on the platform build (client business case, reported). Cost and departments sit side by side.'],
+  p:[[30,46,'Budget vs expenses','Same gauge pattern, applied to money.'],[46.6,48.1,'Revenue by department','Internal medicine, orthopaedics, neurology, surgery.']]}
+ ];
+ var LV=[['Map','Where is the trouble?','map'],['Network','Which building needs me?','network'],['Portfolio','What’s the overall story?','campus'],['Building','What’s happening here?','building'],['Floor','Which room?','floor-ground'],['Act','Who fixes it?','work-orders']];
+ var dr=$('#drill');LV.forEach(function(l,i){var b=document.createElement('button');b.className='dstep';b.innerHTML='<div class="n">0'+(i+1)+'</div><b>'+l[0]+'</b><span>'+l[1]+'</span>';b.onclick=function(){role='all';syncRoles();go(idx(l[2]));$('#gal').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'});};dr.appendChild(b);});
+ var strip=$('#galStrip'),img=$('#galImg'),pins=$('#galPins'),pnl=$('#galPanel'),cur=0,role='all',ths=[];
+ function idx(id){for(var i=0;i<G.length;i++)if(G[i].id===id)return i;return 0;}
+ var groups=[];G.forEach(function(s,i){if(!groups.length||groups[groups.length-1].g!==s.g)groups.push({g:s.g,items:[]});groups[groups.length-1].items.push(i);});
+ groups.forEach(function(gr){var d=document.createElement('div');d.className='sgrp';d.innerHTML='<div class="gl">'+gr.g+'</div><div class="gi"></div>';
+   gr.items.forEach(function(i){var s=G[i],b=document.createElement('button');b.className='th';b.setAttribute('role','tab');b.innerHTML='<img src="screens/'+s.id+'-t.webp" alt="" loading="lazy"><small>'+s.t.split(' · ')[0]+'</small>';b.onclick=function(){go(i);};ths[i]=b;$('.gi',d).appendChild(b);});strip.appendChild(d);});
+ var rc=$('#galRoles');[['all','All screens']].concat(Object.keys(R).map(function(k){return [k,R[k]];})).forEach(function(r){var b=document.createElement('button');b.className='chip';b.dataset.r=r[0];b.textContent=r[1];b.onclick=function(){role=r[0];syncRoles();go(door());};rc.appendChild(b);});
+ function list(){var a=[];G.forEach(function(s,i){if(role==='all'||s.roles.indexOf(role)>-1)a.push(i);});return a;}
+ function syncRoles(){$$('.chip',rc).forEach(function(c){c.classList.toggle('on',c.dataset.r===role);});ths.forEach(function(t,i){t.classList.toggle('dim',role!=='all'&&G[i].roles.indexOf(role)<0);});}
+ function pick(k){$$('.pin',pins).forEach(function(p,j){p.classList.toggle('on',j===k);});$$('.anno li',pnl).forEach(function(l,j){l.classList.toggle('on',j===k);});}
+ function go(i){cur=i;var s=G[i],L=list(),pos=L.indexOf(i);
+   ths.forEach(function(t,j){t.classList.toggle('on',j===i);t.setAttribute('aria-selected',j===i);});
+   var sw=strip.parentNode,t=ths[i],tl=t.offsetLeft-sw.offsetLeft;if(tl<sw.scrollLeft||tl+t.offsetWidth>sw.scrollLeft+sw.clientWidth)sw.scrollTo({left:Math.max(0,tl-sw.clientWidth/2+t.offsetWidth/2),behavior:RM?'auto':'smooth'});
+   $$('.dstep',dr).forEach(function(b,j){b.classList.toggle('on',j===s.lvl);});
+   $('#galTitle').textContent=s.t;$('#galCrumb').textContent=s.crumb;$('#galCount').textContent=(pos>-1?(pos+1)+' / '+L.length:'');
+   img.classList.add('swap');var n=new Image();n.onload=n.onerror=function(){img.src=n.src;img.alt=s.t;requestAnimationFrame(function(){img.classList.remove('swap');});};n.src='screens/'+s.id+'.webp';
+   pins.innerHTML=s.p.map(function(p,k){return '<button class="pin" style="left:'+p[0]+'%;top:'+p[1]+'%;animation-delay:'+(0.25+k*0.08)+'s" aria-label="'+p[2]+'">'+(k+1)+'</button>';}).join('');
+   pnl.innerHTML='<div class="roles">'+s.roles.map(function(r){return '<span>'+R[r]+'</span>';}).join('')+'</div>'+
+     '<div class="pb pbp"><h4>⚠ Problem it solves</h4><p>'+s.pr+'</p></div>'+
+     '<div class="pb wh" style="animation-delay:.06s"><h4>? Why this design</h4><p>'+s.wh+'</p></div>'+
+     '<div class="pb im" style="animation-delay:.12s"><h4>↑ Impact & value</h4><p><span class="big">'+s.im[0]+'</span>'+s.im[1]+'</p></div>'+
+     '<ul class="anno">'+s.p.map(function(p,k){return '<li data-k="'+k+'"><span class="k">'+(k+1)+'</span><div><b>'+p[2]+'</b>'+p[3]+'</div></li>';}).join('')+'</ul>';
+   $$('.pin',pins).forEach(function(p,k){p.addEventListener('click',function(e){e.stopPropagation();pick(k);});p.addEventListener('mouseenter',function(){pick(k);});});
+   $$('.anno li',pnl).forEach(function(l,k){l.addEventListener('click',function(){pick(k);});l.addEventListener('mouseenter',function(){pick(k);});});}
+ function step(d){var L=list(),p=L.indexOf(cur);if(p<0)p=0;go(L[(p+d+L.length)%L.length]);}
+ $('#galPrev').onclick=function(){step(-1);};$('#galNext').onclick=function(){step(1);};
+ var gal=$('#gal'),inView=false;if('IntersectionObserver' in window)new IntersectionObserver(function(es){inView=es[0].isIntersecting;},{threshold:.3}).observe(gal);
+ var lb=$('#lb'),lbImg=$('#lbImg');
+ function closeLb(){lb.hidden=true;}
+ $('#galShot').addEventListener('click',function(e){if(e.target.closest('.pin'))return;lbImg.src=img.src;lbImg.alt=img.alt;lb.hidden=false;});
+ lb.addEventListener('click',closeLb);
+ document.addEventListener('keydown',function(e){if(!lb.hidden&&e.key==='Escape'){closeLb();return;}if(!inView||/INPUT|TEXTAREA/.test(document.activeElement.tagName))return;if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1);});
+ function door(){var D={fm:'network',admin:'campus',sust:'env-energy',maint:'work-orders'};return role==='all'?list()[0]:idx(D[role]);}
+ window.__setRole=function(k){role=k;syncRoles();go(door());};
+ syncRoles();go(1);
+})();
+
+/* ---------- exception funnel (canvas) ---------- */
+(function(){var cv=$('#funnel');if(!cv)return;var ctx=cv.getContext('2d'),W,H,dpr=Math.min(devicePixelRatio||1,2),P=[],count=0,spawned=0,ranked=[];
+ function rs(){W=cv.offsetWidth;H=cv.offsetHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}rs();addEventListener('resize',function(){rs();draw();});
+ var cnt=$('#fCount'),visible=true;
+ if('IntersectionObserver' in window)new IntersectionObserver(function(es){visible=es[0].isIntersecting;}).observe(cv);
+ function spawn(){spawned++;var ex=(spawned%13===0);P.push({x:-4,y:20+Math.random()*(H-90),vx:1.4+Math.random()*1.2,ex:ex,gate:W*.42,st:0,a:1});if(spawned>=240){spawned=0;}}
+ function draw(){ctx.clearRect(0,0,W,H);var gx=W*.42;
+   ctx.fillStyle='var(--falcon-c09)';ctx.font='11px JetBrains Mono, monospace';ctx.fillText('240 READINGS / SHIFT · STREAMED',12,16);
+   ctx.fillText('LOGGED · NO ACTION NEEDED',gx+14,H-12);ctx.textAlign='right';ctx.fillStyle='var(--falcon-c12)';ctx.fillText('RANKED · ONE-TAP CONFIRM',W-12,16);ctx.textAlign='left';
+   ctx.strokeStyle='var(--falcon-c07)';ctx.setLineDash([3,5]);ctx.beginPath();ctx.moveTo(gx,24);ctx.lineTo(gx,H-30);ctx.stroke();ctx.setLineDash([]);
+   ctx.fillStyle='var(--falcon-c13)';ctx.fillText('ANOMALY MODEL',gx-52,H-40>30?H-38:30);
+   P.forEach(function(p){if(p.st===0){p.x+=p.vx;if(p.x>=gx){p.st=p.ex?2:1;}}
+     else if(p.st===1){p.x+=p.vx*.7;p.y+=(H-24-p.y)*.06;p.a-=.012;}
+     else if(p.st===2){p.x+=p.vx*1.6;p.y+=((40+ (count%6)*24)-p.y)*.05;if(p.x>W-150&&!p.done){p.done=true;count++;if(count>18)count=1;cnt.textContent=count;ranked.unshift(1);if(ranked.length>6)ranked.pop();}}
+     ctx.globalAlpha=Math.max(p.a,0);ctx.fillStyle=p.st===2?'var(--falcon-c12)':p.st===1?'var(--falcon-c07)':'var(--falcon-c13)';ctx.beginPath();ctx.arc(p.x,p.y,p.st===2?4:2.2,0,7);ctx.fill();
+     if(p.st===2){ctx.globalAlpha=.25;ctx.beginPath();ctx.arc(p.x,p.y,9,0,7);ctx.fill();}ctx.globalAlpha=1;});
+   P=P.filter(function(p){return p.a>0&&p.x<W+10;});
+   for(var i=0;i<6;i++){var y=32+i*26;ctx.fillStyle=i<ranked.length?'var(--falcon-c05)':'var(--falcon-c04)';ctx.fillRect(W-140,y,128,20);ctx.fillStyle=i===0&&ranked.length?'var(--falcon-c15)':i<3?'var(--falcon-c16)':'var(--falcon-c13)';if(i<ranked.length){ctx.fillRect(W-140,y,3,20);ctx.fillStyle='var(--falcon-c08)';ctx.font='10.5px Inter, sans-serif';ctx.fillText(['Water leak · Latifa B1','HVAC drift · Zayed F6','Fan fault · Pointe Z3','Night setback · F7','Sensor fault · DMM02','Lighting · Circle F2'][(i+count)%6],W-132,y+14);}}
+ }
+ if(RM){spawned=0;for(var i=0;i<60;i++)spawn();P.forEach(function(p,i){p.x=Math.random()*W;});draw();cnt.textContent='18';return;}
+ for(var k=0;k<90;k++){spawn();}P.forEach(function(p,i){for(var s=0;s<i*3;s++){}p.x=Math.random()*W*.9;if(p.x>W*.42){p.st=p.ex?2:1;}});draw();
+ var t=0;(function loop(){if(visible){t++;if(t%3===0)spawn();draw();}requestAnimationFrame(loop);})();})();
+
+/* ---------- hero metric watch ---------- */
+(function(){var w=$('#watch'),a=$('#tbA'),b=$('#tbB');a.style.width='100%';b.style.width=(64/222*100)+'%';
+ function play(){a.style.width=0;b.style.width=0;tween(1600,function(p){w.textContent=mmss(222-(158*p));a.style.width=(p*100)+'%';b.style.width=(p*64/222*100)+'%';});}
+ $('#watchBtn').onclick=play;onView(w,play,.6);})();
+
+/* ---------- rounds chart ---------- */
+(function(){var svg=$('#rdSvg');if(!svg)return;var M=[
+ {t:'Faster in every round',l:'Time to decision',d:[222,140,96,64],max:240,ticks:[0,60,120,180,240],f:mmss,n:'Time to first decision. 3:42 → 1:04 from concept to round 3. Lower is better.'},
+ {t:'Task completion climbed',l:'Task completion',d:[31,54,78,89],max:100,ticks:[0,25,50,75,100],f:function(v){return v+'%';},n:'Share of 7 tasks completed unaided. Higher is better.'},
+ {t:'Cognitive load fell',l:'NASA-TLX',d:[74,58,42,31],max:100,ticks:[0,25,50,75,100],f:function(v){return v;},n:'NASA-TLX workload score after each session. Lower is better.'},
+ {t:'Usability rose to 92',l:'SUS',d:[44,68,82,92],max:100,ticks:[0,25,50,75,100],f:function(v){return v;},ref:68,n:'System Usability Scale. 68 is average; 80+ is excellent. Round 3 provisional.'}];
+ var x0=70,x1=930,y0=24,y1=256,R=['Concept','Round 1','Round 2','Round 3'],X=function(i){return x0+30+i*((x1-x0-60)/3);};
+ var gG=S('g',{},svg),area=S('path',{fill:'var(--falcon-c12)',opacity:.08},svg),line=S('path',{fill:'none',stroke:'var(--falcon-c12)','stroke-width':2.5,'stroke-linejoin':'round'},svg),dG=S('g',{},svg),hG=S('g',{},svg);
+ R.forEach(function(r,i){T(svg,X(i),y1+24,r,{'text-anchor':'middle','font-size':12});});
+ var cur=null,chips=$('#rdChips');
+ M.forEach(function(m,i){var b=document.createElement('button');b.className='chip'+(i?'':' on');b.textContent=m.l;b.onclick=function(){$$('.chip',chips).forEach(function(x){x.classList.toggle('on',x===b);});draw(i);};chips.appendChild(b);});
+ function draw(mi){var m=M[mi],Y=function(v){return y1-v/m.max*(y1-y0);};gG.innerHTML='';
+   m.ticks.forEach(function(t){S('line',{x1:x0,x2:x1,y1:Y(t),y2:Y(t),stroke:'var(--falcon-c06)'},gG);T(gG,x0-10,Y(t)+4,m.f(t),{'text-anchor':'end','font-size':10.5,class:'tm'});});
+   if(m.ref){S('line',{x1:x0,x2:x1,y1:Y(m.ref),y2:Y(m.ref),stroke:'var(--falcon-c16)','stroke-dasharray':'4 4'},gG);T(gG,x1,Y(m.ref)-6,'68 = average',{'text-anchor':'end','font-size':10.5}).setAttribute('fill','var(--falcon-c16)');}
+   var from=cur?cur.map(function(v){return v;}):m.d.map(function(){return 0;}),fromMax=cur?curMax:m.max;
+   tween(700,function(p){var vals=m.d.map(function(v,i){var fy=y1-from[i]/fromMax*(y1-y0),ty=Y(v);return fy+(ty-fy)*p;});
+     var d=vals.map(function(y,i){return (i?'L':'M')+X(i)+' '+y.toFixed(1);}).join(' ');line.setAttribute('d',d);area.setAttribute('d',d+' L'+X(3)+' '+y1+' L'+X(0)+' '+y1+' Z');
+     dG.innerHTML='';vals.forEach(function(y,i){S('circle',{cx:X(i),cy:y,r:i===3?7:5,fill:'var(--falcon-c04)',stroke:'var(--falcon-c12)','stroke-width':2.5},dG);T(dG,X(i),y-14,m.f(m.d[i]),{'text-anchor':'middle','font-size':12,'font-weight':600,class:'tf tm'});});});
+   cur=m.d.slice();curMax=m.max;$('#rdTitle').textContent=m.t;$('#rdNote').textContent=m.n;
+   hG.innerHTML='';m.d.forEach(function(v,i){var h=S('rect',{x:X(i)-50,y:y0,width:100,height:y1-y0,fill:'var(--falcon-c23)',opacity:0},hG);
+     h.addEventListener('mousemove',function(e){C.showTip(e,'<b>'+R[i]+' · '+m.f(v)+'</b><span>'+m.l+(i?' · '+(v>m.d[i-1]?'+':'')+(typeof m.d[i-1]==='number'?(mi===0?Math.round((v-m.d[i-1]))+' s':(v-m.d[i-1])):'')+' vs previous':'')+'</span>');});h.addEventListener('mouseleave',C.hideTip);});}
+ var curMax=240;draw(0);onView(svg,function(){cur=null;draw(+[].indexOf.call($$('.chip',chips),$('.chip.on',chips)));},.5);})();
+
+/* ---------- scorecard ---------- */
+(function(){var R=[['Time to first decision','(222 − 64) ÷ 222','m','3:42','1:04',222,64,'−71%'],['Energy use','network, year one','rp','baseline','−25%',100,75,'−25%'],['Water use','network, year one','rp','baseline','−30%',100,70,'−30%'],['Leak-to-fix time','maintenance logs','rp','3.7 h','0.5 h',3.7,.5,'−86%'],['Reporting time / month','15 h → auto, review only','md','15 h','3 h',15,3,'−80%'],['Signals surfaced / shift','240 streamed → 18 ranked','md','240','18',240,18,'−93%'],['Workload (NASA-TLX)','(74 − 31) ÷ 74','m','74','31',74,31,'−58%'],['Daily adoption','18 months on, 4 roles','ob','—','72%',null,72,'held']];
+ var TG={m:['m','Measured'],rp:['rp','Reported'],md:['md','Modelled'],ob:['ob','Observed']};
+ var h=$('#sc');h.innerHTML='<div class="sc-row hd"><span>Measure</span><span class="tg">Evidence</span><span class="sb">Before → after, to scale</span><span style="text-align:right">Change</span></div>'+R.map(function(r){var bw=r[5]===null?0:100,aw=r[5]===null?r[6]:r[6]/r[5]*100;
+   return '<div class="sc-row" data-k="'+r[2]+'"><span class="mn">'+r[0]+'<small>'+r[1]+'</small></span><span class="tg"><span class="tag '+TG[r[2]][0]+'">'+TG[r[2]][1]+'</span></span><span class="sb"><div><span>'+r[3]+'</span><i class="bar" data-w="'+bw+'"></i></div><div><span style="color:var(--green)">'+r[4]+'</span><i class="bar a" data-w="'+aw+'"></i></div></span><span class="ch">'+r[7]+'</span></div>';}).join('');
+ var bars=$$('.bar',h);bars.forEach(function(b){b.style.width=b.dataset.w+'%';});
+ onView(h,function(){if(RM)return;bars.forEach(function(b){b.style.transition='none';b.style.width=0;});h.getBoundingClientRect();bars.forEach(function(b,i){setTimeout(function(){b.style.transition='';b.style.width=b.dataset.w+'%';},60+i*40);});},.25);
+ $('#scChips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;$$('#scChips .chip').forEach(function(x){x.classList.toggle('on',x===b);});$$('.sc-row:not(.hd)',h).forEach(function(r){r.classList.toggle('hide',b.dataset.f!=='all'&&r.dataset.k!==b.dataset.f);});});})();
+
+/* ---------- impact chain ---------- */
+(function(){var svg=$('#chainSvg');if(!svg)return;var cols=['Design change','User behaviour','Operational effect','Business & org outcome'],cx=[20,265,510,755],w=205;
+ cols.forEach(function(c,i){T(svg,cx[i],20,c.toUpperCase(),{'font-size':10.5,class:'tm'}).setAttribute('fill',i===3?'var(--falcon-c12)':'var(--falcon-c13)');});
+ var R=[['Role-aware, severity-coded operating picture','See the right number first; act in the first minute','Faster leak-to-fix; fewer reactive events','25% energy saved, 320% ROI'],['Augment the legacy system','Tenured crews keep the tools they trust','No workflow disruption at rollout','72% adoption held, scaled 1 → 8'],['Automated audit trail','Officers review, they don\'t compile','Reporting 15 h → 3 h a month','LEED Gold, compliance on track']];
+ var fig=$('#chainFig');
+ R.forEach(function(r,ri){var y=40+ri*96,g=S('g',{class:'ch-row',tabindex:0},svg);
+   for(var i=0;i<3;i++){var p=S('path',{d:'M'+(cx[i]+w)+' '+(y+38)+' H'+cx[i+1],stroke:'var(--falcon-c12)','stroke-width':2,fill:'none',class:'flowline','stroke-opacity':.7},g);S('path',{d:'M'+(cx[i+1]-7)+' '+(y+33)+' l7 5 -7 5',fill:'none',stroke:'var(--falcon-c12)','stroke-width':2},g);}
+   r.forEach(function(t,i){S('rect',{x:cx[i],y:y,width:w,height:76,rx:12,fill:i===3?'var(--falcon-c24)':'var(--falcon-c05)',stroke:i===3?'var(--falcon-c12)':'var(--falcon-c07)','stroke-opacity':i===3?.6:1},g);TW(g,cx[i]+14,y+30,t,i===3?24:28,17,{'font-size':i===3?14:13,'font-weight':i===0||i===3?600:400,class:'tf'});});
+   g.addEventListener('mouseenter',function(){fig.classList.add('focus');g.classList.add('on');});g.addEventListener('mouseleave',function(){fig.classList.remove('focus');g.classList.remove('on');});
+   g.addEventListener('click',function(){var on=g.classList.contains('on')&&fig.classList.contains('focus');$$('.ch-row',svg).forEach(function(x){x.classList.remove('on');});fig.classList.toggle('focus',!on);if(!on)g.classList.add('on');});});})();
+
+/* ---------- who filter ---------- */
+$('#whoChips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;$$('#whoChips .chip').forEach(function(x){x.classList.toggle('on',x===b);});$$('#who .wc').forEach(function(c){c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.k!==b.dataset.f);});});
+
+/* ---------- adoption funnel ---------- */
+(function(){var is=$$('.funnel2 .t i');is.forEach(function(i){i.style.width=i.dataset.w+'%';});onView($('.funnel2'),function(){if(RM)return;is.forEach(function(i){i.style.transition='none';i.style.width=0;});is[0].getBoundingClientRect();is.forEach(function(i,k){setTimeout(function(){i.style.transition='';i.style.width=i.dataset.w+'%';},100+k*200);});},.4);})();
+
+/* ---------- rollout steps ---------- */
+(function(){var svg=$('#stepSvg');if(!svg)return;var x0=50,x1=460,y0=20,y1=170,P=[['Phase 0','Pilot',1,'Done'],['Phase 1','Network',4,'Done'],['Now','Scaled',8,'Live'],['Next','Offline',8,'Plan']],X=function(i){return x0+i*((x1-x0)/4);},Y=function(v){return y1-v/8*(y1-y0);};
+ [0,2,4,6,8].forEach(function(v){S('line',{x1:x0,x2:x1,y1:Y(v),y2:Y(v),stroke:'var(--falcon-c06)'},svg);T(svg,x0-10,Y(v)+4,String(v),{'text-anchor':'end','font-size':10.5,class:'tm'});});
+ T(svg,8,12,'SITES LIVE',{'font-size':10,class:'tm'});
+ var bars=P.map(function(p,i){var bw=(x1-x0)/4-14,x=X(i)+7,h=y1-Y(p[2]);var r=S('rect',{x:x,y:Y(p[2]),width:bw,height:h,rx:4,fill:i===3?'none':i===2?'var(--falcon-c12)':'var(--falcon-c13)','fill-opacity':i===2?1:.55,stroke:i===3?'var(--falcon-c10)':'none','stroke-dasharray':'4 4'},svg);
+   T(svg,x+bw/2,Y(p[2])-8,i===3?'+ offline':String(p[2]),{'text-anchor':'middle','font-size':13,'font-weight':600,class:'tf tm'});T(svg,x+bw/2,y1+18,p[0],{'text-anchor':'middle','font-size':11,class:'tf'});T(svg,x+bw/2,y1+33,p[1]+' · '+p[3],{'text-anchor':'middle','font-size':10});return [r,Y(p[2]),h];});
+ onView(svg,function(){bars.forEach(function(b,i){tween(900+i*150,function(p){b[0].setAttribute('y',y1-b[2]*p);b[0].setAttribute('height',b[2]*p);});});},.5);})();
+
+/* ---------- reflection flips ---------- */
+$$('.rc').forEach(function(c){function f(){c.classList.toggle('flip');}c.addEventListener('click',f);c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();f();}});});
+})();
+</script>
+
+
+<div class="as-dock" id="asDock">
+  <a href="index.html" title="Back to portfolio">&larr; Index</a>
+  <span class="as-sep" aria-hidden="true"></span>
+  <button type="button" id="asThemeBtn" aria-pressed="false" title="Switch colour theme">Light</button>
+</div>
+
+<script>
+/* ══ theme toggle (injected) ══════════════════════════════════ */
+(function(){
+  var root=document.documentElement,
+      btn=document.getElementById('asThemeBtn');
+  function label(){
+    var t=root.getAttribute('data-theme')==='light';
+    if(btn){btn.textContent=t?'Dark':'Light';btn.setAttribute('aria-pressed',t?'true':'false');}
+  }
+  label();
+  if(btn)btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('as-theme',next);}catch(e){}
+    label();
+  });
+  /* keep in sync if the visitor flips the theme in another tab */
+  try{
+    window.addEventListener('storage',function(e){
+      if(e.key==='as-theme'&&(e.newValue==='dark'||e.newValue==='light')){
+        root.setAttribute('data-theme',e.newValue);label();
+      }
+    });
+  }catch(e){}
+})();
+</script>
+</body></html>
