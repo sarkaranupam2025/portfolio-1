@@ -150,6 +150,23 @@ const PASS = 'correct-horse-battery';
     body: JSON.stringify({ which: 'nope', content: {} }) }));
   check('unknown bucket falls back to a safe one', r.statusCode === 200 && body(r).which !== 'nope',
         'wrote to ' + body(r).which);
+  /* the nested card structures are whitelisted */
+  r = await content.handler(ev('PUT', { headers: liveHdr, body: JSON.stringify({ which: 'draft',
+    content: { works: { items: [{ title: 'x', fields: { meta: 'yes' } }] } } }) }));
+  check('non-boolean card field rejected', r.statusCode === 400, body(r).error);
+  r = await content.handler(ev('PUT', { headers: liveHdr, body: JSON.stringify({ which: 'draft',
+    content: { works: { items: [{ title: 'x', fields: { injected: true } }] } } }) }));
+  check('unknown card field rejected', r.statusCode === 400, body(r).error);
+  r = await content.handler(ev('PUT', { headers: liveHdr, body: JSON.stringify({ which: 'draft',
+    content: { works: { items: [{ title: 'x', preview: { dot: 'green' } }] } } }) }));
+  check('non-hex preview colour rejected', r.statusCode === 400, body(r).error);
+  r = await content.handler(ev('PUT', { headers: liveHdr, body: JSON.stringify({ which: 'draft',
+    content: { works: { items: [{ title: 'x', preview: { background: '#fff' } }] } } }) }));
+  check('unknown preview key rejected', r.statusCode === 400, body(r).error);
+  r = await content.handler(ev('PUT', { headers: liveHdr, body: JSON.stringify({ which: 'draft',
+    content: { works: { items: [{ title: 'x', fields: { dots: false, meta: true }, preview: { dot: '#00ff88' } }] } } }) }));
+  check('valid card fields + preview accepted', r.statusCode === 200, body(r).error || 'saved');
+
   r = await content.handler(ev('PUT', { headers: liveHdr, body: 'not json at all' }));
   check('non-JSON body handled without crashing', r.statusCode === 400 || r.statusCode === 200, 'HTTP ' + r.statusCode);
   r = await content.handler(ev('PUT', { headers: liveHdr,

@@ -73,6 +73,19 @@ async function boot(label, seed) {
   check('no {{slot}} visible', !/\{\{/.test(da.body.textContent));
   check('card artwork rendered', da.querySelectorAll('.work-preview svg *').length > 100,
         da.querySelectorAll('.work-preview svg *').length + ' svg nodes');
+
+  /* the mockup anatomy, as baked */
+  check('card title is not duplicated', !/Management System Management System/.test(textOf(da)),
+        textOf(da.querySelector('.work-card h3')));
+  check('badge on the plate', da.querySelectorAll('.work-preview .badge').length === 4);
+  check('four accent dots per plate', da.querySelectorAll('.work-dots i').length === 16,
+        da.querySelectorAll('.work-dots').length + ' rows');
+  check('meta, description and outcome hidden by default',
+        da.querySelectorAll('.work-meta.is-off').length === 4 &&
+        da.querySelectorAll('.work-prob.is-off').length === 4 &&
+        da.querySelectorAll('.work-out.is-off').length === 4);
+  check('tags and call to action show by default',
+        da.querySelectorAll('.work-tag').length >= 6 && da.querySelectorAll('.work-cta').length === 4);
   const textA = textOf(da);
   a.window.close();
 
@@ -87,6 +100,9 @@ async function boot(label, seed) {
   edited.works.items[0].title = 'Edited Project';
   edited.works.items[0].tags = ['One', 'Two', 'Three', 'Four'];
   edited.works.items[0].openIn = 'same-tab';
+  /* flip this card's visible fields: dots off, meta and description on, outcome off */
+  edited.works.items[0].fields = { badge: true, dots: false, meta: true,
+                                   problem: true, outcome: false, tags: true, cta: true };
   edited.works.items = edited.works.items.slice(0, 3);
   edited.ai.guardrails = ['<b>Only one guardrail now</b>'];
   edited.contact.links = [{ label: 'Edited Link', href: 'https://example.com', newTab: true }];
@@ -109,6 +125,16 @@ async function boot(label, seed) {
   const tags = [...db.querySelectorAll('.work-card')][0].querySelectorAll('.work-tag');
   check('{{#tags}} loop expanded', tags.length === 4, tags.length + ' tags');
   check('openIn=same-tab honoured', !db.querySelector('a.work-card').hasAttribute('target'));
+
+  /* per-card field visibility, driven by the payload */
+  const c0 = db.querySelector('a.work-card');
+  check('field toggle: description switched on', !!c0.querySelector('.work-prob'));
+  check('field toggle: meta line switched on', !!c0.querySelector('.work-meta'));
+  check('field toggle: accent dots switched off', !c0.querySelector('.work-dots'));
+  check('field toggle: outcome stays off', !c0.querySelector('.work-out'));
+  check('field toggle: title always renders', /Edited Project/.test(textOf(c0.querySelector('h3'))),
+        textOf(c0.querySelector('h3')));
+  check('field toggle is per card', !!db.querySelectorAll('a.work-card')[1].querySelector('.work-dots'));
   check('guardrails rebuilt', db.querySelectorAll('.guard li').length === 1);
   const fl = db.querySelector('.footer-bottom div a');
   check('footer link rebuilt with target+rel',

@@ -35,6 +35,35 @@ four case studies embedded (gzip + base64) in one 3.4 MB file. Clicking a card
 inflates the study into a Blob and opens it in a new tab — or in an in-page reader
 if the popup is blocked — so it works offline with nothing else on disk.
 
+### The project cards
+
+Each card is two stacked parts, matching the approved mockup:
+
+```
+┌─────────────────────────────────────┐
+│  [ STAR · 12 SECTIONS ]    • • • •  │   dark preview plate: badge left,
+│                                     │   four accent dots right, artwork
+│            (artwork)                │
+├─────────────────────────────────────┤
+│  Smart Mining Management System     │   title — second part italic + muted
+│  ( RESEARCH ) ( ZERO-TO-ONE )       │   outlined tag pills
+│  READ THE CASE STUDY  ─────────→    │   call to action
+└─────────────────────────────────────┘
+```
+
+Which parts appear is **per card** and switched in the admin under *Project cards
+→ Fields shown on the card*: badge, accent dots, meta line, description, outcome,
+tags, call to action. The title is always shown. Anything switched off keeps its
+text, so nothing is lost and it can be turned back on at any time.
+
+The default set is what the mockup shows — badge, dots, title, tags and call to
+action on; meta line, description and outcome off. The baked HTML carries the
+hidden blocks with `.is-off`, so the page is correct before JavaScript runs, and
+the CMS re-renders from the template when a field is enabled.
+
+Plate colours (`preview.bg`, `preview.ink`, `preview.dot`) are edited per card in
+the admin's **Media** panel.
+
 ### How the case-study themes work
 
 Three of the studies were "dark-committed": their palettes live in `:root`

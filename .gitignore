@@ -19,3 +19,7 @@ site/content.json
 
 # the deploy zip duplicates the repo contents; build it with build/package.py
 download/anupam-sarkar-portfolio-site.zip
+
+# git bundles/handoff archives are build artefacts
+download/Anupam-Portfolio-git-ready.zip
+download/portfolio-1-git-ready.zip

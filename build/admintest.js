@@ -114,6 +114,22 @@ const NOISE = /Not implemented|Could not load|HTMLCanvasElement|getTotalLength|s
   check('project cards panel lists 4', $$('#main .item').length === 4, $$('#main .item').length + ' cards');
   check('tag chip editor present', $$('#main .state-pill').length >= 3, $$('#main .state-pill').length + ' chips');
 
+  const boxes = $$('#main input[type=checkbox]');
+  check('7 field toggles per card', boxes.length === 28, boxes.length + ' checkboxes for 4 cards');
+  const dotsBox = boxes[1];                       /* badge, dots, meta… */
+  const was = Admin.State.content.works.items[0].fields.dots;
+  check('dots toggle starts on', dotsBox.checked === was, String(was));
+  dotsBox.checked = !was;
+  dotsBox.dispatchEvent(new win.Event('change', { bubbles: true }));
+  await wait(60);
+  check('toggling a field reaches the model',
+        Admin.State.content.works.items[0].fields.dots === !was,
+        'dots -> ' + Admin.State.content.works.items[0].fields.dots);
+  check('toggling marks the draft dirty', $('#stateText').textContent === 'Unsaved changes');
+  dotsBox.checked = was;
+  dotsBox.dispatchEvent(new win.Event('change', { bubbles: true }));
+  await wait(60);
+
   Admin.go('ai'); await wait(80);
   check('AI practices lists every repeatable', $$('#main .item').length >= 14,
         $$('#main .item').length + ' items (5 stages + 3 keys + 6 practices + 3 guardrails)');

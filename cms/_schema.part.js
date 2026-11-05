@@ -234,7 +234,29 @@ const EXTRA_EDITABLE = [
   'works.items.[].preview.type',
   'works.items.[].preview.svg',
   'works.items.[].preview.image',
+  'works.items.[].preview.bg',
+  'works.items.[].preview.ink',
+  'works.items.[].preview.dot',
+  'works.items.[].fields.badge',
+  'works.items.[].fields.dots',
+  'works.items.[].fields.meta',
+  'works.items.[].fields.problem',
+  'works.items.[].fields.outcome',
+  'works.items.[].fields.tags',
+  'works.items.[].fields.cta',
   'works.items.[].id',
+];
+
+/* Which parts of a project card can be shown or hidden, in the order they appear
+   on the card. The title is always shown — a card without one is a broken link. */
+const CARD_FIELDS = [
+  { k: 'badge',   label: 'Preview badge',   hint: 'The pill in the top-left of the artwork.' },
+  { k: 'dots',    label: 'Accent dots',     hint: 'The four dots top-right of the artwork.' },
+  { k: 'meta',    label: 'Meta line',       hint: 'Sector on the left, your role on the right.' },
+  { k: 'problem', label: 'Description',     hint: 'The paragraph explaining the problem.' },
+  { k: 'outcome', label: 'Outcome',         hint: 'The result, under a hairline rule.' },
+  { k: 'tags',    label: 'Tags',            hint: 'The outlined pills under the title.' },
+  { k: 'cta',     label: 'Call to action',  hint: '"Read the case study" with the arrow.' },
 ];
 
 // which design tokens get a colour picker vs a text field

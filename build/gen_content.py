@@ -119,15 +119,33 @@ def work_cards():
         m = re.search(pat, body, flags)
         return m.group(1).strip() if m else ''
 
+    # The mockup's default set: badge, dots, title, tags, call to action.
+    # Description, meta line and outcome keep their copy but start switched off.
+    DEFAULT_FIELDS = {'badge': True, 'dots': True, 'meta': False, 'problem': False,
+                      'outcome': False, 'tags': True, 'cta': True}
+
     out = []
     for href, body in re.findall(r'<a class="work-card[^"]*" href="([^"]+)"[^>]*>(.*?)</a>', s, re.S):
         key = os.path.basename(href).replace('.html', '')
         if key not in svgs:
             raise SystemExit('card %s has no entry in cms/_svgs.json — run extract_svgs.py' % key)
-        italic = re.search(r'<h3>.*?<span class="it">(.*?)</span>', body, re.S)
+
+        # the title renders as  {{title}} <span class="it">{{titleItalic}}</span>,
+        # so the italic words must come out of `title` or they appear twice
+        h3 = g(r'<h3>(.*?)</h3>', body)
+        italic = re.search(r'<span class="it">(.*?)</span>', h3, re.S)
+        plain = re.sub(r'<span class="it">.*?</span>', '', h3, flags=re.S)
+        title = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', plain)).strip()
+
+        # each preview plate carries its own colours, including the accent dots
+        style = g(r'<div class="work-preview" style="([^"]*)"', body)
+        def cssvar(name, fallback):
+            m = re.search(name + r':\s*(#[0-9a-fA-F]{6})', style)
+            return m.group(1) if m else fallback
+
         out.append({
             'id': key,
-            'title': re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', g(r'<h3>(.*?)</h3>', body))),
+            'title': title,
             'titleItalic': italic.group(1).strip() if italic else '',
             'href': href,
             'meta': g(r'<div class="work-meta"><span>(.*?)</span>', body),
@@ -137,7 +155,13 @@ def work_cards():
             'tags': [t.strip() for t in re.findall(r'<span class="work-tag">(.*?)</span>', body, re.S)],
             'cta': re.sub(r'\s*<i>.*', '', g(r'<span class="work-cta">(.*?)</span>', body)).strip(),
             'badge': svgs[key]['badge'],
-            'preview': {'type': 'svg', 'svg': svgs[key]['svg'], 'image': ''},
+            'preview': {
+                'type': 'svg', 'svg': svgs[key]['svg'], 'image': '',
+                'bg': cssvar('--preview-bg', '#070d12'),
+                'ink': cssvar('--preview-ink', '#e9eff1'),
+                'dot': cssvar('--preview-dot', '#2ee6a6'),
+            },
+            'fields': dict(DEFAULT_FIELDS),
             'openIn': 'new-tab',
         })
     return out
@@ -177,6 +201,10 @@ def main():
     json.dump(data, open(out, 'w'), indent=1, ensure_ascii=False)
 
     print('works parsed : %s' % ', '.join(w['id'] for w in works))
+    for w in works:
+        print('   %-26s title=%-16r italic=%-20r dot=%-8s on=%s'
+              % (w['id'], w['title'], w['titleItalic'], w['preview']['dot'],
+                 ','.join(k for k, v in w['fields'].items() if v)))
     for k, v in cases.items():
         mapped = sum(1 for t in v.get('tokenByRole', {}).values() if t)
         print('  %-22s %2d roles, %2d light, %2d/%d mapped to tokens'

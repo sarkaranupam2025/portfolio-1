@@ -45,11 +45,12 @@ if (typeof window !== 'undefined') {
   window.SCHEMA = SCHEMA;
   window.TOKEN_GROUPS = TOKEN_GROUPS;
   window.EXTRA_EDITABLE = EXTRA_EDITABLE;
+  window.CARD_FIELDS = CARD_FIELDS;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { SITE_CONTENT, DESIGN_TOKENS, CASE_STUDIES, CASE_LIGHT_FULL,
-                     SCHEMA, TOKEN_GROUPS, EXTRA_EDITABLE };
+                     SCHEMA, TOKEN_GROUPS, EXTRA_EDITABLE, CARD_FIELDS };
 }
 """
 

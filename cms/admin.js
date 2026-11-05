@@ -880,6 +880,48 @@
   }
 
   /* ══════════════════════════════════════════════════════════════════════
+     PROJECT CARDS — which parts of each card are visible
+     ══════════════════════════════════════════════════════════════════════ */
+  var CARD_FIELDS = window.CARD_FIELDS || [];
+  var CARD_FIELD_DEFAULTS = { badge: true, dots: true, meta: false, problem: false,
+                              outcome: false, tags: true, cta: true };
+
+  function cardFieldsEditor(item) {
+    if (!item.fields) item.fields = {};
+    var host = h('div', { class: 'field' });
+    host.appendChild(h('label', {}, [
+      h('span', { text: 'Fields shown on the card' }),
+      h('span', { class: 'path', text: 'fields' }),
+    ]));
+
+    var list = h('div', { style: { borderTop: '1px solid var(--border)' } });
+    CARD_FIELDS.forEach(function (f) {
+      if (item.fields[f.k] === undefined) item.fields[f.k] = CARD_FIELD_DEFAULTS[f.k] !== false;
+      var box = h('input', { type: 'checkbox', id: 'cf-' + f.k + '-' + (item.id || '') });
+      box.checked = !!item.fields[f.k];
+      box.addEventListener('change', function () {
+        item.fields[f.k] = box.checked;
+        markDirty(); refreshPreview();
+      });
+      list.appendChild(h('label', {
+        for: box.id,
+        style: { display: 'flex', gap: '11px', alignItems: 'flex-start', padding: '9px 0',
+                 borderBottom: '1px solid var(--border)', cursor: 'pointer' },
+      }, [
+        h('span', { style: { paddingTop: '2px' } }, [box]),
+        h('span', {}, [
+          h('span', { style: { display: 'block', fontSize: '13px' }, text: f.label }),
+          h('span', { class: 'hint', style: { display: 'block', marginTop: '2px' }, text: f.hint }),
+        ]),
+      ]));
+    });
+    host.appendChild(list);
+    host.appendChild(h('p', { class: 'hint',
+      text: 'The title is always shown — a card without one is a dead link. Anything switched off keeps its text, so you can turn it back on at any time.' }));
+    return host;
+  }
+
+  /* ══════════════════════════════════════════════════════════════════════
      PROJECT CARDS
      ══════════════════════════════════════════════════════════════════════ */
   function projectsPanel() {
@@ -955,6 +997,7 @@
       body.appendChild(fieldFor(f, function () { return item[f.k]; }, function (v) { item[f.k] = v; }));
     });
     body.appendChild(tagsEditor(path0(i)));
+    body.appendChild(cardFieldsEditor(item));
     body.appendChild(h('div', { class: 'notice', style: { marginTop: '4px' } }, [
       h('span', { class: 'ico', text: '↗' }),
       h('div', { html: 'Preview artwork is edited under <b>Media</b>. ' +
@@ -1306,6 +1349,27 @@
         h('button', { type: 'button', class: prev.type === 'image' ? 'on' : '', text: 'Uploaded image',
           onclick: function () { prev.type = 'image'; markDirty(); refreshPreview(); render(); } }),
       ]));
+
+      /* the plate the artwork sits on: background, ink and the accent dots */
+      var plate = h('div', { class: 'token-grid', style: { marginBottom: '16px' } });
+      [['bg', 'artwork background'], ['ink', 'artwork ink'], ['dot', 'accent dots']].forEach(function (pair) {
+        if (!prev[pair[0]]) prev[pair[0]] = pair[0] === 'dot' ? '#2ee6a6' : pair[0] === 'bg' ? '#070d12' : '#e9eff1';
+        var pick = h('input', { type: 'color', value: prev[pair[0]] });
+        var txt = h('input', { type: 'text', value: prev[pair[0]], spellcheck: 'false' });
+        pick.addEventListener('input', function () {
+          prev[pair[0]] = pick.value; txt.value = pick.value; markDirty(); refreshPreview(); paintFrame();
+        });
+        txt.addEventListener('input', function () {
+          prev[pair[0]] = txt.value;
+          if (/^#[0-9a-fA-F]{6}$/.test(txt.value.trim())) pick.value = txt.value.trim();
+          markDirty(); refreshPreview();
+        });
+        plate.appendChild(h('div', { class: 'token' }, [
+          h('div', { class: 'k', text: pair[1] }),
+          h('div', { class: 'v' }, [pick, txt]),
+        ]));
+      });
+      body.appendChild(plate);
 
       if (prev.type === 'image') {
         var drop = h('div', { class: 'drop', text: prev.image ? 'Replace the image — click or drop a file here'

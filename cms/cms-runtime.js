@@ -155,27 +155,51 @@
     return n;
   }
 
-  /* ── list rendering ───────────────────────────────────────────────────── */
+  /* ── list rendering ─────────────────────────────────────────────────────
+     Template syntax, applied per array element:
+
+       {{path}}                  a value from the element
+       {{#path}} … {{/path}}     repeat the block for each array item ({{.}} = the
+                                 item), or render it once when the value is true
+
+     Blocks nest — the card template wraps {{#tags}} inside {{#fields.tags}} — so
+     expansion recurses, and a depth guard stops malformed input looping forever.
+     ──────────────────────────────────────────────────────────────────────── */
+  var BLOCK = /\{\{#\s*([A-Za-z0-9_.\[\]$]+)\s*\}\}([\s\S]*?)\{\{\/\s*\1\s*\}\}/g;
+
+  function pathGet(ctx, key) {
+    if (key.indexOf('[') > -1) {
+      return key.replace(/\[(\d+)\]/g, '.$1').split('.').reduce(function (o, k) {
+        return (o === null || o === undefined) ? undefined : o[k];
+      }, ctx);
+    }
+    return get(ctx, key);
+  }
+
   function fillTemplate(html, item, index) {
-    /* {{#list}}row markup{{/list}} — repeat a fragment per array item, {{.}} = the item */
-    html = html.replace(/\{\{#\s*([A-Za-z0-9_.]+)\s*\}\}([\s\S]*?)\{\{\/\s*\1\s*\}\}/g,
-      function (_, key, row) {
-        var arr = get(item, key);
-        if (!Array.isArray(arr)) return '';
-        return arr.map(function (v) {
-          return row.replace(/\{\{\s*\.\s*\}\}/g, function () {
-            return v === null || v === undefined ? '' : String(v);
-          });
-        }).join('');
+    function expand(str, ctx, depth) {
+      if (depth > 8 || str.indexOf('{{#') === -1) return str;
+      var out = str.replace(BLOCK, function (_, key, row) {   /* one pass at a time */
+        var value = pathGet(ctx, key);
+        if (Array.isArray(value)) {
+          return value.map(function (el) {
+            var rowStr = row.replace(/\{\{\s*\.\s*\}\}/g, function () {
+              return el === null || el === undefined ? '' : String(el);
+            });
+            return expand(rowStr, ctx, depth + 1);
+          }).join('');
+        }
+        return value ? expand(row, ctx, depth + 1) : '';
       });
-    return html.replace(/\{\{\s*([$A-Za-z0-9_.\[\]]+)\s*\}\}/g, function (_, key) {
+      /* the pass may have revealed an inner block; run again until stable */
+      return expand(out, ctx, depth + 1);
+    }
+
+    var out = expand(String(html), item, 0);
+    return out.replace(/\{\{\s*([$A-Za-z0-9_.\[\]]+)\s*\}\}/g, function (_, key) {
       if (key === '$index') return String(index + 1);
-      if (key === '$self') return item === null || typeof item !== 'object' ? String(item) : '';
-      var v = key.indexOf('[') > -1
-        ? key.replace(/\[(\d+)\]/g, '.$1').split('.').reduce(function (o, k) {
-            return (o === null || o === undefined) ? undefined : o[k];
-          }, item)
-        : get(item, key);
+      if (key === '$self') return (item === null || typeof item !== 'object') ? String(item) : '';
+      var v = pathGet(item, key);
       if (v === undefined || v === null) return '';
       if (typeof v === 'boolean') return v ? 'true' : 'false';
       if (typeof v === 'object') return JSON.stringify(v);
